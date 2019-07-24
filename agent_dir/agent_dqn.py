@@ -9,6 +9,7 @@ import torch.nn as nn
 from agent_dir.agent import Agent
 from environment import Environment
 from collections import namedtuple
+from logger import TensorboardLogger
 
 use_cuda = torch.cuda.is_available()
 seed = 11037
@@ -28,7 +29,7 @@ class ReplayBuffer(object):
     Replay Buffer for Q function
         default size : 20000 of (s_t, a_t, r_t, s_t+1)
     """
-    def __init__(self, capacity=20000):
+    def __init__(self, capacity=10000):
         self.capacity = capacity
         self.memory = []
         self.position = 0
@@ -94,9 +95,11 @@ class AgentDQN(Agent):
 
         # build target, online network
         self.target_net = DQN(self.input_channels, self.num_actions)
-        self.target_net = self.target_net.cuda() if use_cuda else self.target_net
+        # self.target_net = self.target_net.cuda() if use_cuda else self.target_net
+        self.target_net = self.target_net.to(self.device)
         self.online_net = DQN(self.input_channels, self.num_actions)
-        self.online_net = self.online_net.cuda() if use_cuda else self.online_net
+        # self.online_net = self.online_net.cuda() if use_cuda else self.online_net
+        self.online_net = self.online_net.to(self.device)
 
         if args.test_dqn:
             self.load('dqn')
@@ -114,6 +117,9 @@ class AgentDQN(Agent):
         self.target_update_freq = 1000 # frequency to update target network
         self.epsilon = 0
         self.replay_buffer = ReplayBuffer()
+        self.EPS_DECAY = 80000
+        self.tensorboard = TensorboardLogger(dir='./dqn_assault')
+
         # optimizer
         self.optimizer = optim.RMSprop(self.online_net.parameters(), lr=1e-4)
 
@@ -141,15 +147,17 @@ class AgentDQN(Agent):
     def make_action(self, state, test=False):
         # TODO:
         # At first, you decide whether you want to explore the environemnt
+        eps = 0.01 + (0.9 - 0.01) * math.exp(-1. * self.steps / self.EPS_DECAY)
         # TODO:
         # if explore, you randomly samples one action
         # else, use your model to predict action
-        if random.random() > self.epsilon:
+        if random.random() > eps:
             Q_s_a= self.online_net(state)
             action = torch.argmax(Q_s_a)
+            return action.item()
         else :
             action = self.env.get_random_action()
-        return action
+            return action
 
     def update(self):
         # TODO:
@@ -162,28 +170,34 @@ class AgentDQN(Agent):
         state_batch = torch.cat(batch.state).to(self.device)
         action_batch = torch.cat(batch.action).to(self.device)
         reward_batch = torch.cat(batch.reward).to(self.device)
-        next_state_batch = torch.cat(batch.state).to(self.device)
-
+        # next_state_batch = torch.cat(batch.state).to(self.device)
+        non_final_mask = torch.tensor(tuple(map(lambda s: s is not None,
+                                            batch.next_state)), device=self.device, dtype=torch.uint8)
+        non_final_next_states = torch.cat([s for s in batch.next_state
+                                                    if s is not None])
+        
         # TODO:
         # Compute Q(s_t, a) with your model.
-        state_action_values = self.online_net(state_batch).gather(1, action_batch)
+        state_action_values = self.online_net(state_batch).gather(1, action_batch).reshape(-1)
 
         with torch.no_grad():
             # TODO:
             # Compute Q(s_{t+1}, a) for all next states.
             # Since we do not want to backprop through the expected action values,
             # use torch.no_grad() to stop the gradient from Q(s_{t+1}, a)
-            next_state_values= self.target_net(next_state_batch).max(1,keepdim=True)[0]
+            # next_state_values= self.target_net(next_state_batch).max(1,keepdim=True)[0]
+            next_state_values = torch.zeros(self.batch_size, device=self.device)
+            next_state_values[non_final_mask] = self.target_net(non_final_next_states).max(1)[0]
+
         # TODO:
         # Compute the expected Q values: rewards + gamma * max(Q(s_{t+1}, a))
         # You should carefully deal with gamma * max(Q(s_{t+1}, a)) when it is the terminal state.
-        expected_state_action_values = self.GAMMA * (next_state_values) + reward_batch
+        expected_state_action_values = self.GAMMA * (next_state_values) + reward_batch.reshape(-1)
 
         # TODO:
         # Compute temporal difference loss
         loss_fn = torch.nn.MSELoss()
         loss = loss_fn(state_action_values, expected_state_action_values)
-
 
         self.optimizer.zero_grad()
         loss.backward()
@@ -199,24 +213,24 @@ class AgentDQN(Agent):
             state = self.env.reset()
             # State: (84,84,4) --> (1,4,84,84)
             state = torch.from_numpy(state).permute(2,0,1).unsqueeze(0)
-            state = state.cuda() if use_cuda else state
-            
+            state = state.to(self.device)
+
             done = False
             while(not done):
                 # select and perform action
                 action = self.make_action(state)
-                next_state, reward, done, _ = self.env.step(action[0, 0].data.item())
+                next_state, reward, done, _ = self.env.step(action)
                 total_reward += reward
 
                 # process new state
                 next_state = torch.from_numpy(next_state).permute(2,0,1).unsqueeze(0)
-                next_state = next_state.cuda() if use_cuda else next_state
+                next_state = next_state.to(self.device)
                 if done:
                     next_state = None
 
                 # TODO:
                 # store the transition in memory
-                a_0 = torch.tensor([action[0, 0].data.item()], device=self.device)
+                a_0 = torch.tensor([action], device=self.device)
                 r_0 = torch.tensor([reward], device=self.device)
                 self.replay_buffer.push(state, expand_dim(a_0), expand_dim(r_0),next_state)
 
@@ -236,10 +250,13 @@ class AgentDQN(Agent):
                     self.save('dqn')
 
                 self.steps += 1
+                self.tensorboard.update()
 
             if episodes_done_num % self.display_freq == 0:
                 print('Episode: %d | Steps: %d/%d | Avg reward: %f | loss: %f '%
                         (episodes_done_num, self.steps, self.num_timesteps, total_reward / self.display_freq, loss))
+                self.tensorboard.scalar_summary("Avg reward", total_reward / self.display_freq)
+                self.tensorboard.scalar_summary("loss", loss)
                 total_reward = 0
 
             episodes_done_num += 1
