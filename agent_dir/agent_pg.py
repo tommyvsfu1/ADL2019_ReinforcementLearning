@@ -49,10 +49,17 @@ class PolicyNet(nn.Module):
 
 class AgentPG(Agent):
     def __init__(self, env, args):
+        # device
+        if torch.cuda.is_available():
+            self.device = torch.device('cuda')
+        else :
+            self.device = torch.device('cpu')
+
+
         self.env = env
         self.model = PolicyNet(state_dim = self.env.observation_space.shape[0],
                                action_num= self.env.action_space.n,
-                               hidden_dim=64)
+                               hidden_dim=64).to(self.device)
         
         
         if args.test_pg:
@@ -72,12 +79,6 @@ class AgentPG(Agent):
     
         # log
         self.tensorboard = TensorboardLogger('./pg_lunar')
-
-        # device
-        if torch.cuda.is_available():
-            self.device = torch.device('cuda')
-        else :
-            self.device = torch.device('cpu')
 
     def save(self, save_path):
         print('save model to', save_path)
