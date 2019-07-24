@@ -86,8 +86,10 @@ class AgentDQN(Agent):
         else :
             self.device = torch.device('cpu')
 
+        print("using device", self.device)
 
         self.env = env
+        self.env.seed(seed)
         self.input_channels = 4
         self.num_actions = self.env.action_space.n
         # TODO:
