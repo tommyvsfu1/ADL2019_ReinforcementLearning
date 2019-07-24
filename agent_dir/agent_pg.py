@@ -57,6 +57,7 @@ class AgentPG(Agent):
 
 
         self.env = env
+        self.env.seed(seed)
         self.model = PolicyNet(state_dim = self.env.observation_space.shape[0],
                                action_num= self.env.action_space.n,
                                hidden_dim=64).to(self.device)
