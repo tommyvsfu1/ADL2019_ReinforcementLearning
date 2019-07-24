@@ -147,20 +147,26 @@ class AgentDQN(Agent):
         pass
     
     def make_action(self, state, test=False):
-        # TODO:
-        # At first, you decide whether you want to explore the environemnt
-        eps = 0.01 + (0.9 - 0.01) * math.exp(-1. * self.steps / self.EPS_DECAY)
-        # TODO:
-        # if explore, you randomly samples one action
-        # else, use your model to predict action
-        if random.random() > eps:
-            Q_s_a= self.online_net(state)
+        if not test:
+            # TODO:
+            # At first, you decide whether you want to explore the environemnt
+            eps = 0.01 + (0.9 - 0.01) * math.exp(-1. * self.steps / self.EPS_DECAY)
+            # TODO:
+            # if explore, you randomly samples one action
+            # else, use your model to predict action
+            if random.random() > eps:
+                Q_s_a= self.online_net(state)
+                action = torch.argmax(Q_s_a)
+                return action.item()
+            else :
+                action = self.env.get_random_action()
+                return action
+        else :
+            self.online_net.eval()
+            state = torch.from_numpy(state).permute(2,0,1).unsqueeze(0)
+            Q_s_a = self.online_net(state)
             action = torch.argmax(Q_s_a)
             return action.item()
-        else :
-            action = self.env.get_random_action()
-            return action
-
     def update(self):
         # TODO:
         # To update model, we sample some stored experiences as training examples.
