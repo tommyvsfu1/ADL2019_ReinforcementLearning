@@ -64,7 +64,7 @@ class AgentPG(Agent):
         
         
         if args.test_pg:
-            self.load('pg.cpt')
+            self.load('pg_best.cpt')
         # discounted reward
         self.gamma = 0.99 
         
