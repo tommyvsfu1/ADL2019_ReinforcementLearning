@@ -52,6 +52,36 @@ class ReplayBuffer(object):
         return len(self.memory)
 
 
+class Dueling_DQN(nn.Module):
+    '''
+    This architecture is the one from OpenAI Baseline, with small modification.
+    '''
+    def __init__(self, channels, num_actions):
+        super(Dueling_DQN, self).__init__()
+        self.num_actions = num_actions
+        self.conv1 = nn.Conv2d(channels, 32, kernel_size=8, stride=4)
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=4, stride=2)
+        self.conv3 = nn.Conv2d(64, 64, kernel_size=3, stride=1)
+        self.fc = nn.Linear(3136, 512)
+        self.head = nn.Linear(512, num_actions)
+        self.fc1_val = torch.nn.Linear((512), 1)
+        self.relu = nn.ReLU()
+        self.lrelu = nn.LeakyReLU(0.01)
+
+        torch.nn.init.kaiming_normal_(self.conv1.weight)
+        torch.nn.init.kaiming_normal_(self.conv2.weight)
+        torch.nn.init.kaiming_normal_(self.conv3.weight)
+
+    def forward(self, x):
+        x = self.relu(self.conv1(x))
+        x = self.relu(self.conv2(x))
+        x = self.relu(self.conv3(x))
+        x = self.lrelu(self.fc(x.view(x.size(0), -1)))
+        adv = self.head(x)
+        val = self.fc1_val(x)
+        Q = val + adv - adv.mean(1).unsqueeze(1).expand(x.size(0),self.num_actions)
+        return Q
+
 class DQN(nn.Module):
     '''
     This architecture is the one from OpenAI Baseline, with small modification.
@@ -96,11 +126,14 @@ class AgentDQN(Agent):
         # Initialize your replay buffer
 
         # build target, online network
-        self.target_net = DQN(self.input_channels, self.num_actions)
-        # self.target_net = self.target_net.cuda() if use_cuda else self.target_net
+        if args.model_use == "Dueling":
+            self.target_net = Dueling_DQN(self.input_channels, self.num_actions)
+            self.online_net = Dueling_DQN(self.input_channels, self.num_actions)
+        else :
+            self.target_net = DQN(self.input_channels, self.num_actions)
+            self.online_net = DQN(self.input_channels, self.num_actions)
+
         self.target_net = self.target_net.to(self.device)
-        self.online_net = DQN(self.input_channels, self.num_actions)
-        # self.online_net = self.online_net.cuda() if use_cuda else self.online_net
         self.online_net = self.online_net.to(self.device)
 
         if args.test_dqn:
@@ -120,7 +153,7 @@ class AgentDQN(Agent):
         self.epsilon = 0
         self.replay_buffer = ReplayBuffer()
         self.EPS_DECAY = 80000
-        self.tensorboard = TensorboardLogger(dir='./dqn_assault')
+        self.tensorboard = TensorboardLogger(dir='./log/dueling_dqn_assault')
 
         # optimizer
         self.optimizer = optim.RMSprop(self.online_net.parameters(), lr=1e-4)
@@ -216,6 +249,7 @@ class AgentDQN(Agent):
     def train(self):
         episodes_done_num = 0 # passed episodes
         total_reward = 0 # compute average reward
+        best_avg_reward = float('-inf')
         loss = 0 
         while(True):
             state = self.env.reset()
@@ -261,11 +295,19 @@ class AgentDQN(Agent):
                 self.tensorboard.update()
 
             if episodes_done_num % self.display_freq == 0:
+                avg_reward = total_reward / self.display_freq
                 print('Episode: %d | Steps: %d/%d | Avg reward: %f | loss: %f '%
-                        (episodes_done_num, self.steps, self.num_timesteps, total_reward / self.display_freq, loss))
+                        (episodes_done_num, self.steps, self.num_timesteps, avg_reward, loss))
                 self.tensorboard.scalar_summary("Avg reward", total_reward / self.display_freq)
                 self.tensorboard.scalar_summary("loss", loss)
                 total_reward = 0
+
+                # save the best model
+                if avg_reward > best_avg_reward:
+                    best_avg_reward = avg_reward
+                    self.save('dqn_best')
+
+
 
             episodes_done_num += 1
             if self.steps > self.num_timesteps:

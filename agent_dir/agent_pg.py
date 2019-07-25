@@ -79,7 +79,7 @@ class AgentPG(Agent):
         self.memory = Memory()
     
         # log
-        self.tensorboard = TensorboardLogger('./pg_lunar')
+        self.tensorboard = TensorboardLogger('./log/pg_lunar')
 
     def save(self, save_path):
         print('save model to', save_path)

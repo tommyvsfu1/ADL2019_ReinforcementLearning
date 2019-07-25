@@ -20,7 +20,7 @@ def parse():
     parser.add_argument('--test_mario', action='store_true', help='whether test mario')
     parser.add_argument('--video_dir', default=None, help='output video directory')
     parser.add_argument('--do_render', action='store_true', help='whether render environment')
-
+    parser.add_argument('--model_use', default="Dueling")
     try:
         from argument import add_arguments
         parser = add_arguments(parser)
