@@ -65,3 +65,7 @@ testing SuperMarioBros:
 ├── test.py (test script. we will use this script to test your agents. DO NOT MODIFY IT)
 
 ```
+
+## Bugs
+*   BinarySpaceToDiscreteSpaceEnv -> JoypadSpace 
+http://melonicedlatte.com/programming/2019/06/09/202000.html

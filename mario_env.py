@@ -12,7 +12,8 @@ from gym import spaces
 from PIL import Image
 import cv2
 
-from nes_py.wrappers import BinarySpaceToDiscreteSpaceEnv
+#from nes_py.wrappers import BinarySpaceToDiscreteSpaceEnv
+from nes_py.wrappers import JoypadSpace
 import gym_super_mario_bros
 from gym_super_mario_bros.actions import COMPLEX_MOVEMENT
 
@@ -183,6 +184,7 @@ def wrap_mario(env):
 
 def create_mario_env(env_id):
     env = gym_super_mario_bros.make(env_id)
-    env = BinarySpaceToDiscreteSpaceEnv(env, COMPLEX_MOVEMENT)
+    #env = BinarySpaceToDiscreteSpaceEnv(env, COMPLEX_MOVEMENT)
+    env = JoypadSpace(env,COMPLEX_MOVEMENT)
     env = wrap_mario(env)
     return env

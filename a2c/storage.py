@@ -4,15 +4,14 @@ class RolloutStorage:
     def __init__(self, n_steps, n_processes, obs_shape, action_space,
             hidden_size):
         self.obs = torch.zeros(n_steps + 1, n_processes, *obs_shape)
-        self.hiddens = torch.zeros(
-            n_steps + 1, n_processes, hidden_size)
+        self.hiddens = torch.zeros(n_steps + 1, n_processes, hidden_size)
         self.rewards = torch.zeros(n_steps, n_processes, 1)
-        self.value_preds = torch.zeros(n_steps + 1, n_processes, 1)
+        self.value_preds = torch.zeros(n_steps + 1, n_processes, 1) # I don't know why values_predinitialize n_step + 1
         self.returns = torch.zeros(n_steps + 1, n_processes, 1)
         self.actions = torch.zeros(n_steps, n_processes, 1).long()
         self.masks = torch.ones(n_steps + 1, n_processes, 1)
 
-        self.n_steps = n_steps
+        self.n_steps = n_steps # 5
         self.step = 0
 
     def to(self, device):

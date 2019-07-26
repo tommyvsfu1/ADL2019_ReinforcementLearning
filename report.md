@@ -29,7 +29,7 @@ Mean: 196.97405585001098
 
 ### 2.1 baseline
 - [x] Getting averaging reward in 100 episodes over 100 in Assault
-- [] Improvements to DQN are allowed, not including Actor-Critic series.
+- [x] Improvements to DQN are allowed, not including Actor-Critic series.
 
 structure  
 ```python
@@ -40,8 +40,12 @@ self.fc = nn.Linear(3136, 512)
 self.lrelu = nn.LeakyReLU(0.01)
 self.head = nn.Linear(512, num_actions)
 ```
-*   testing (dqn.cpt)  
-Run 100 episodes  
-Mean: 222.8
-*   training curve
+### Testing   
+#### DQN :  
+Run 100 episodes    
+Mean: 222.8  
 ![](https://i.imgur.com/hSgpZQ0.png)
+#### Dueling DQN:  
+Run 100 episodes  
+Mean: 366.17  
+![](https://i.imgur.com/bu6rw4A.png)

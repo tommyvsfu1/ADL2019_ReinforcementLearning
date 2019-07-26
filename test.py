@@ -27,7 +27,7 @@ def parse():
     return args
 
 
-def test(agent, env, total_episodes=30):
+def test(agent, env, total_episodes=1):
     rewards = []
     env.seed(seed)
     for i in range(total_episodes):
@@ -41,7 +41,7 @@ def test(agent, env, total_episodes=30):
             action = agent.make_action(state, test=True)
             state, reward, done, info = env.step(action)
             episode_reward += reward
-
+        print("done")
         rewards.append(episode_reward)
     print('Run %d episodes'%(total_episodes))
     print('Mean:', np.mean(rewards))

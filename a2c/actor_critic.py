@@ -14,7 +14,7 @@ class ActorCritic(nn.Module):
         
         self.recurrent = recurrent
         self.hidden_size = hidden_size
-        
+        # obs_shape = (4, 84, 84)
         self.head = nn.Sequential(
             nn.Conv2d(obs_shape[0], 32, 8, stride=4),
             nn.ReLU(),
@@ -32,7 +32,7 @@ class ActorCritic(nn.Module):
         
         self.actor = nn.Linear(hidden_size, act_shape)
         self.critic = nn.Linear(hidden_size, 1)
-        
+        self.flatten = Flatten()
         self.reset_parameters()
 
     def reset_parameters(self):
@@ -59,23 +59,46 @@ class ActorCritic(nn.Module):
 
     def _forward_rnn(self, x, hiddens, masks):
         '''
-        Args:
-            x: observations -> (n_steps * n_processes, hidden_size)
-            hiddens: hidden states of 1st step -> (n_processes, hidden_size)
-            masks: whether to reset hidden state -> (n_steps * n_processes, 1)
+        Inputs:
+            x: observations : (n_steps * n_processes, hidden_size)
+            hiddens: hidden states of 1st step : (n_processes, hidden_size)
+            masks: whether to reset hidden state : (n_steps * n_processes, 1)
         Returns:
-            x: outputs of RNN -> (n_steps * n_processes, hidden_size)
-            hiddens: hidden states of last step -> (n_processes, hidden_size)
+            x: outputs of RNN : (n_steps * n_processes, hidden_size)
+            hiddens: hidden states of last step : (n_processes, hidden_size)
         '''
+        
         # TODO
         # step 1: Unflatten the tensors to (n_steps, n_processes, -1) 
+        n_processes = hiddens.shape[0]
+        n_steps = masks.shape[0] // n_processes
+        hidden_size = hiddens.shape[1]
+        x_input = x.view(n_steps, n_processes, -1)
+        mask_input = masks.view(n_steps, n_processes, -1)
         # step 2: Run a for loop through time to forward rnn
+        # rnn propogating network
+        #        y  
+        #        |
+        # h0 -> GRU -> h1
+        #        |
+        #        x
+        y = torch.zeros_like(x_input)
+        for t in range(n_steps): # default : 1
+            x_t = x_input[t].unsqueeze(0)
+            mask_t = mask_input[t]
+            if torch.all(torch.eq(mask_t,0)).item() == 0:
+                y[t], hiddens = self.rnn(x_t)
+            else :
+                y[t], hiddens = self.rnn(x_t, hiddens.unsqueeze(0))
         # step 3: Flatten the outputs
+        y = y.view(-1, hidden_size)
+        hiddens = hiddens.view(-1, hidden_size)
         # HINT: You must set hidden states to zeros when masks == 0 in the loop 
-       
-        return x, hiddens
+        
+        return y, hiddens
 
     def forward(self, inputs, hiddens, masks):
+        print("inputs shape", inputs.shape)
         x = self.head(inputs / 255.0)
         if self.recurrent:
             x, hiddens = self._forward_rnn(x, hiddens, masks)
