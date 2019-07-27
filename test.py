@@ -41,8 +41,8 @@ def test(agent, env, total_episodes=1):
             action = agent.make_action(state, test=True)
             state, reward, done, info = env.step(action)
             episode_reward += reward
-        print("done")
         rewards.append(episode_reward)
+        print("done", "state:",state)
     print('Run %d episodes'%(total_episodes))
     print('Mean:', np.mean(rewards))
 

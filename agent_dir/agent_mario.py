@@ -1,3 +1,4 @@
+# reference code https://github.com/dennybritz/reinforcement-learning/blob/master/PolicyGradient/a3c/worker.py
 import torch
 from torch.distributions import Categorical
 from torch.optim import RMSprop
@@ -10,6 +11,8 @@ from a2c.actor_critic import ActorCritic
 from collections import deque
 import os
 import numpy as np
+from logger import TensorboardLogger
+
 use_cuda = torch.cuda.is_available()
 
 class AgentMario:
@@ -56,6 +59,7 @@ class AgentMario:
         self.hidden = None
         self.init_game_setting()
    
+        self.tensorboard = TensorboardLogger("./log/mario_log")
     def _update(self):
         # TODO: Compute returns
         # R_t = reward_t + gamma * R_{t+1}
@@ -69,63 +73,92 @@ class AgentMario:
         # loss = value_loss + action_loss (- entropy_weight * entropy)
 
         #  Feedforward (do not use with no_grad() because we need Backprop)
-        obs_batch = (self.rollouts.obs).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step + 1, n_processes, 4, 84, 84)
-        hidden_batch = (self.rollouts.hiddens).view(-1, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
-        mask_batch = (self.rollouts.masks).view(-1, 1) # (n_step + 1, n_processes, 1)
-        next_values = self.rollouts.value_preds
-
+        obs_batch = (self.rollouts.obs[0:self.update_freq]).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step + 1, n_processes, 4, 84, 84)
+        hidden_batch = (self.rollouts.hiddens[0:self.update_freq]).view(-1, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
+        mask_batch = (self.rollouts.masks[0:self.update_freq]).view(-1, 1) # (n_step + 1, n_processes, 1)
+        obs_batch = obs_batch.to(self.device)
+        hidden_batch = hidden_batch.to(self.device)
+        mask_batch = mask_batch.to(self.device)
         values, action_probs, hiddens = self.model(obs_batch, hidden_batch, mask_batch)
+        
+        log_probs = torch.log(action_probs).view(self.update_freq*self.n_processes,-1)
+        log_action_probs = log_probs.gather(1, self.rollouts.actions.view(self.update_freq*self.n_processes,-1))
+        log_action_probs = log_action_probs.view(self.update_freq, self.n_processes, -1)
+        #dist = torch.distributions.Categorical(action_probs.view(self.update_freq,self.n_processes,-1))
+        #log_action_probs = dist.log_prob(self.rollouts.actions)
 
+
+        with torch.no_grad():
+            obs_next_batch = (self.rollouts.obs[1:self.update_freq+1]).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step + 1, n_processes, 4, 84, 84)
+            hidden_next_batch = (self.rollouts.hiddens[1:self.update_freq+1]).view(-1, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
+            mask_next_batch = (self.rollouts.masks[1:self.update_freq+1]).view(-1, 1) # (n_step + 1, n_processes, 1)
+            obs_next_batch = obs_next_batch.to(self.device)
+            hidden_next_batch = hidden_next_batch.to(self.device)
+            mask_next_batch = mask_next_batch.to(self.device)
+            next_values, _, _ = self.model(obs_next_batch, hidden_next_batch, mask_next_batch)
+            
+        # next_values[t] = V(s)_t
+        
+        # next feedforward
+        #[0,1,2,3,4,5]
+        # obs = [ob(0), ob(1), ob(2), ob(3), ob(4), ob(5)]
+        # mask = [m(0),m(1),m(2),m(3),m(4),m(5)]
+        # values = [v(0),v(1),v(2),v(3),v(4),v(5)]
+        # self.rollouts.value_preds = [v(0), v(1), v(2), v(3), v(4)]
         # TODO:
         # calculate
         # target = f(values, next_values)
         # value_loss = mse(values, target)
-
-
+        #values = self.rollouts.value_preds[0 : self.update_freq]
+        target_y = self.rollouts.rewards + self.gamma * next_values.view(self.update_freq,self.n_processes,1) # [v(1),v(2),v(3),v(4),v(5)]
+        value_loss_fn = torch.nn.MSELoss()
+        value_loss = 0.5 * value_loss_fn(values.view(self.update_freq,self.n_processes,-1), target_y)
         # TODO:
         # action_loss = log(...) * advantage_function
-
-
-        
-        print("values shape", values.size())
-        print("values", (values.view(6,16,1))[:,0,0])
-        print("next values", next_values[:,0,0])
-        entropy = (torch.distributions.Categorical(action_probs)).entropy()
-        loss = - 0.01 * entropy
+        advantage_function = R - (values.view(self.update_freq,self.n_processes,-1)).detach()
+        action_loss = (-log_action_probs * advantage_function).sum()
+    
+        #entropy = dist.entropy()
+        loss = action_loss + value_loss 
         # Update
-        #self.optimizer.zero_grad()
-        #loss.backward()
-        #clip_grad_norm_(self.model.parameters(), self.grad_norm)
-        #self.optimizer.step()
+        self.optimizer.zero_grad()
+        loss.backward()
+        clip_grad_norm_(self.model.parameters(), self.grad_norm)
+        self.optimizer.step()
         
         # TODO:
         # Clear rollouts after update (RolloutStorage.reset())
-
-        #return loss.item()
+        self.rollouts.reset()
+        self.tensorboard.scalar_summary("action_loss", action_loss.item())
+        self.tensorboard.scalar_summary("value_loss", value_loss.item())
+        self.tensorboard.scalar_summary("loss",loss.item())
+        return loss.item()
 
     def _step(self, obs, hiddens, masks):
         with torch.no_grad():
-            # TODO:
-            # Sample actions from the output distributions
-            # HINT: you can use torch.distributions.Categorical
-            values, action_probs, hiddens = self.make_action(obs, hiddens, masks)
+        # TODO:
+        # Sample actions from the output distributions
+        # HINT: you can use torch.distributions.Categorical
+            values, action_probs, hiddens_next = self.make_action(obs, hiddens, masks)
             dist = torch.distributions.Categorical(action_probs)
             actions = dist.sample()
+        #log_action_prob = torch.unsqueeze(dist.log_prob(actions),1) # expand dim
+        #entropy = dist.entropy()
 
-        obs, rewards, dones, infos = self.envs.step(actions.cpu().numpy()) # synchronously step
-        masks = torch.from_numpy(1 - np.expand_dims(dones,axis=1))
+        obs_next, rewards, dones, infos = self.envs.step(actions.cpu().numpy()) # synchronously step
+        masks_next = torch.from_numpy(1 - np.expand_dims(dones,axis=1))
         actions = torch.unsqueeze(actions, 1)
         rewards = torch.from_numpy(np.expand_dims(rewards,axis=1))
         # TODO:
         # Store transitions (obs, hiddens, actions, values, rewards, masks)
         # You need to convert arrays to tensors first
         # HINT: masks = (1 - dones)
-        self.rollouts.insert(torch.from_numpy(obs), 
-                            hiddens, 
+        self.rollouts.insert(torch.from_numpy(obs_next), 
+                            hiddens_next, 
                             actions, 
                             values,  
                             rewards, 
-                            masks)
+                            masks_next)
 
     def train(self):
         print('Start training')
@@ -151,9 +184,11 @@ class AgentMario:
                     if m == 0:
                         running_reward.append(r.item()) # when done, update running reward
                 episode_rewards *= self.rollouts.masks[step + 1] # episode reward continues or back to 0
-            loss = self._update()
+            
+            
+            loss_term = self._update()
+            self.tensorboard.update()
             total_steps += self.update_freq * self.n_processes
-            print("self .rollout step", self.rollouts.step)
             # Log & save model
             if len(running_reward) == 0:
                 avg_reward = 0
@@ -165,7 +200,8 @@ class AgentMario:
                         (total_steps, self.max_steps, avg_reward))
             
             if total_steps % self.save_freq == 0:
-                self.save_model('model.pt')
+                print("*****save model*****")
+                self.save_model('mario_model.pt')
             
             if total_steps >= self.max_steps:
                 break
@@ -183,7 +219,11 @@ class AgentMario:
     def make_action(self, obs, hiddens, masks, test=False):
         # TODO: Use you model to choose an action
         if not test:
+            obs = obs.to(self.device)
+            hiddens = hiddens.to(self.device)
+            masks = masks.to(self.device)
             values, action_probs, hiddens = self.model(obs, hiddens, masks)
+            return values, action_probs, hiddens  
         else :
-            raise NotImplementedError("Not Implement Test case")
-        return values, action_probs, hiddens   
+            pass
+ 

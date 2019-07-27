@@ -98,7 +98,6 @@ class ActorCritic(nn.Module):
         return y, hiddens
 
     def forward(self, inputs, hiddens, masks):
-        print("inputs shape", inputs.shape)
         x = self.head(inputs / 255.0)
         if self.recurrent:
             x, hiddens = self._forward_rnn(x, hiddens, masks)
