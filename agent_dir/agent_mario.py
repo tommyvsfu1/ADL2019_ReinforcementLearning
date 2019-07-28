@@ -188,7 +188,7 @@ class AgentMario:
             
             
             loss_term = self._update()
-            self.tensorboard.update()
+
             total_steps += self.update_freq * self.n_processes
             # Log & save model
             if len(running_reward) == 0:
@@ -199,6 +199,7 @@ class AgentMario:
             if total_steps % self.display_freq == 0:
                 print('Steps: %d/%d | Avg reward: %f'%
                         (total_steps, self.max_steps, avg_reward))
+                self.tensorboard.scalar_summary("reward",avg_reward)
             
             if total_steps % self.save_freq == 0:
                 print("*****save model*****")
@@ -206,7 +207,8 @@ class AgentMario:
             
             if total_steps >= self.max_steps:
                 break
-
+                
+            self.tensorboard.update()
     def save_model(self, filename):
         torch.save(self.model, os.path.join(self.save_dir, filename))
 
