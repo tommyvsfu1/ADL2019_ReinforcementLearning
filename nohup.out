@@ -1,0 +1,235 @@
+update freq: 5
+n_processes: 16
+display freq: 4000
+save freq: 100000
+save dir: ./model/mario
+using device: cuda:0
+Start training
+#####save best model#####
+Steps: 4000/10000000 | Avg reward: 0.000000
+#####save best model#####
+#####save best model#####
+#####save best model#####
+#####save best model#####
+#####save best model#####
+#####save best model#####
+#####save best model#####
+Steps: 8000/10000000 | Avg reward: 989.420795
+#####save best model#####
+Steps: 12000/10000000 | Avg reward: 808.670178
+Steps: 16000/10000000 | Avg reward: 716.150165
+Steps: 20000/10000000 | Avg reward: 716.150165
+Steps: 24000/10000000 | Avg reward: 714.620093
+Steps: 28000/10000000 | Avg reward: 717.000171
+Steps: 32000/10000000 | Avg reward: 711.390161
+#####save best model#####
+#####save best model#####
+#####save best model#####
+#####save best model#####
+#####save best model#####
+Steps: 36000/10000000 | Avg reward: 1125.703607
+Steps: 40000/10000000 | Avg reward: 924.561237
+Steps: 44000/10000000 | Avg reward: 717.200171
+Steps: 48000/10000000 | Avg reward: 802.301129
+Steps: 52000/10000000 | Avg reward: 802.301129
+Steps: 56000/10000000 | Avg reward: 802.301129
+Steps: 60000/10000000 | Avg reward: 802.301129
+Steps: 64000/10000000 | Avg reward: 860.462067
+Steps: 68000/10000000 | Avg reward: 991.064886
+Steps: 72000/10000000 | Avg reward: 1111.426794
+Steps: 76000/10000000 | Avg reward: 1022.445947
+Steps: 80000/10000000 | Avg reward: 996.295959
+Steps: 84000/10000000 | Avg reward: 996.295959
+Steps: 88000/10000000 | Avg reward: 996.295959
+Steps: 92000/10000000 | Avg reward: 996.295959
+Steps: 96000/10000000 | Avg reward: 1166.095081
+Steps: 100000/10000000 | Avg reward: 1036.763861
+*****save model*****
+#####save best model#####
+Steps: 104000/10000000 | Avg reward: 1266.382281
+#####save best model#####
+Steps: 108000/10000000 | Avg reward: 1335.311951
+#####save best model#####
+Steps: 112000/10000000 | Avg reward: 1430.313940
+Steps: 116000/10000000 | Avg reward: 1430.313940
+#####save best model#####
+#####save best model#####
+Steps: 120000/10000000 | Avg reward: 1644.022223
+Steps: 124000/10000000 | Avg reward: 1644.022223
+Steps: 128000/10000000 | Avg reward: 1644.022223
+Steps: 132000/10000000 | Avg reward: 1644.022223
+Steps: 136000/10000000 | Avg reward: 1635.272223
+#####save best model#####
+Steps: 140000/10000000 | Avg reward: 1654.772760
+Steps: 144000/10000000 | Avg reward: 1542.141876
+Steps: 148000/10000000 | Avg reward: 1542.141876
+Steps: 152000/10000000 | Avg reward: 1542.141876
+Steps: 156000/10000000 | Avg reward: 1480.321536
+Steps: 160000/10000000 | Avg reward: 1480.321536
+Steps: 164000/10000000 | Avg reward: 1480.321536
+Steps: 168000/10000000 | Avg reward: 1551.363425
+Steps: 172000/10000000 | Avg reward: 1551.363425
+Steps: 176000/10000000 | Avg reward: 1545.115903
+Steps: 180000/10000000 | Avg reward: 1545.115903
+Steps: 184000/10000000 | Avg reward: 1415.867075
+Steps: 188000/10000000 | Avg reward: 1415.867075
+Steps: 192000/10000000 | Avg reward: 1415.867075
+Steps: 196000/10000000 | Avg reward: 1095.256674
+Steps: 200000/10000000 | Avg reward: 799.359332
+*****save model*****
+Steps: 204000/10000000 | Avg reward: 799.359332
+Steps: 208000/10000000 | Avg reward: 747.513321
+Steps: 212000/10000000 | Avg reward: 723.989236
+Steps: 216000/10000000 | Avg reward: 723.989236
+Steps: 220000/10000000 | Avg reward: 723.989236
+Steps: 224000/10000000 | Avg reward: 723.989236
+Steps: 228000/10000000 | Avg reward: 723.989236
+Steps: 232000/10000000 | Avg reward: 536.787533
+Steps: 236000/10000000 | Avg reward: 458.335628
+Steps: 240000/10000000 | Avg reward: 410.886369
+Steps: 244000/10000000 | Avg reward: 410.886369
+Steps: 248000/10000000 | Avg reward: 410.886369
+Steps: 252000/10000000 | Avg reward: 363.737109
+Steps: 256000/10000000 | Avg reward: 363.737109
+Steps: 260000/10000000 | Avg reward: 363.737109
+Steps: 264000/10000000 | Avg reward: 284.184893
+Steps: 268000/10000000 | Avg reward: 284.184893
+Steps: 272000/10000000 | Avg reward: 164.483308
+Steps: 276000/10000000 | Avg reward: 164.483308
+Steps: 280000/10000000 | Avg reward: 79.130688
+Steps: 284000/10000000 | Avg reward: 79.130688
+Steps: 288000/10000000 | Avg reward: 79.130688
+Steps: 292000/10000000 | Avg reward: -89.999886
+Steps: 296000/10000000 | Avg reward: -89.999886
+Steps: 300000/10000000 | Avg reward: -89.999886
+*****save model*****
+Steps: 304000/10000000 | Avg reward: -89.999886
+Steps: 308000/10000000 | Avg reward: -89.999886
+Steps: 312000/10000000 | Avg reward: -89.999886
+Steps: 316000/10000000 | Avg reward: -89.999886
+Steps: 320000/10000000 | Avg reward: -89.999886
+Steps: 324000/10000000 | Avg reward: -89.999886
+Steps: 328000/10000000 | Avg reward: -89.999886
+Steps: 332000/10000000 | Avg reward: -89.999886
+Steps: 336000/10000000 | Avg reward: -89.999886
+Steps: 340000/10000000 | Avg reward: -89.999886
+Steps: 344000/10000000 | Avg reward: -89.999886
+Steps: 348000/10000000 | Avg reward: -89.999886
+Steps: 352000/10000000 | Avg reward: -89.999886
+Steps: 356000/10000000 | Avg reward: -89.999886
+Steps: 360000/10000000 | Avg reward: -89.999886
+Steps: 364000/10000000 | Avg reward: -89.999886
+Steps: 368000/10000000 | Avg reward: -89.999886
+Steps: 372000/10000000 | Avg reward: -89.999886
+Steps: 376000/10000000 | Avg reward: -89.999886
+Steps: 380000/10000000 | Avg reward: -89.999886
+Steps: 384000/10000000 | Avg reward: -89.999886
+Steps: 388000/10000000 | Avg reward: -89.999886
+Steps: 392000/10000000 | Avg reward: -89.999886
+Steps: 396000/10000000 | Avg reward: -89.999886
+Steps: 400000/10000000 | Avg reward: -89.999886
+*****save model*****
+Steps: 404000/10000000 | Avg reward: -89.999886
+Steps: 408000/10000000 | Avg reward: -89.999886
+Steps: 412000/10000000 | Avg reward: -89.999886
+Steps: 416000/10000000 | Avg reward: -89.999886
+Steps: 420000/10000000 | Avg reward: -89.999886
+Steps: 424000/10000000 | Avg reward: -89.999886
+Steps: 428000/10000000 | Avg reward: -89.999886
+Steps: 432000/10000000 | Avg reward: -89.999886
+Steps: 436000/10000000 | Avg reward: -89.999886
+Steps: 440000/10000000 | Avg reward: -89.999886
+Steps: 444000/10000000 | Avg reward: -89.999886
+Steps: 448000/10000000 | Avg reward: -89.999886
+Steps: 452000/10000000 | Avg reward: -89.999886
+Steps: 456000/10000000 | Avg reward: -89.999886
+Steps: 460000/10000000 | Avg reward: -89.999886
+Steps: 464000/10000000 | Avg reward: -89.999886
+Steps: 468000/10000000 | Avg reward: -89.999886
+Steps: 472000/10000000 | Avg reward: -89.999886
+Steps: 476000/10000000 | Avg reward: -89.999886
+Steps: 480000/10000000 | Avg reward: -89.999886
+Steps: 484000/10000000 | Avg reward: -89.999886
+Steps: 488000/10000000 | Avg reward: -89.999886
+Steps: 492000/10000000 | Avg reward: -89.999886
+Steps: 496000/10000000 | Avg reward: -89.999886
+Steps: 500000/10000000 | Avg reward: -89.999886
+*****save model*****
+Steps: 504000/10000000 | Avg reward: -89.999886
+Steps: 508000/10000000 | Avg reward: -89.999886
+Steps: 512000/10000000 | Avg reward: -89.999886
+Steps: 516000/10000000 | Avg reward: -89.999886
+Steps: 520000/10000000 | Avg reward: -89.999886
+Steps: 524000/10000000 | Avg reward: -89.999886
+Steps: 528000/10000000 | Avg reward: -89.999886
+Steps: 532000/10000000 | Avg reward: -89.999886
+Steps: 536000/10000000 | Avg reward: -89.999886
+Steps: 540000/10000000 | Avg reward: -89.999886
+Steps: 544000/10000000 | Avg reward: -89.999886
+Steps: 548000/10000000 | Avg reward: -89.999886
+Steps: 552000/10000000 | Avg reward: -89.999886
+Steps: 556000/10000000 | Avg reward: -89.999886
+Steps: 560000/10000000 | Avg reward: -89.999886
+Steps: 564000/10000000 | Avg reward: -89.999886
+Steps: 568000/10000000 | Avg reward: -89.999886
+Steps: 572000/10000000 | Avg reward: -89.999886
+Steps: 576000/10000000 | Avg reward: -89.999886
+Steps: 580000/10000000 | Avg reward: -89.999886
+Steps: 584000/10000000 | Avg reward: -89.999886
+Steps: 588000/10000000 | Avg reward: -89.999886
+Steps: 592000/10000000 | Avg reward: -89.999886
+Steps: 596000/10000000 | Avg reward: -89.999886
+Steps: 600000/10000000 | Avg reward: -89.999886
+*****save model*****
+Steps: 604000/10000000 | Avg reward: -89.999886
+Steps: 608000/10000000 | Avg reward: -89.999886
+Steps: 612000/10000000 | Avg reward: -89.999886
+Steps: 616000/10000000 | Avg reward: -89.999886
+Steps: 620000/10000000 | Avg reward: -89.999886
+Steps: 624000/10000000 | Avg reward: -89.999886
+Steps: 628000/10000000 | Avg reward: -89.999886
+Steps: 632000/10000000 | Avg reward: -89.999886
+Steps: 636000/10000000 | Avg reward: -89.999886
+Steps: 640000/10000000 | Avg reward: -89.999886
+Steps: 644000/10000000 | Avg reward: -89.999886
+Steps: 648000/10000000 | Avg reward: -89.999886
+Steps: 652000/10000000 | Avg reward: -89.999886
+Steps: 656000/10000000 | Avg reward: -89.999886
+Steps: 660000/10000000 | Avg reward: -89.999886
+Steps: 664000/10000000 | Avg reward: -89.999886
+Steps: 668000/10000000 | Avg reward: -89.999886
+Steps: 672000/10000000 | Avg reward: -89.999886
+Steps: 676000/10000000 | Avg reward: -89.999886
+Steps: 680000/10000000 | Avg reward: -89.999886
+Steps: 684000/10000000 | Avg reward: -89.999886
+Steps: 688000/10000000 | Avg reward: -89.999886
+Steps: 692000/10000000 | Avg reward: -89.999886
+Steps: 696000/10000000 | Avg reward: -89.999886
+Steps: 700000/10000000 | Avg reward: -89.999886
+*****save model*****
+Steps: 704000/10000000 | Avg reward: -89.999886
+Steps: 708000/10000000 | Avg reward: -89.999886
+Steps: 712000/10000000 | Avg reward: -89.999886
+Steps: 716000/10000000 | Avg reward: -89.999886
+Steps: 720000/10000000 | Avg reward: -89.999886
+Steps: 724000/10000000 | Avg reward: -89.999886
+Traceback (most recent call last):
+  File "main.py", line 73, in <module>
+    run(args)
+  File "main.py", line 51, in run
+    agent.train()
+  File "/home/tommy558788_eed04/ADL2019_rl/agent_dir/agent_mario.py", line 209, in train
+    self.rollouts.masks[step])
+  File "/home/tommy558788_eed04/ADL2019_rl/agent_dir/agent_mario.py", line 178, in _step
+    obs_next, rewards, dones, infos = self.envs.step(actions.cpu().numpy()) # synchronously step
+  File "/home/tommy558788_eed04/ADL2019_rl/a2c/vec_env/vec_env.py", line 111, in step
+    self.step_async(actions)
+  File "/home/tommy558788_eed04/ADL2019_rl/a2c/vec_env/shmem_vec_env.py", line 71, in step_async
+    pipe.send(('step', act))
+  File "/opt/anaconda3/lib/python3.7/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/opt/anaconda3/lib/python3.7/multiprocessing/connection.py", line 404, in _send_bytes
+    self._send(header + buf)
+  File "/opt/anaconda3/lib/python3.7/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
