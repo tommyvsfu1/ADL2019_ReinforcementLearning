@@ -73,16 +73,17 @@ class AgentMario:
         # loss = value_loss + action_loss (- entropy_weight * entropy)
 
         #  Feedforward (do not use with no_grad() because we need Backprop)
-        obs_batch = (self.rollouts.obs[0:self.update_freq]).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step + 1, n_processes, 4, 84, 84)
-        hidden_batch = (self.rollouts.hiddens[0:self.update_freq]).view(-1, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
-        mask_batch = (self.rollouts.masks[0:self.update_freq]).view(-1, 1) # (n_step + 1, n_processes, 1)
+        obs_batch = (self.rollouts.obs[:-1]).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step + 1, n_processes, 4, 84, 84)
+        hidden_batch = (self.rollouts.hiddens[:-1]).view(-1, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
+        mask_batch = (self.rollouts.masks[:-1]).view(-1, 1) # (n_step + 1, n_processes, 1)
         obs_batch = obs_batch.to(self.device)
         hidden_batch = hidden_batch.to(self.device)
         mask_batch = mask_batch.to(self.device)
         values, action_probs, hiddens = self.model(obs_batch, hidden_batch, mask_batch)
         
         log_probs = torch.log(action_probs).view(self.update_freq*self.n_processes,-1)
-        log_action_probs = log_probs.gather(1, self.rollouts.actions.view(self.update_freq*self.n_processes,-1))
+        action_gather = self.rollouts.actions.view(self.update_freq*self.n_processes,-1)
+        log_action_probs = log_probs.gather(1, action_gather)        
         log_action_probs = log_action_probs.view(self.update_freq, self.n_processes, -1)
         #dist = torch.distributions.Categorical(action_probs.view(self.update_freq,self.n_processes,-1))
         #log_action_probs = dist.log_prob(self.rollouts.actions)
@@ -112,11 +113,11 @@ class AgentMario:
         #values = self.rollouts.value_preds[0 : self.update_freq]
         target_y = self.rollouts.rewards + self.gamma * next_values.view(self.update_freq,self.n_processes,1) # [v(1),v(2),v(3),v(4),v(5)]
         value_loss_fn = torch.nn.MSELoss()
-        value_loss = 0.5 * value_loss_fn(values.view(self.update_freq,self.n_processes,-1), target_y)
+        value_loss = 0.5 * value_loss_fn(values, target_y.view(self.update_freq*self.n_processes,-1))
         # TODO:
         # action_loss = log(...) * advantage_function
         advantage_function = R - (values.view(self.update_freq,self.n_processes,-1)).detach()
-        action_loss = (-log_action_probs * advantage_function).sum()
+        action_loss = (-log_action_probs * advantage_function).mean()
     
         #entropy = dist.entropy()
         loss = action_loss + value_loss 
