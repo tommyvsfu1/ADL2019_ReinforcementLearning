@@ -1,937 +1,1705 @@
-using device cuda
-save model to dqn
-Episode: 0 | Steps: 162/3000000 | Avg reward: 0.600000 | loss: 0.000000 
-save model to dqn_best
-Episode: 10 | Steps: 1657/3000000 | Avg reward: 3.800000 | loss: 0.000000 
-save model to dqn_best
-Episode: 20 | Steps: 3146/3000000 | Avg reward: 4.800000 | loss: 0.000000 
-save model to dqn_best
-Episode: 30 | Steps: 4751/3000000 | Avg reward: 3.600000 | loss: 0.000000 
-Episode: 40 | Steps: 6200/3000000 | Avg reward: 4.500000 | loss: 0.000000 
-Episode: 50 | Steps: 7773/3000000 | Avg reward: 3.800000 | loss: 0.000000 
-Episode: 60 | Steps: 8619/3000000 | Avg reward: 2.200000 | loss: 0.000000 
-Episode: 70 | Steps: 10069/3000000 | Avg reward: 3.300000 | loss: 0.010120 
-Episode: 80 | Steps: 11558/3000000 | Avg reward: 2.100000 | loss: 0.001475 
-Episode: 90 | Steps: 13258/3000000 | Avg reward: 3.900000 | loss: 0.053255 
-Episode: 100 | Steps: 14400/3000000 | Avg reward: 2.700000 | loss: 0.001785 
-Episode: 110 | Steps: 15574/3000000 | Avg reward: 2.200000 | loss: 0.007357 
-Episode: 120 | Steps: 16815/3000000 | Avg reward: 2.300000 | loss: 0.002242 
-Episode: 130 | Steps: 18088/3000000 | Avg reward: 3.000000 | loss: 0.007093 
-Episode: 140 | Steps: 19812/3000000 | Avg reward: 3.000000 | loss: 0.005045 
-Episode: 150 | Steps: 21154/3000000 | Avg reward: 3.300000 | loss: 0.013126 
-Episode: 160 | Steps: 22521/3000000 | Avg reward: 2.500000 | loss: 0.015064 
-Episode: 170 | Steps: 24008/3000000 | Avg reward: 2.800000 | loss: 0.018463 
-Episode: 180 | Steps: 25346/3000000 | Avg reward: 2.900000 | loss: 0.030409 
-Episode: 190 | Steps: 26566/3000000 | Avg reward: 2.500000 | loss: 0.019918 
-Episode: 200 | Steps: 28151/3000000 | Avg reward: 3.300000 | loss: 0.030162 
-Episode: 210 | Steps: 29564/3000000 | Avg reward: 2.800000 | loss: 0.012246 
-Episode: 220 | Steps: 30978/3000000 | Avg reward: 2.400000 | loss: 0.032347 
-Episode: 230 | Steps: 31946/3000000 | Avg reward: 1.900000 | loss: 0.014493 
-Episode: 240 | Steps: 33126/3000000 | Avg reward: 2.700000 | loss: 0.021100 
-Episode: 250 | Steps: 34121/3000000 | Avg reward: 1.800000 | loss: 0.015130 
-Episode: 260 | Steps: 35645/3000000 | Avg reward: 3.300000 | loss: 0.056562 
-Episode: 270 | Steps: 36937/3000000 | Avg reward: 3.200000 | loss: 0.035279 
-Episode: 280 | Steps: 38430/3000000 | Avg reward: 2.500000 | loss: 0.037841 
-Episode: 290 | Steps: 39769/3000000 | Avg reward: 2.600000 | loss: 0.022944 
-Episode: 300 | Steps: 41180/3000000 | Avg reward: 3.500000 | loss: 0.020162 
-Episode: 310 | Steps: 42530/3000000 | Avg reward: 2.600000 | loss: 0.019654 
-Episode: 320 | Steps: 44199/3000000 | Avg reward: 3.600000 | loss: 0.022311 
-Episode: 330 | Steps: 45172/3000000 | Avg reward: 1.700000 | loss: 0.043648 
-Episode: 340 | Steps: 46571/3000000 | Avg reward: 2.800000 | loss: 0.023157 
-Episode: 350 | Steps: 48069/3000000 | Avg reward: 3.300000 | loss: 0.026290 
-Episode: 360 | Steps: 49536/3000000 | Avg reward: 3.600000 | loss: 0.036668 
-Episode: 370 | Steps: 51076/3000000 | Avg reward: 3.000000 | loss: 0.024871 
-Episode: 380 | Steps: 52538/3000000 | Avg reward: 3.200000 | loss: 0.026043 
-Episode: 390 | Steps: 54325/3000000 | Avg reward: 4.000000 | loss: 0.026445 
-Episode: 400 | Steps: 55948/3000000 | Avg reward: 3.800000 | loss: 0.050848 
-Episode: 410 | Steps: 57116/3000000 | Avg reward: 2.500000 | loss: 0.032410 
-Episode: 420 | Steps: 58648/3000000 | Avg reward: 3.000000 | loss: 0.016066 
-Episode: 430 | Steps: 60064/3000000 | Avg reward: 2.800000 | loss: 0.050323 
-Episode: 440 | Steps: 61630/3000000 | Avg reward: 3.500000 | loss: 0.011706 
-Episode: 450 | Steps: 62843/3000000 | Avg reward: 2.700000 | loss: 0.029117 
-Episode: 460 | Steps: 64305/3000000 | Avg reward: 2.500000 | loss: 0.040200 
-Episode: 470 | Steps: 66025/3000000 | Avg reward: 3.500000 | loss: 0.020929 
-Episode: 480 | Steps: 67686/3000000 | Avg reward: 4.300000 | loss: 0.020779 
-Episode: 490 | Steps: 69237/3000000 | Avg reward: 3.600000 | loss: 0.025005 
-Episode: 500 | Steps: 71143/3000000 | Avg reward: 4.500000 | loss: 0.026683 
-Episode: 510 | Steps: 72762/3000000 | Avg reward: 3.700000 | loss: 0.022484 
-Episode: 520 | Steps: 74475/3000000 | Avg reward: 3.300000 | loss: 0.011042 
-Episode: 530 | Steps: 76195/3000000 | Avg reward: 3.800000 | loss: 0.016446 
-Episode: 540 | Steps: 77633/3000000 | Avg reward: 2.900000 | loss: 0.018957 
-Episode: 550 | Steps: 79072/3000000 | Avg reward: 2.900000 | loss: 0.016696 
-Episode: 560 | Steps: 80471/3000000 | Avg reward: 3.700000 | loss: 0.032373 
-Episode: 570 | Steps: 81923/3000000 | Avg reward: 3.000000 | loss: 0.021771 
-Episode: 580 | Steps: 83254/3000000 | Avg reward: 3.800000 | loss: 0.018823 
-Episode: 590 | Steps: 84592/3000000 | Avg reward: 2.300000 | loss: 0.010930 
-Episode: 600 | Steps: 85835/3000000 | Avg reward: 2.200000 | loss: 0.034036 
-Episode: 610 | Steps: 87172/3000000 | Avg reward: 2.500000 | loss: 0.042527 
-Episode: 620 | Steps: 88696/3000000 | Avg reward: 2.900000 | loss: 0.032412 
-Episode: 630 | Steps: 90123/3000000 | Avg reward: 2.700000 | loss: 0.020071 
-Episode: 640 | Steps: 91549/3000000 | Avg reward: 3.300000 | loss: 0.013538 
-Episode: 650 | Steps: 92940/3000000 | Avg reward: 3.300000 | loss: 0.017938 
-Episode: 660 | Steps: 94689/3000000 | Avg reward: 2.900000 | loss: 0.020618 
-Episode: 670 | Steps: 96288/3000000 | Avg reward: 3.300000 | loss: 0.027609 
-Episode: 680 | Steps: 97957/3000000 | Avg reward: 4.000000 | loss: 0.023842 
-Episode: 690 | Steps: 99585/3000000 | Avg reward: 3.600000 | loss: 0.031751 
-Episode: 700 | Steps: 101275/3000000 | Avg reward: 4.300000 | loss: 0.025836 
-Episode: 710 | Steps: 103058/3000000 | Avg reward: 4.300000 | loss: 0.025717 
-Episode: 720 | Steps: 104506/3000000 | Avg reward: 3.400000 | loss: 0.019223 
-Episode: 730 | Steps: 105712/3000000 | Avg reward: 2.500000 | loss: 0.033031 
-Episode: 740 | Steps: 107220/3000000 | Avg reward: 3.400000 | loss: 0.028880 
-Episode: 750 | Steps: 108762/3000000 | Avg reward: 3.800000 | loss: 0.024353 
-Episode: 760 | Steps: 110684/3000000 | Avg reward: 4.500000 | loss: 0.020607 
-Episode: 770 | Steps: 112952/3000000 | Avg reward: 4.500000 | loss: 0.052877 
-Episode: 780 | Steps: 114702/3000000 | Avg reward: 3.900000 | loss: 0.027341 
-Episode: 790 | Steps: 116621/3000000 | Avg reward: 3.400000 | loss: 0.019309 
-Episode: 800 | Steps: 118158/3000000 | Avg reward: 3.500000 | loss: 0.016071 
-Episode: 810 | Steps: 120155/3000000 | Avg reward: 4.500000 | loss: 0.047190 
-Episode: 820 | Steps: 121977/3000000 | Avg reward: 4.300000 | loss: 0.026477 
-Episode: 830 | Steps: 123635/3000000 | Avg reward: 3.400000 | loss: 0.032470 
-Episode: 840 | Steps: 125253/3000000 | Avg reward: 3.600000 | loss: 0.024861 
-Episode: 850 | Steps: 126747/3000000 | Avg reward: 3.400000 | loss: 0.023946 
-Episode: 860 | Steps: 128448/3000000 | Avg reward: 4.200000 | loss: 0.028631 
-Episode: 870 | Steps: 130189/3000000 | Avg reward: 5.500000 | loss: 0.063318 
-save model to dqn_best
-Episode: 880 | Steps: 131427/3000000 | Avg reward: 3.300000 | loss: 0.172698 
-Episode: 890 | Steps: 133127/3000000 | Avg reward: 4.500000 | loss: 0.120569 
-Episode: 900 | Steps: 134621/3000000 | Avg reward: 3.700000 | loss: 0.145995 
-Episode: 910 | Steps: 135992/3000000 | Avg reward: 3.200000 | loss: 0.024237 
-Episode: 920 | Steps: 137874/3000000 | Avg reward: 5.600000 | loss: 0.021852 
-save model to dqn_best
-Episode: 930 | Steps: 139277/3000000 | Avg reward: 2.600000 | loss: 0.047526 
-Episode: 940 | Steps: 141686/3000000 | Avg reward: 5.300000 | loss: 0.023446 
-Episode: 950 | Steps: 143462/3000000 | Avg reward: 4.400000 | loss: 0.067814 
-Episode: 960 | Steps: 145071/3000000 | Avg reward: 3.300000 | loss: 0.059195 
-Episode: 970 | Steps: 146739/3000000 | Avg reward: 4.300000 | loss: 0.045777 
-Episode: 980 | Steps: 148615/3000000 | Avg reward: 5.000000 | loss: 0.027579 
-Episode: 990 | Steps: 150703/3000000 | Avg reward: 5.400000 | loss: 0.023802 
-Episode: 1000 | Steps: 152795/3000000 | Avg reward: 5.000000 | loss: 0.025239 
-Episode: 1010 | Steps: 154880/3000000 | Avg reward: 4.700000 | loss: 0.034330 
-Episode: 1020 | Steps: 156857/3000000 | Avg reward: 4.400000 | loss: 0.057770 
-Episode: 1030 | Steps: 158864/3000000 | Avg reward: 5.600000 | loss: 0.030615 
-Episode: 1040 | Steps: 160570/3000000 | Avg reward: 4.500000 | loss: 0.031218 
-Episode: 1050 | Steps: 162959/3000000 | Avg reward: 5.200000 | loss: 0.041285 
-Episode: 1060 | Steps: 164340/3000000 | Avg reward: 3.800000 | loss: 0.028344 
-Episode: 1070 | Steps: 166207/3000000 | Avg reward: 4.100000 | loss: 0.048448 
-Episode: 1080 | Steps: 168648/3000000 | Avg reward: 6.300000 | loss: 0.028093 
-save model to dqn_best
-Episode: 1090 | Steps: 170326/3000000 | Avg reward: 4.700000 | loss: 0.062091 
-Episode: 1100 | Steps: 172889/3000000 | Avg reward: 6.800000 | loss: 0.039345 
-save model to dqn_best
-Episode: 1110 | Steps: 174822/3000000 | Avg reward: 5.000000 | loss: 0.042260 
-Episode: 1120 | Steps: 176636/3000000 | Avg reward: 6.300000 | loss: 0.049847 
-Episode: 1130 | Steps: 179282/3000000 | Avg reward: 5.600000 | loss: 0.027589 
-Episode: 1140 | Steps: 180830/3000000 | Avg reward: 4.200000 | loss: 0.044754 
-Episode: 1150 | Steps: 183330/3000000 | Avg reward: 6.400000 | loss: 0.034011 
-Episode: 1160 | Steps: 186031/3000000 | Avg reward: 8.000000 | loss: 0.045180 
-save model to dqn_best
-Episode: 1170 | Steps: 188454/3000000 | Avg reward: 7.800000 | loss: 0.014969 
-Episode: 1180 | Steps: 191199/3000000 | Avg reward: 6.000000 | loss: 0.035574 
-Episode: 1190 | Steps: 193687/3000000 | Avg reward: 6.200000 | loss: 0.064231 
-Episode: 1200 | Steps: 195820/3000000 | Avg reward: 6.100000 | loss: 0.063224 
-Episode: 1210 | Steps: 198249/3000000 | Avg reward: 6.200000 | loss: 0.020411 
-save model to dqn
-Episode: 1220 | Steps: 201401/3000000 | Avg reward: 7.800000 | loss: 0.009512 
-Episode: 1230 | Steps: 203629/3000000 | Avg reward: 6.400000 | loss: 0.038649 
-Episode: 1240 | Steps: 206044/3000000 | Avg reward: 7.500000 | loss: 0.035285 
-Episode: 1250 | Steps: 209336/3000000 | Avg reward: 7.400000 | loss: 0.024061 
-Episode: 1260 | Steps: 212743/3000000 | Avg reward: 8.300000 | loss: 0.016098 
-save model to dqn_best
-Episode: 1270 | Steps: 215003/3000000 | Avg reward: 5.600000 | loss: 0.077115 
-Episode: 1280 | Steps: 217267/3000000 | Avg reward: 5.700000 | loss: 0.134601 
-Episode: 1290 | Steps: 219614/3000000 | Avg reward: 5.100000 | loss: 0.033650 
-Episode: 1300 | Steps: 221792/3000000 | Avg reward: 5.600000 | loss: 0.014192 
-Episode: 1310 | Steps: 224030/3000000 | Avg reward: 5.300000 | loss: 0.026896 
-Episode: 1320 | Steps: 227128/3000000 | Avg reward: 8.000000 | loss: 0.027534 
-Episode: 1330 | Steps: 230280/3000000 | Avg reward: 6.600000 | loss: 0.015817 
-Episode: 1340 | Steps: 232406/3000000 | Avg reward: 5.300000 | loss: 0.014136 
-Episode: 1350 | Steps: 235130/3000000 | Avg reward: 5.400000 | loss: 0.020478 
-Episode: 1360 | Steps: 237213/3000000 | Avg reward: 5.000000 | loss: 0.012929 
-Episode: 1370 | Steps: 240255/3000000 | Avg reward: 7.200000 | loss: 0.041842 
-Episode: 1380 | Steps: 242620/3000000 | Avg reward: 5.800000 | loss: 0.023582 
-Episode: 1390 | Steps: 245541/3000000 | Avg reward: 6.400000 | loss: 0.059719 
-Episode: 1400 | Steps: 249081/3000000 | Avg reward: 8.700000 | loss: 0.101747 
-save model to dqn_best
-Episode: 1410 | Steps: 251600/3000000 | Avg reward: 6.500000 | loss: 0.095719 
-Episode: 1420 | Steps: 253543/3000000 | Avg reward: 4.600000 | loss: 0.031630 
-Episode: 1430 | Steps: 256713/3000000 | Avg reward: 7.700000 | loss: 0.029532 
-Episode: 1440 | Steps: 259982/3000000 | Avg reward: 8.300000 | loss: 0.038121 
-Episode: 1450 | Steps: 262294/3000000 | Avg reward: 5.400000 | loss: 0.021764 
-Episode: 1460 | Steps: 265589/3000000 | Avg reward: 8.400000 | loss: 0.035017 
-Episode: 1470 | Steps: 269012/3000000 | Avg reward: 7.900000 | loss: 0.086636 
-Episode: 1480 | Steps: 271923/3000000 | Avg reward: 6.700000 | loss: 0.020761 
-Episode: 1490 | Steps: 274456/3000000 | Avg reward: 6.900000 | loss: 0.043970 
-Episode: 1500 | Steps: 277771/3000000 | Avg reward: 8.300000 | loss: 0.111044 
-Episode: 1510 | Steps: 280212/3000000 | Avg reward: 5.700000 | loss: 0.032438 
-Episode: 1520 | Steps: 282532/3000000 | Avg reward: 5.900000 | loss: 0.031550 
-Episode: 1530 | Steps: 285459/3000000 | Avg reward: 7.000000 | loss: 0.023832 
-Episode: 1540 | Steps: 288241/3000000 | Avg reward: 6.900000 | loss: 0.036823 
-Episode: 1550 | Steps: 290967/3000000 | Avg reward: 7.400000 | loss: 0.095263 
-Episode: 1560 | Steps: 293818/3000000 | Avg reward: 6.600000 | loss: 0.032517 
-Episode: 1570 | Steps: 296785/3000000 | Avg reward: 7.100000 | loss: 0.012844 
-Episode: 1580 | Steps: 299260/3000000 | Avg reward: 5.900000 | loss: 0.061994 
-Episode: 1590 | Steps: 301337/3000000 | Avg reward: 5.000000 | loss: 0.016499 
-Episode: 1600 | Steps: 304060/3000000 | Avg reward: 7.000000 | loss: 0.020889 
-Episode: 1610 | Steps: 306986/3000000 | Avg reward: 7.800000 | loss: 0.032583 
-Episode: 1620 | Steps: 309317/3000000 | Avg reward: 6.100000 | loss: 0.026495 
-Episode: 1630 | Steps: 312193/3000000 | Avg reward: 7.300000 | loss: 0.019738 
-Episode: 1640 | Steps: 314646/3000000 | Avg reward: 6.400000 | loss: 0.024191 
-Episode: 1650 | Steps: 317090/3000000 | Avg reward: 5.200000 | loss: 0.059433 
-Episode: 1660 | Steps: 319287/3000000 | Avg reward: 5.800000 | loss: 0.024007 
-Episode: 1670 | Steps: 322133/3000000 | Avg reward: 6.200000 | loss: 0.132174 
-Episode: 1680 | Steps: 324764/3000000 | Avg reward: 6.500000 | loss: 0.046915 
-Episode: 1690 | Steps: 327354/3000000 | Avg reward: 5.400000 | loss: 0.038209 
-Episode: 1700 | Steps: 329621/3000000 | Avg reward: 6.400000 | loss: 0.017988 
-Episode: 1710 | Steps: 332430/3000000 | Avg reward: 7.600000 | loss: 0.026448 
-Episode: 1720 | Steps: 335599/3000000 | Avg reward: 9.000000 | loss: 0.034095 
-save model to dqn_best
-Episode: 1730 | Steps: 339122/3000000 | Avg reward: 10.200000 | loss: 0.023950 
-save model to dqn_best
-Episode: 1740 | Steps: 342730/3000000 | Avg reward: 8.600000 | loss: 0.022667 
-Episode: 1750 | Steps: 345987/3000000 | Avg reward: 7.100000 | loss: 0.022582 
-Episode: 1760 | Steps: 349494/3000000 | Avg reward: 8.200000 | loss: 0.039011 
-Episode: 1770 | Steps: 352740/3000000 | Avg reward: 8.800000 | loss: 0.102055 
-Episode: 1780 | Steps: 355786/3000000 | Avg reward: 8.100000 | loss: 0.031957 
-Episode: 1790 | Steps: 359352/3000000 | Avg reward: 9.300000 | loss: 0.024983 
-Episode: 1800 | Steps: 362055/3000000 | Avg reward: 7.700000 | loss: 0.026941 
-Episode: 1810 | Steps: 365277/3000000 | Avg reward: 9.400000 | loss: 0.038597 
-Episode: 1820 | Steps: 373364/3000000 | Avg reward: 15.400000 | loss: 0.031512 
-save model to dqn_best
-Episode: 1830 | Steps: 376448/3000000 | Avg reward: 8.100000 | loss: 0.034453 
-Episode: 1840 | Steps: 379319/3000000 | Avg reward: 7.700000 | loss: 0.026593 
-Episode: 1850 | Steps: 382083/3000000 | Avg reward: 7.000000 | loss: 0.062167 
-Episode: 1860 | Steps: 384901/3000000 | Avg reward: 8.100000 | loss: 0.031752 
-Episode: 1870 | Steps: 387945/3000000 | Avg reward: 8.000000 | loss: 0.033106 
-Episode: 1880 | Steps: 390811/3000000 | Avg reward: 7.400000 | loss: 0.024313 
-Episode: 1890 | Steps: 394171/3000000 | Avg reward: 8.700000 | loss: 0.073688 
-Episode: 1900 | Steps: 396959/3000000 | Avg reward: 8.300000 | loss: 0.036175 
-Episode: 1910 | Steps: 399748/3000000 | Avg reward: 6.200000 | loss: 0.105733 
-save model to dqn
-Episode: 1920 | Steps: 403333/3000000 | Avg reward: 10.300000 | loss: 0.108414 
-Episode: 1930 | Steps: 405954/3000000 | Avg reward: 7.200000 | loss: 0.090348 
-Episode: 1940 | Steps: 408414/3000000 | Avg reward: 5.600000 | loss: 0.026195 
-Episode: 1950 | Steps: 410712/3000000 | Avg reward: 5.400000 | loss: 0.033383 
-Episode: 1960 | Steps: 412893/3000000 | Avg reward: 6.200000 | loss: 0.035783 
-Episode: 1970 | Steps: 416343/3000000 | Avg reward: 10.400000 | loss: 0.039970 
-Episode: 1980 | Steps: 419325/3000000 | Avg reward: 8.400000 | loss: 0.021255 
-Episode: 1990 | Steps: 422701/3000000 | Avg reward: 9.400000 | loss: 0.021991 
-Episode: 2000 | Steps: 424844/3000000 | Avg reward: 6.300000 | loss: 0.012859 
-Episode: 2010 | Steps: 428374/3000000 | Avg reward: 10.500000 | loss: 0.136078 
-Episode: 2020 | Steps: 432318/3000000 | Avg reward: 11.000000 | loss: 0.039030 
-Episode: 2030 | Steps: 434269/3000000 | Avg reward: 5.700000 | loss: 0.020911 
-Episode: 2040 | Steps: 436794/3000000 | Avg reward: 6.700000 | loss: 0.034846 
-Episode: 2050 | Steps: 440270/3000000 | Avg reward: 9.800000 | loss: 0.020635 
-Episode: 2060 | Steps: 442957/3000000 | Avg reward: 7.400000 | loss: 0.026083 
-Episode: 2070 | Steps: 445794/3000000 | Avg reward: 7.900000 | loss: 0.026116 
-Episode: 2080 | Steps: 449417/3000000 | Avg reward: 9.400000 | loss: 0.021096 
-Episode: 2090 | Steps: 452340/3000000 | Avg reward: 7.000000 | loss: 0.031707 
-Episode: 2100 | Steps: 455110/3000000 | Avg reward: 7.800000 | loss: 0.041907 
-Episode: 2110 | Steps: 458340/3000000 | Avg reward: 8.300000 | loss: 0.034987 
-Episode: 2120 | Steps: 460696/3000000 | Avg reward: 6.700000 | loss: 0.032952 
-Episode: 2130 | Steps: 463438/3000000 | Avg reward: 8.200000 | loss: 0.050092 
-Episode: 2140 | Steps: 466433/3000000 | Avg reward: 9.100000 | loss: 0.027899 
-Episode: 2150 | Steps: 469496/3000000 | Avg reward: 9.300000 | loss: 0.145025 
-Episode: 2160 | Steps: 472579/3000000 | Avg reward: 7.400000 | loss: 0.031083 
-Episode: 2170 | Steps: 475526/3000000 | Avg reward: 7.600000 | loss: 0.050522 
-Episode: 2180 | Steps: 479259/3000000 | Avg reward: 10.400000 | loss: 0.025172 
-Episode: 2190 | Steps: 482843/3000000 | Avg reward: 10.700000 | loss: 0.025491 
-Episode: 2200 | Steps: 486504/3000000 | Avg reward: 9.700000 | loss: 0.036197 
-Episode: 2210 | Steps: 489124/3000000 | Avg reward: 7.700000 | loss: 0.029512 
-Episode: 2220 | Steps: 491855/3000000 | Avg reward: 8.000000 | loss: 0.037907 
-Episode: 2230 | Steps: 494903/3000000 | Avg reward: 9.500000 | loss: 0.035504 
-Episode: 2240 | Steps: 498634/3000000 | Avg reward: 13.000000 | loss: 0.030488 
-Episode: 2250 | Steps: 504917/3000000 | Avg reward: 15.100000 | loss: 0.035345 
-Episode: 2260 | Steps: 507724/3000000 | Avg reward: 9.000000 | loss: 0.149934 
-Episode: 2270 | Steps: 510704/3000000 | Avg reward: 8.900000 | loss: 0.018577 
-Episode: 2280 | Steps: 513228/3000000 | Avg reward: 8.000000 | loss: 0.028309 
-Episode: 2290 | Steps: 516811/3000000 | Avg reward: 11.500000 | loss: 0.033263 
-Episode: 2300 | Steps: 520916/3000000 | Avg reward: 9.900000 | loss: 0.028050 
-Episode: 2310 | Steps: 524162/3000000 | Avg reward: 9.000000 | loss: 0.028329 
-Episode: 2320 | Steps: 526814/3000000 | Avg reward: 7.600000 | loss: 0.019740 
-Episode: 2330 | Steps: 529065/3000000 | Avg reward: 7.800000 | loss: 0.029422 
-Episode: 2340 | Steps: 532618/3000000 | Avg reward: 12.200000 | loss: 0.066355 
-Episode: 2350 | Steps: 536689/3000000 | Avg reward: 10.900000 | loss: 0.044649 
-Episode: 2360 | Steps: 542664/3000000 | Avg reward: 16.000000 | loss: 0.018219 
-save model to dqn_best
-Episode: 2370 | Steps: 544377/3000000 | Avg reward: 4.700000 | loss: 0.037722 
-Episode: 2380 | Steps: 547635/3000000 | Avg reward: 8.800000 | loss: 0.017577 
-Episode: 2390 | Steps: 551597/3000000 | Avg reward: 13.300000 | loss: 0.021787 
-Episode: 2400 | Steps: 554183/3000000 | Avg reward: 8.200000 | loss: 0.066628 
-Episode: 2410 | Steps: 556859/3000000 | Avg reward: 9.800000 | loss: 0.031350 
-Episode: 2420 | Steps: 559904/3000000 | Avg reward: 8.900000 | loss: 0.046261 
-Episode: 2430 | Steps: 562446/3000000 | Avg reward: 7.500000 | loss: 0.105273 
-Episode: 2440 | Steps: 565028/3000000 | Avg reward: 8.700000 | loss: 0.033553 
-Episode: 2450 | Steps: 566948/3000000 | Avg reward: 7.500000 | loss: 0.034962 
-Episode: 2460 | Steps: 570341/3000000 | Avg reward: 11.500000 | loss: 0.037292 
-Episode: 2470 | Steps: 572435/3000000 | Avg reward: 6.200000 | loss: 0.071780 
-Episode: 2480 | Steps: 575829/3000000 | Avg reward: 10.900000 | loss: 0.042548 
-Episode: 2490 | Steps: 578988/3000000 | Avg reward: 10.000000 | loss: 0.035340 
-Episode: 2500 | Steps: 582647/3000000 | Avg reward: 11.600000 | loss: 0.031064 
-Episode: 2510 | Steps: 584794/3000000 | Avg reward: 6.400000 | loss: 0.044830 
-Episode: 2520 | Steps: 587345/3000000 | Avg reward: 8.600000 | loss: 0.043658 
-Episode: 2530 | Steps: 590298/3000000 | Avg reward: 9.000000 | loss: 0.035306 
-Episode: 2540 | Steps: 594390/3000000 | Avg reward: 11.100000 | loss: 0.058714 
-Episode: 2550 | Steps: 596671/3000000 | Avg reward: 7.200000 | loss: 0.248992 
-save model to dqn
-Episode: 2560 | Steps: 600480/3000000 | Avg reward: 12.400000 | loss: 0.038847 
-Episode: 2570 | Steps: 604344/3000000 | Avg reward: 10.200000 | loss: 0.070730 
-Episode: 2580 | Steps: 607667/3000000 | Avg reward: 9.200000 | loss: 0.048051 
-Episode: 2590 | Steps: 611196/3000000 | Avg reward: 9.600000 | loss: 0.072753 
-Episode: 2600 | Steps: 613929/3000000 | Avg reward: 8.400000 | loss: 0.016519 
-Episode: 2610 | Steps: 616927/3000000 | Avg reward: 7.600000 | loss: 0.013066 
-Episode: 2620 | Steps: 619871/3000000 | Avg reward: 8.500000 | loss: 0.018145 
-Episode: 2630 | Steps: 622930/3000000 | Avg reward: 9.100000 | loss: 0.029217 
-Episode: 2640 | Steps: 625731/3000000 | Avg reward: 7.800000 | loss: 0.033695 
-Episode: 2650 | Steps: 628997/3000000 | Avg reward: 10.400000 | loss: 0.038899 
-Episode: 2660 | Steps: 631886/3000000 | Avg reward: 6.400000 | loss: 0.227949 
-Episode: 2670 | Steps: 634933/3000000 | Avg reward: 9.300000 | loss: 0.014009 
-Episode: 2680 | Steps: 639117/3000000 | Avg reward: 10.700000 | loss: 0.008421 
-Episode: 2690 | Steps: 642735/3000000 | Avg reward: 9.600000 | loss: 0.053742 
-Episode: 2700 | Steps: 646060/3000000 | Avg reward: 8.900000 | loss: 0.116454 
-Episode: 2710 | Steps: 649269/3000000 | Avg reward: 10.200000 | loss: 0.043643 
-Episode: 2720 | Steps: 654035/3000000 | Avg reward: 12.800000 | loss: 0.019703 
-Episode: 2730 | Steps: 656790/3000000 | Avg reward: 7.500000 | loss: 0.054117 
-Episode: 2740 | Steps: 661000/3000000 | Avg reward: 11.900000 | loss: 0.048091 
-Episode: 2750 | Steps: 663860/3000000 | Avg reward: 9.000000 | loss: 0.038830 
-Episode: 2760 | Steps: 667319/3000000 | Avg reward: 11.800000 | loss: 0.082979 
-Episode: 2770 | Steps: 671328/3000000 | Avg reward: 12.000000 | loss: 0.031797 
-Episode: 2780 | Steps: 675661/3000000 | Avg reward: 13.300000 | loss: 0.017013 
-Episode: 2790 | Steps: 679128/3000000 | Avg reward: 10.700000 | loss: 0.017182 
-Episode: 2800 | Steps: 682215/3000000 | Avg reward: 10.500000 | loss: 0.024019 
-Episode: 2810 | Steps: 685917/3000000 | Avg reward: 13.700000 | loss: 0.046879 
-Episode: 2820 | Steps: 691630/3000000 | Avg reward: 16.300000 | loss: 0.065472 
-save model to dqn_best
-Episode: 2830 | Steps: 695459/3000000 | Avg reward: 10.800000 | loss: 0.015143 
-Episode: 2840 | Steps: 698113/3000000 | Avg reward: 6.400000 | loss: 0.047005 
-Episode: 2850 | Steps: 701843/3000000 | Avg reward: 9.400000 | loss: 0.287118 
-Episode: 2860 | Steps: 704796/3000000 | Avg reward: 9.400000 | loss: 0.021568 
-Episode: 2870 | Steps: 707673/3000000 | Avg reward: 9.900000 | loss: 0.143693 
-Episode: 2880 | Steps: 710609/3000000 | Avg reward: 8.100000 | loss: 0.202263 
-Episode: 2890 | Steps: 715110/3000000 | Avg reward: 13.000000 | loss: 0.040479 
-Episode: 2900 | Steps: 718743/3000000 | Avg reward: 11.500000 | loss: 0.023479 
-Episode: 2910 | Steps: 721123/3000000 | Avg reward: 6.900000 | loss: 0.018106 
-Episode: 2920 | Steps: 724055/3000000 | Avg reward: 9.100000 | loss: 0.070566 
-Episode: 2930 | Steps: 727291/3000000 | Avg reward: 10.000000 | loss: 0.032648 
-Episode: 2940 | Steps: 731581/3000000 | Avg reward: 12.600000 | loss: 0.053561 
-Episode: 2950 | Steps: 734589/3000000 | Avg reward: 10.400000 | loss: 0.049922 
-Episode: 2960 | Steps: 738184/3000000 | Avg reward: 10.700000 | loss: 0.018128 
-Episode: 2970 | Steps: 741893/3000000 | Avg reward: 11.500000 | loss: 0.029867 
-Episode: 2980 | Steps: 746395/3000000 | Avg reward: 14.600000 | loss: 0.024730 
-Episode: 2990 | Steps: 748378/3000000 | Avg reward: 6.900000 | loss: 0.024395 
-Episode: 3000 | Steps: 750733/3000000 | Avg reward: 8.000000 | loss: 0.031391 
-Episode: 3010 | Steps: 753573/3000000 | Avg reward: 9.200000 | loss: 0.033786 
-Episode: 3020 | Steps: 757365/3000000 | Avg reward: 10.200000 | loss: 0.035308 
-Episode: 3030 | Steps: 760124/3000000 | Avg reward: 7.700000 | loss: 0.025610 
-Episode: 3040 | Steps: 763797/3000000 | Avg reward: 11.800000 | loss: 0.038988 
-Episode: 3050 | Steps: 768152/3000000 | Avg reward: 12.200000 | loss: 0.016991 
-Episode: 3060 | Steps: 772470/3000000 | Avg reward: 10.700000 | loss: 0.036161 
-Episode: 3070 | Steps: 775575/3000000 | Avg reward: 8.600000 | loss: 0.040926 
-Episode: 3080 | Steps: 777936/3000000 | Avg reward: 7.100000 | loss: 0.037706 
-Episode: 3090 | Steps: 779844/3000000 | Avg reward: 6.100000 | loss: 0.259001 
-Episode: 3100 | Steps: 783866/3000000 | Avg reward: 10.800000 | loss: 0.032237 
-Episode: 3110 | Steps: 786374/3000000 | Avg reward: 8.300000 | loss: 0.026694 
-Episode: 3120 | Steps: 789088/3000000 | Avg reward: 9.100000 | loss: 0.041369 
-Episode: 3130 | Steps: 791967/3000000 | Avg reward: 10.300000 | loss: 0.029447 
-Episode: 3140 | Steps: 795592/3000000 | Avg reward: 12.400000 | loss: 0.052378 
-Episode: 3150 | Steps: 798449/3000000 | Avg reward: 9.300000 | loss: 0.023627 
-save model to dqn
-Episode: 3160 | Steps: 801503/3000000 | Avg reward: 10.500000 | loss: 0.037983 
-Episode: 3170 | Steps: 804097/3000000 | Avg reward: 8.300000 | loss: 0.085580 
-Episode: 3180 | Steps: 809510/3000000 | Avg reward: 15.700000 | loss: 0.023807 
-Episode: 3190 | Steps: 811675/3000000 | Avg reward: 7.100000 | loss: 0.016719 
-Episode: 3200 | Steps: 815003/3000000 | Avg reward: 11.300000 | loss: 0.021575 
-Episode: 3210 | Steps: 817841/3000000 | Avg reward: 8.900000 | loss: 0.019744 
-Episode: 3220 | Steps: 820914/3000000 | Avg reward: 10.400000 | loss: 0.023677 
-Episode: 3230 | Steps: 823447/3000000 | Avg reward: 8.200000 | loss: 0.142262 
-Episode: 3240 | Steps: 828648/3000000 | Avg reward: 15.000000 | loss: 0.008002 
-Episode: 3250 | Steps: 832392/3000000 | Avg reward: 12.200000 | loss: 0.040664 
-Episode: 3260 | Steps: 835603/3000000 | Avg reward: 10.300000 | loss: 0.028794 
-Episode: 3270 | Steps: 839922/3000000 | Avg reward: 13.400000 | loss: 0.031309 
-Episode: 3280 | Steps: 842938/3000000 | Avg reward: 9.300000 | loss: 0.040767 
-Episode: 3290 | Steps: 845715/3000000 | Avg reward: 9.500000 | loss: 0.147252 
-Episode: 3300 | Steps: 849025/3000000 | Avg reward: 11.000000 | loss: 0.024695 
-Episode: 3310 | Steps: 852658/3000000 | Avg reward: 10.900000 | loss: 0.021633 
-Episode: 3320 | Steps: 856586/3000000 | Avg reward: 12.800000 | loss: 0.037373 
-Episode: 3330 | Steps: 859466/3000000 | Avg reward: 8.000000 | loss: 0.188574 
-Episode: 3340 | Steps: 862820/3000000 | Avg reward: 11.100000 | loss: 0.041044 
-Episode: 3350 | Steps: 865121/3000000 | Avg reward: 9.100000 | loss: 0.040559 
-Episode: 3360 | Steps: 868795/3000000 | Avg reward: 11.800000 | loss: 0.035444 
-Episode: 3370 | Steps: 874010/3000000 | Avg reward: 16.300000 | loss: 0.034495 
-Episode: 3380 | Steps: 876928/3000000 | Avg reward: 11.000000 | loss: 0.038169 
-Episode: 3390 | Steps: 880736/3000000 | Avg reward: 13.700000 | loss: 0.019842 
-Episode: 3400 | Steps: 883951/3000000 | Avg reward: 10.300000 | loss: 0.038825 
-Episode: 3410 | Steps: 887370/3000000 | Avg reward: 10.600000 | loss: 0.091965 
-Episode: 3420 | Steps: 890771/3000000 | Avg reward: 10.000000 | loss: 0.023113 
-Episode: 3430 | Steps: 897066/3000000 | Avg reward: 18.100000 | loss: 0.033792 
-save model to dqn_best
-Episode: 3440 | Steps: 900932/3000000 | Avg reward: 12.100000 | loss: 0.024317 
-Episode: 3450 | Steps: 903123/3000000 | Avg reward: 7.800000 | loss: 0.042462 
-Episode: 3460 | Steps: 905828/3000000 | Avg reward: 11.000000 | loss: 0.035451 
-Episode: 3470 | Steps: 908250/3000000 | Avg reward: 9.000000 | loss: 0.047128 
-Episode: 3480 | Steps: 910907/3000000 | Avg reward: 9.000000 | loss: 0.023769 
-Episode: 3490 | Steps: 913946/3000000 | Avg reward: 10.800000 | loss: 0.029109 
-Episode: 3500 | Steps: 917271/3000000 | Avg reward: 13.200000 | loss: 0.030748 
-Episode: 3510 | Steps: 920314/3000000 | Avg reward: 10.300000 | loss: 0.027968 
-Episode: 3520 | Steps: 926763/3000000 | Avg reward: 19.300000 | loss: 0.028797 
-save model to dqn_best
-Episode: 3530 | Steps: 931260/3000000 | Avg reward: 13.500000 | loss: 0.028275 
-Episode: 3540 | Steps: 933986/3000000 | Avg reward: 9.500000 | loss: 0.020885 
-Episode: 3550 | Steps: 938125/3000000 | Avg reward: 12.800000 | loss: 0.041350 
-Episode: 3560 | Steps: 941942/3000000 | Avg reward: 13.700000 | loss: 0.037848 
-Episode: 3570 | Steps: 944379/3000000 | Avg reward: 8.200000 | loss: 0.189547 
-Episode: 3580 | Steps: 948624/3000000 | Avg reward: 13.500000 | loss: 0.025594 
-Episode: 3590 | Steps: 951771/3000000 | Avg reward: 10.300000 | loss: 0.025716 
-Episode: 3600 | Steps: 955077/3000000 | Avg reward: 11.900000 | loss: 0.043966 
-Episode: 3610 | Steps: 957919/3000000 | Avg reward: 9.700000 | loss: 0.050006 
-Episode: 3620 | Steps: 961027/3000000 | Avg reward: 9.900000 | loss: 0.040083 
-Episode: 3630 | Steps: 964252/3000000 | Avg reward: 10.800000 | loss: 0.029109 
-Episode: 3640 | Steps: 968132/3000000 | Avg reward: 14.100000 | loss: 0.022761 
-Episode: 3650 | Steps: 971086/3000000 | Avg reward: 9.700000 | loss: 0.037095 
-Episode: 3660 | Steps: 974274/3000000 | Avg reward: 11.500000 | loss: 0.041682 
-Episode: 3670 | Steps: 976845/3000000 | Avg reward: 8.600000 | loss: 0.052641 
-Episode: 3680 | Steps: 980656/3000000 | Avg reward: 14.200000 | loss: 0.031982 
-Episode: 3690 | Steps: 983037/3000000 | Avg reward: 8.200000 | loss: 0.026427 
-Episode: 3700 | Steps: 986739/3000000 | Avg reward: 12.200000 | loss: 0.020642 
-Episode: 3710 | Steps: 989302/3000000 | Avg reward: 7.900000 | loss: 0.170954 
-Episode: 3720 | Steps: 991957/3000000 | Avg reward: 10.400000 | loss: 0.021184 
-Episode: 3730 | Steps: 994983/3000000 | Avg reward: 11.400000 | loss: 0.031076 
-Episode: 3740 | Steps: 997535/3000000 | Avg reward: 9.400000 | loss: 0.089133 
-save model to dqn
-Episode: 3750 | Steps: 1001014/3000000 | Avg reward: 12.100000 | loss: 0.034242 
-Episode: 3760 | Steps: 1004258/3000000 | Avg reward: 10.100000 | loss: 0.040582 
-Episode: 3770 | Steps: 1006695/3000000 | Avg reward: 7.900000 | loss: 0.029585 
-Episode: 3780 | Steps: 1009470/3000000 | Avg reward: 9.000000 | loss: 0.041760 
-Episode: 3790 | Steps: 1013039/3000000 | Avg reward: 11.800000 | loss: 0.020615 
-Episode: 3800 | Steps: 1015852/3000000 | Avg reward: 10.200000 | loss: 0.022048 
-Episode: 3810 | Steps: 1018930/3000000 | Avg reward: 11.400000 | loss: 0.026552 
-Episode: 3820 | Steps: 1022402/3000000 | Avg reward: 11.300000 | loss: 0.020384 
-Episode: 3830 | Steps: 1024753/3000000 | Avg reward: 7.200000 | loss: 0.177254 
-Episode: 3840 | Steps: 1028438/3000000 | Avg reward: 12.400000 | loss: 0.211558 
-Episode: 3850 | Steps: 1030748/3000000 | Avg reward: 8.500000 | loss: 0.062020 
-Episode: 3860 | Steps: 1033392/3000000 | Avg reward: 8.700000 | loss: 0.024440 
-Episode: 3870 | Steps: 1036424/3000000 | Avg reward: 10.400000 | loss: 0.029080 
-Episode: 3880 | Steps: 1039565/3000000 | Avg reward: 10.100000 | loss: 0.125273 
-Episode: 3890 | Steps: 1042324/3000000 | Avg reward: 9.100000 | loss: 0.063569 
-Episode: 3900 | Steps: 1045145/3000000 | Avg reward: 9.400000 | loss: 0.063096 
-Episode: 3910 | Steps: 1049760/3000000 | Avg reward: 14.400000 | loss: 0.042397 
-Episode: 3920 | Steps: 1052531/3000000 | Avg reward: 9.100000 | loss: 0.027266 
-Episode: 3930 | Steps: 1055718/3000000 | Avg reward: 10.500000 | loss: 0.041838 
-Episode: 3940 | Steps: 1058882/3000000 | Avg reward: 11.100000 | loss: 0.016736 
-Episode: 3950 | Steps: 1062158/3000000 | Avg reward: 11.200000 | loss: 0.026150 
-Episode: 3960 | Steps: 1065343/3000000 | Avg reward: 10.400000 | loss: 0.046725 
-Episode: 3970 | Steps: 1068674/3000000 | Avg reward: 12.300000 | loss: 0.080945 
-Episode: 3980 | Steps: 1072671/3000000 | Avg reward: 14.600000 | loss: 0.017170 
-Episode: 3990 | Steps: 1075058/3000000 | Avg reward: 8.600000 | loss: 0.048938 
-Episode: 4000 | Steps: 1077678/3000000 | Avg reward: 8.700000 | loss: 0.023516 
-Episode: 4010 | Steps: 1083911/3000000 | Avg reward: 23.800000 | loss: 0.010509 
-save model to dqn_best
-Episode: 4020 | Steps: 1086957/3000000 | Avg reward: 12.400000 | loss: 0.027159 
-Episode: 4030 | Steps: 1089256/3000000 | Avg reward: 7.800000 | loss: 0.043407 
-Episode: 4040 | Steps: 1091938/3000000 | Avg reward: 10.000000 | loss: 0.066204 
-Episode: 4050 | Steps: 1094542/3000000 | Avg reward: 10.000000 | loss: 0.033519 
-Episode: 4060 | Steps: 1097200/3000000 | Avg reward: 11.100000 | loss: 0.039451 
-Episode: 4070 | Steps: 1100318/3000000 | Avg reward: 11.400000 | loss: 0.050100 
-Episode: 4080 | Steps: 1102921/3000000 | Avg reward: 9.400000 | loss: 0.039674 
-Episode: 4090 | Steps: 1105442/3000000 | Avg reward: 8.700000 | loss: 0.037573 
-Episode: 4100 | Steps: 1109223/3000000 | Avg reward: 14.700000 | loss: 0.024850 
-Episode: 4110 | Steps: 1112182/3000000 | Avg reward: 11.800000 | loss: 0.030990 
-Episode: 4120 | Steps: 1115153/3000000 | Avg reward: 11.000000 | loss: 0.012752 
-Episode: 4130 | Steps: 1118281/3000000 | Avg reward: 11.100000 | loss: 0.017675 
-Episode: 4140 | Steps: 1121135/3000000 | Avg reward: 10.000000 | loss: 0.028554 
-Episode: 4150 | Steps: 1124136/3000000 | Avg reward: 10.800000 | loss: 0.016118 
-Episode: 4160 | Steps: 1127634/3000000 | Avg reward: 13.300000 | loss: 0.027842 
-Episode: 4170 | Steps: 1130418/3000000 | Avg reward: 10.100000 | loss: 0.043925 
-Episode: 4180 | Steps: 1134177/3000000 | Avg reward: 14.300000 | loss: 0.070874 
-Episode: 4190 | Steps: 1137260/3000000 | Avg reward: 11.200000 | loss: 0.023440 
-Episode: 4200 | Steps: 1140179/3000000 | Avg reward: 10.600000 | loss: 0.055636 
-Episode: 4210 | Steps: 1142602/3000000 | Avg reward: 8.600000 | loss: 0.066801 
-Episode: 4220 | Steps: 1145910/3000000 | Avg reward: 11.100000 | loss: 0.026679 
-Episode: 4230 | Steps: 1148828/3000000 | Avg reward: 10.000000 | loss: 0.039699 
-Episode: 4240 | Steps: 1152508/3000000 | Avg reward: 10.700000 | loss: 0.181035 
-Episode: 4250 | Steps: 1154771/3000000 | Avg reward: 7.300000 | loss: 0.065388 
-Episode: 4260 | Steps: 1157717/3000000 | Avg reward: 9.600000 | loss: 0.042363 
-Episode: 4270 | Steps: 1160906/3000000 | Avg reward: 11.600000 | loss: 0.197470 
-Episode: 4280 | Steps: 1163477/3000000 | Avg reward: 9.400000 | loss: 0.032687 
-Episode: 4290 | Steps: 1166457/3000000 | Avg reward: 9.400000 | loss: 0.035042 
-Episode: 4300 | Steps: 1169062/3000000 | Avg reward: 10.400000 | loss: 0.029299 
-Episode: 4310 | Steps: 1172393/3000000 | Avg reward: 12.400000 | loss: 0.032946 
-Episode: 4320 | Steps: 1176366/3000000 | Avg reward: 14.700000 | loss: 0.023112 
-Episode: 4330 | Steps: 1179288/3000000 | Avg reward: 9.900000 | loss: 0.027687 
-Episode: 4340 | Steps: 1182428/3000000 | Avg reward: 11.500000 | loss: 0.014468 
-Episode: 4350 | Steps: 1184713/3000000 | Avg reward: 8.100000 | loss: 0.054457 
-Episode: 4360 | Steps: 1188370/3000000 | Avg reward: 14.800000 | loss: 0.169539 
-Episode: 4370 | Steps: 1191698/3000000 | Avg reward: 10.400000 | loss: 0.024784 
-Episode: 4380 | Steps: 1194785/3000000 | Avg reward: 11.300000 | loss: 0.051489 
-Episode: 4390 | Steps: 1197751/3000000 | Avg reward: 11.800000 | loss: 0.019132 
-save model to dqn
-Episode: 4400 | Steps: 1200688/3000000 | Avg reward: 11.200000 | loss: 0.033110 
-Episode: 4410 | Steps: 1203811/3000000 | Avg reward: 11.200000 | loss: 0.068955 
-Episode: 4420 | Steps: 1206291/3000000 | Avg reward: 9.100000 | loss: 0.042620 
-Episode: 4430 | Steps: 1211423/3000000 | Avg reward: 17.800000 | loss: 0.050087 
-Episode: 4440 | Steps: 1214625/3000000 | Avg reward: 10.600000 | loss: 0.016975 
-Episode: 4450 | Steps: 1218194/3000000 | Avg reward: 11.000000 | loss: 0.028683 
-Episode: 4460 | Steps: 1221459/3000000 | Avg reward: 11.700000 | loss: 0.165527 
-Episode: 4470 | Steps: 1225370/3000000 | Avg reward: 13.500000 | loss: 0.027690 
-Episode: 4480 | Steps: 1229178/3000000 | Avg reward: 13.300000 | loss: 0.021489 
-Episode: 4490 | Steps: 1232323/3000000 | Avg reward: 10.700000 | loss: 0.036378 
-Episode: 4500 | Steps: 1235952/3000000 | Avg reward: 12.000000 | loss: 0.013109 
-Episode: 4510 | Steps: 1238430/3000000 | Avg reward: 8.000000 | loss: 0.047737 
-Episode: 4520 | Steps: 1242187/3000000 | Avg reward: 12.300000 | loss: 0.120176 
-Episode: 4530 | Steps: 1244916/3000000 | Avg reward: 8.800000 | loss: 0.046418 
-Episode: 4540 | Steps: 1247928/3000000 | Avg reward: 12.700000 | loss: 0.024894 
-Episode: 4550 | Steps: 1251071/3000000 | Avg reward: 10.300000 | loss: 0.047109 
-Episode: 4560 | Steps: 1253480/3000000 | Avg reward: 8.100000 | loss: 0.022748 
-Episode: 4570 | Steps: 1256388/3000000 | Avg reward: 10.000000 | loss: 0.040284 
-Episode: 4580 | Steps: 1259794/3000000 | Avg reward: 12.700000 | loss: 0.036462 
-Episode: 4590 | Steps: 1262677/3000000 | Avg reward: 9.300000 | loss: 0.026428 
-Episode: 4600 | Steps: 1266063/3000000 | Avg reward: 11.600000 | loss: 0.061944 
-Episode: 4610 | Steps: 1269421/3000000 | Avg reward: 10.900000 | loss: 0.039739 
-Episode: 4620 | Steps: 1273414/3000000 | Avg reward: 14.800000 | loss: 0.018123 
-Episode: 4630 | Steps: 1275928/3000000 | Avg reward: 8.500000 | loss: 0.013941 
-Episode: 4640 | Steps: 1280107/3000000 | Avg reward: 12.600000 | loss: 0.052872 
-Episode: 4650 | Steps: 1282616/3000000 | Avg reward: 8.200000 | loss: 0.025813 
-Episode: 4660 | Steps: 1288977/3000000 | Avg reward: 20.700000 | loss: 0.035677 
-Episode: 4670 | Steps: 1295534/3000000 | Avg reward: 19.100000 | loss: 0.016376 
-Episode: 4680 | Steps: 1303257/3000000 | Avg reward: 22.800000 | loss: 0.016626 
-Episode: 4690 | Steps: 1304929/3000000 | Avg reward: 5.600000 | loss: 0.048022 
-Episode: 4700 | Steps: 1309391/3000000 | Avg reward: 16.200000 | loss: 0.016513 
-Episode: 4710 | Steps: 1314606/3000000 | Avg reward: 15.200000 | loss: 0.027158 
-Episode: 4720 | Steps: 1321940/3000000 | Avg reward: 21.200000 | loss: 0.078379 
-Episode: 4730 | Steps: 1324652/3000000 | Avg reward: 9.000000 | loss: 0.026659 
-Episode: 4740 | Steps: 1327302/3000000 | Avg reward: 9.100000 | loss: 0.023362 
-Episode: 4750 | Steps: 1331282/3000000 | Avg reward: 13.500000 | loss: 0.012341 
-Episode: 4760 | Steps: 1335487/3000000 | Avg reward: 13.900000 | loss: 0.021348 
-Episode: 4770 | Steps: 1339309/3000000 | Avg reward: 13.300000 | loss: 0.016570 
-Episode: 4780 | Steps: 1342196/3000000 | Avg reward: 9.000000 | loss: 0.019180 
-Episode: 4790 | Steps: 1346721/3000000 | Avg reward: 14.900000 | loss: 0.028990 
-Episode: 4800 | Steps: 1353162/3000000 | Avg reward: 21.800000 | loss: 0.027392 
-Episode: 4810 | Steps: 1355952/3000000 | Avg reward: 10.100000 | loss: 0.059931 
-Episode: 4820 | Steps: 1359616/3000000 | Avg reward: 13.000000 | loss: 0.071006 
-Episode: 4830 | Steps: 1363517/3000000 | Avg reward: 13.900000 | loss: 0.037456 
-Episode: 4840 | Steps: 1370067/3000000 | Avg reward: 21.200000 | loss: 0.055950 
-Episode: 4850 | Steps: 1372574/3000000 | Avg reward: 8.200000 | loss: 0.024235 
-Episode: 4860 | Steps: 1376561/3000000 | Avg reward: 14.700000 | loss: 0.032595 
-Episode: 4870 | Steps: 1379792/3000000 | Avg reward: 10.800000 | loss: 0.020312 
-Episode: 4880 | Steps: 1385269/3000000 | Avg reward: 17.600000 | loss: 0.164530 
-Episode: 4890 | Steps: 1387936/3000000 | Avg reward: 9.400000 | loss: 0.011930 
-Episode: 4900 | Steps: 1390839/3000000 | Avg reward: 9.200000 | loss: 0.022565 
-Episode: 4910 | Steps: 1393613/3000000 | Avg reward: 8.800000 | loss: 0.035982 
-Episode: 4920 | Steps: 1396992/3000000 | Avg reward: 10.800000 | loss: 0.047097 
-Episode: 4930 | Steps: 1399725/3000000 | Avg reward: 9.900000 | loss: 0.032778 
-save model to dqn
-Episode: 4940 | Steps: 1403974/3000000 | Avg reward: 14.000000 | loss: 0.412122 
-Episode: 4950 | Steps: 1407091/3000000 | Avg reward: 9.700000 | loss: 0.011515 
-Episode: 4960 | Steps: 1410231/3000000 | Avg reward: 10.500000 | loss: 0.041172 
-Episode: 4970 | Steps: 1414243/3000000 | Avg reward: 14.600000 | loss: 0.023429 
-Episode: 4980 | Steps: 1417408/3000000 | Avg reward: 12.100000 | loss: 0.025245 
-Episode: 4990 | Steps: 1419484/3000000 | Avg reward: 6.100000 | loss: 0.025620 
-Episode: 5000 | Steps: 1425245/3000000 | Avg reward: 20.200000 | loss: 0.081869 
-Episode: 5010 | Steps: 1427916/3000000 | Avg reward: 9.400000 | loss: 0.045106 
-Episode: 5020 | Steps: 1432159/3000000 | Avg reward: 14.300000 | loss: 0.028586 
-Episode: 5030 | Steps: 1435712/3000000 | Avg reward: 12.400000 | loss: 0.048662 
-Episode: 5040 | Steps: 1442377/3000000 | Avg reward: 21.100000 | loss: 0.040180 
-Episode: 5050 | Steps: 1445552/3000000 | Avg reward: 10.800000 | loss: 0.060131 
-Episode: 5060 | Steps: 1450560/3000000 | Avg reward: 16.000000 | loss: 0.050644 
-Episode: 5070 | Steps: 1453131/3000000 | Avg reward: 8.600000 | loss: 0.096703 
-Episode: 5080 | Steps: 1457021/3000000 | Avg reward: 13.600000 | loss: 0.052408 
-Episode: 5090 | Steps: 1460274/3000000 | Avg reward: 11.600000 | loss: 0.036383 
-Episode: 5100 | Steps: 1464416/3000000 | Avg reward: 14.800000 | loss: 0.033458 
-Episode: 5110 | Steps: 1469335/3000000 | Avg reward: 18.400000 | loss: 0.054866 
-Episode: 5120 | Steps: 1474580/3000000 | Avg reward: 18.100000 | loss: 0.047929 
-Episode: 5130 | Steps: 1477540/3000000 | Avg reward: 11.600000 | loss: 0.025124 
-Episode: 5140 | Steps: 1480954/3000000 | Avg reward: 11.800000 | loss: 0.042518 
-Episode: 5150 | Steps: 1484925/3000000 | Avg reward: 14.800000 | loss: 0.026040 
-Episode: 5160 | Steps: 1488270/3000000 | Avg reward: 10.100000 | loss: 0.030996 
-Episode: 5170 | Steps: 1492682/3000000 | Avg reward: 14.500000 | loss: 0.028306 
-Episode: 5180 | Steps: 1496709/3000000 | Avg reward: 14.800000 | loss: 0.025908 
-Episode: 5190 | Steps: 1499708/3000000 | Avg reward: 10.100000 | loss: 0.037384 
-Episode: 5200 | Steps: 1501512/3000000 | Avg reward: 6.900000 | loss: 0.027732 
-Episode: 5210 | Steps: 1504379/3000000 | Avg reward: 9.300000 | loss: 0.020947 
-Episode: 5220 | Steps: 1507205/3000000 | Avg reward: 10.100000 | loss: 0.040778 
-Episode: 5230 | Steps: 1511185/3000000 | Avg reward: 11.200000 | loss: 0.035719 
-Episode: 5240 | Steps: 1514183/3000000 | Avg reward: 9.600000 | loss: 0.020116 
-Episode: 5250 | Steps: 1517733/3000000 | Avg reward: 11.200000 | loss: 0.041469 
-Episode: 5260 | Steps: 1524279/3000000 | Avg reward: 19.800000 | loss: 0.082285 
-Episode: 5270 | Steps: 1530359/3000000 | Avg reward: 19.700000 | loss: 0.054450 
-Episode: 5280 | Steps: 1534314/3000000 | Avg reward: 11.800000 | loss: 0.031554 
-Episode: 5290 | Steps: 1536756/3000000 | Avg reward: 8.000000 | loss: 0.054545 
-Episode: 5300 | Steps: 1539288/3000000 | Avg reward: 8.200000 | loss: 0.033694 
-Episode: 5310 | Steps: 1541854/3000000 | Avg reward: 8.400000 | loss: 0.038383 
-Episode: 5320 | Steps: 1544706/3000000 | Avg reward: 9.500000 | loss: 0.078714 
-Episode: 5330 | Steps: 1548223/3000000 | Avg reward: 10.900000 | loss: 0.025218 
-Episode: 5340 | Steps: 1551194/3000000 | Avg reward: 8.600000 | loss: 0.061763 
-Episode: 5350 | Steps: 1554420/3000000 | Avg reward: 10.900000 | loss: 0.129304 
-Episode: 5360 | Steps: 1557759/3000000 | Avg reward: 9.800000 | loss: 0.066854 
-Episode: 5370 | Steps: 1560534/3000000 | Avg reward: 8.200000 | loss: 0.017186 
-Episode: 5380 | Steps: 1563650/3000000 | Avg reward: 11.000000 | loss: 0.099325 
-Episode: 5390 | Steps: 1566524/3000000 | Avg reward: 10.200000 | loss: 0.046546 
-Episode: 5400 | Steps: 1570275/3000000 | Avg reward: 12.300000 | loss: 0.033605 
-Episode: 5410 | Steps: 1576564/3000000 | Avg reward: 19.100000 | loss: 0.024812 
-Episode: 5420 | Steps: 1580561/3000000 | Avg reward: 13.800000 | loss: 0.015779 
-Episode: 5430 | Steps: 1583130/3000000 | Avg reward: 8.100000 | loss: 0.030739 
-Episode: 5440 | Steps: 1585799/3000000 | Avg reward: 8.800000 | loss: 0.057010 
-Episode: 5450 | Steps: 1588546/3000000 | Avg reward: 9.600000 | loss: 0.022851 
-Episode: 5460 | Steps: 1591193/3000000 | Avg reward: 7.800000 | loss: 0.038751 
-Episode: 5470 | Steps: 1594219/3000000 | Avg reward: 9.500000 | loss: 0.036410 
-Episode: 5480 | Steps: 1596321/3000000 | Avg reward: 6.600000 | loss: 0.017572 
-Episode: 5490 | Steps: 1599468/3000000 | Avg reward: 10.600000 | loss: 0.047931 
-save model to dqn
-Episode: 5500 | Steps: 1602362/3000000 | Avg reward: 7.800000 | loss: 0.037715 
-Episode: 5510 | Steps: 1604661/3000000 | Avg reward: 7.600000 | loss: 0.029155 
-Episode: 5520 | Steps: 1606925/3000000 | Avg reward: 8.100000 | loss: 0.065774 
-Episode: 5530 | Steps: 1610907/3000000 | Avg reward: 12.500000 | loss: 0.020470 
-Episode: 5540 | Steps: 1613411/3000000 | Avg reward: 8.500000 | loss: 0.039405 
-Episode: 5550 | Steps: 1616310/3000000 | Avg reward: 9.500000 | loss: 0.051422 
-Episode: 5560 | Steps: 1620140/3000000 | Avg reward: 12.000000 | loss: 0.029250 
-Episode: 5570 | Steps: 1622835/3000000 | Avg reward: 9.400000 | loss: 0.019693 
-Episode: 5580 | Steps: 1626749/3000000 | Avg reward: 11.300000 | loss: 0.411771 
-Episode: 5590 | Steps: 1632765/3000000 | Avg reward: 16.200000 | loss: 0.074800 
-Episode: 5600 | Steps: 1637044/3000000 | Avg reward: 13.400000 | loss: 0.015991 
-Episode: 5610 | Steps: 1639661/3000000 | Avg reward: 8.600000 | loss: 0.024996 
-Episode: 5620 | Steps: 1645568/3000000 | Avg reward: 19.400000 | loss: 0.027477 
-Episode: 5630 | Steps: 1649227/3000000 | Avg reward: 13.900000 | loss: 0.046965 
-Episode: 5640 | Steps: 1654022/3000000 | Avg reward: 15.900000 | loss: 0.021839 
-Episode: 5650 | Steps: 1656209/3000000 | Avg reward: 8.200000 | loss: 0.251236 
-Episode: 5660 | Steps: 1659042/3000000 | Avg reward: 10.500000 | loss: 0.414767 
-Episode: 5670 | Steps: 1661894/3000000 | Avg reward: 9.400000 | loss: 0.020868 
-Episode: 5680 | Steps: 1665251/3000000 | Avg reward: 12.300000 | loss: 0.036780 
-Episode: 5690 | Steps: 1668487/3000000 | Avg reward: 11.100000 | loss: 0.041127 
-Episode: 5700 | Steps: 1671150/3000000 | Avg reward: 9.600000 | loss: 0.042004 
-Episode: 5710 | Steps: 1674358/3000000 | Avg reward: 11.100000 | loss: 0.052641 
-Episode: 5720 | Steps: 1677602/3000000 | Avg reward: 11.400000 | loss: 0.031958 
-Episode: 5730 | Steps: 1680377/3000000 | Avg reward: 10.300000 | loss: 0.265468 
-Episode: 5740 | Steps: 1682692/3000000 | Avg reward: 8.600000 | loss: 0.076364 
-Episode: 5750 | Steps: 1685371/3000000 | Avg reward: 8.000000 | loss: 0.078213 
-Episode: 5760 | Steps: 1688963/3000000 | Avg reward: 12.900000 | loss: 0.039480 
-Episode: 5770 | Steps: 1692906/3000000 | Avg reward: 13.600000 | loss: 0.045930 
-Episode: 5780 | Steps: 1695366/3000000 | Avg reward: 8.500000 | loss: 0.031650 
-Episode: 5790 | Steps: 1699818/3000000 | Avg reward: 14.400000 | loss: 0.035970 
-Episode: 5800 | Steps: 1702380/3000000 | Avg reward: 8.500000 | loss: 0.036463 
-Episode: 5810 | Steps: 1705342/3000000 | Avg reward: 10.500000 | loss: 0.220941 
-Episode: 5820 | Steps: 1710147/3000000 | Avg reward: 16.200000 | loss: 0.048670 
-Episode: 5830 | Steps: 1712540/3000000 | Avg reward: 9.300000 | loss: 0.017778 
-Episode: 5840 | Steps: 1715954/3000000 | Avg reward: 11.200000 | loss: 0.016164 
-Episode: 5850 | Steps: 1720870/3000000 | Avg reward: 15.900000 | loss: 0.036666 
-Episode: 5860 | Steps: 1723700/3000000 | Avg reward: 10.500000 | loss: 0.022714 
-Episode: 5870 | Steps: 1726360/3000000 | Avg reward: 9.200000 | loss: 0.049785 
-Episode: 5880 | Steps: 1728817/3000000 | Avg reward: 9.300000 | loss: 0.059072 
-Episode: 5890 | Steps: 1733384/3000000 | Avg reward: 16.200000 | loss: 0.023966 
-Episode: 5900 | Steps: 1738433/3000000 | Avg reward: 16.800000 | loss: 0.018157 
-Episode: 5910 | Steps: 1741117/3000000 | Avg reward: 9.100000 | loss: 0.035920 
-Episode: 5920 | Steps: 1746053/3000000 | Avg reward: 14.500000 | loss: 0.016249 
-Episode: 5930 | Steps: 1748903/3000000 | Avg reward: 10.500000 | loss: 0.024989 
-Episode: 5940 | Steps: 1754542/3000000 | Avg reward: 17.600000 | loss: 0.047333 
-Episode: 5950 | Steps: 1757651/3000000 | Avg reward: 11.900000 | loss: 0.252746 
-Episode: 5960 | Steps: 1761943/3000000 | Avg reward: 15.100000 | loss: 0.026798 
-Episode: 5970 | Steps: 1765204/3000000 | Avg reward: 11.300000 | loss: 0.023453 
-Episode: 5980 | Steps: 1769389/3000000 | Avg reward: 13.300000 | loss: 0.043716 
-Episode: 5990 | Steps: 1772624/3000000 | Avg reward: 11.700000 | loss: 0.016243 
-Episode: 6000 | Steps: 1777857/3000000 | Avg reward: 17.200000 | loss: 0.040421 
-Episode: 6010 | Steps: 1780747/3000000 | Avg reward: 10.300000 | loss: 0.022950 
-Episode: 6020 | Steps: 1783611/3000000 | Avg reward: 10.800000 | loss: 0.086823 
-Episode: 6030 | Steps: 1788997/3000000 | Avg reward: 19.900000 | loss: 0.189722 
-Episode: 6040 | Steps: 1798568/3000000 | Avg reward: 30.400000 | loss: 0.017663 
-save model to dqn_best
-save model to dqn
-Episode: 6050 | Steps: 1805577/3000000 | Avg reward: 23.500000 | loss: 0.020855 
-Episode: 6060 | Steps: 1811111/3000000 | Avg reward: 18.900000 | loss: 0.040129 
-Episode: 6070 | Steps: 1814264/3000000 | Avg reward: 11.700000 | loss: 0.033730 
-Episode: 6080 | Steps: 1819062/3000000 | Avg reward: 14.000000 | loss: 0.021239 
-Episode: 6090 | Steps: 1823834/3000000 | Avg reward: 15.600000 | loss: 0.026065 
-Episode: 6100 | Steps: 1827272/3000000 | Avg reward: 12.100000 | loss: 0.020635 
-Episode: 6110 | Steps: 1830088/3000000 | Avg reward: 8.600000 | loss: 0.018539 
-Episode: 6120 | Steps: 1832728/3000000 | Avg reward: 9.100000 | loss: 0.028029 
-Episode: 6130 | Steps: 1837911/3000000 | Avg reward: 17.800000 | loss: 0.069221 
-Episode: 6140 | Steps: 1842014/3000000 | Avg reward: 13.700000 | loss: 0.013462 
-Episode: 6150 | Steps: 1844662/3000000 | Avg reward: 9.300000 | loss: 0.029007 
-Episode: 6160 | Steps: 1850267/3000000 | Avg reward: 18.200000 | loss: 0.023249 
-Episode: 6170 | Steps: 1853197/3000000 | Avg reward: 9.600000 | loss: 0.046301 
-Episode: 6180 | Steps: 1856737/3000000 | Avg reward: 9.700000 | loss: 0.021558 
-Episode: 6190 | Steps: 1862014/3000000 | Avg reward: 17.400000 | loss: 0.064890 
-Episode: 6200 | Steps: 1871198/3000000 | Avg reward: 24.100000 | loss: 0.028419 
-Episode: 6210 | Steps: 1875785/3000000 | Avg reward: 15.700000 | loss: 0.037837 
-Episode: 6220 | Steps: 1878341/3000000 | Avg reward: 8.500000 | loss: 0.024267 
-Episode: 6230 | Steps: 1880552/3000000 | Avg reward: 7.800000 | loss: 0.121943 
-Episode: 6240 | Steps: 1884130/3000000 | Avg reward: 12.200000 | loss: 0.030935 
-Episode: 6250 | Steps: 1887433/3000000 | Avg reward: 11.300000 | loss: 0.062215 
-Episode: 6260 | Steps: 1890139/3000000 | Avg reward: 8.800000 | loss: 0.043034 
-Episode: 6270 | Steps: 1893122/3000000 | Avg reward: 10.600000 | loss: 0.019415 
-Episode: 6280 | Steps: 1897603/3000000 | Avg reward: 16.300000 | loss: 0.027934 
-Episode: 6290 | Steps: 1900906/3000000 | Avg reward: 11.500000 | loss: 0.019831 
-Episode: 6300 | Steps: 1905743/3000000 | Avg reward: 17.100000 | loss: 0.043208 
-Episode: 6310 | Steps: 1908697/3000000 | Avg reward: 10.300000 | loss: 0.027014 
-Episode: 6320 | Steps: 1911187/3000000 | Avg reward: 10.100000 | loss: 0.050550 
-Episode: 6330 | Steps: 1916425/3000000 | Avg reward: 17.400000 | loss: 0.040185 
-Episode: 6340 | Steps: 1920687/3000000 | Avg reward: 15.900000 | loss: 0.026682 
-Episode: 6350 | Steps: 1924966/3000000 | Avg reward: 13.200000 | loss: 0.027816 
-Episode: 6360 | Steps: 1930617/3000000 | Avg reward: 21.000000 | loss: 0.049856 
-Episode: 6370 | Steps: 1934639/3000000 | Avg reward: 14.400000 | loss: 0.029042 
-Episode: 6380 | Steps: 1938517/3000000 | Avg reward: 12.900000 | loss: 0.030936 
-Episode: 6390 | Steps: 1942071/3000000 | Avg reward: 13.400000 | loss: 0.042681 
-Episode: 6400 | Steps: 1944665/3000000 | Avg reward: 9.900000 | loss: 0.052761 
-Episode: 6410 | Steps: 1947580/3000000 | Avg reward: 9.400000 | loss: 0.023087 
-Episode: 6420 | Steps: 1950674/3000000 | Avg reward: 11.800000 | loss: 0.025608 
-Episode: 6430 | Steps: 1954975/3000000 | Avg reward: 14.300000 | loss: 0.041617 
-Episode: 6440 | Steps: 1958129/3000000 | Avg reward: 11.900000 | loss: 0.055549 
-Episode: 6450 | Steps: 1961133/3000000 | Avg reward: 11.400000 | loss: 0.041049 
-Episode: 6460 | Steps: 1964892/3000000 | Avg reward: 13.600000 | loss: 0.058034 
-Episode: 6470 | Steps: 1968792/3000000 | Avg reward: 13.700000 | loss: 0.035231 
-Episode: 6480 | Steps: 1972651/3000000 | Avg reward: 14.500000 | loss: 0.071072 
-Episode: 6490 | Steps: 1976435/3000000 | Avg reward: 14.800000 | loss: 0.025486 
-Episode: 6500 | Steps: 1978892/3000000 | Avg reward: 10.100000 | loss: 0.152992 
-Episode: 6510 | Steps: 1982628/3000000 | Avg reward: 13.300000 | loss: 0.033598 
-Episode: 6520 | Steps: 1985368/3000000 | Avg reward: 11.000000 | loss: 0.026249 
-Episode: 6530 | Steps: 1990908/3000000 | Avg reward: 19.600000 | loss: 0.032141 
-Episode: 6540 | Steps: 1998128/3000000 | Avg reward: 21.600000 | loss: 0.136385 
-save model to dqn
-Episode: 6550 | Steps: 2002915/3000000 | Avg reward: 16.000000 | loss: 0.035366 
-Episode: 6560 | Steps: 2008853/3000000 | Avg reward: 20.200000 | loss: 0.305153 
-Episode: 6570 | Steps: 2011764/3000000 | Avg reward: 10.200000 | loss: 0.042838 
-Episode: 6580 | Steps: 2017806/3000000 | Avg reward: 18.800000 | loss: 0.036744 
-Episode: 6590 | Steps: 2022431/3000000 | Avg reward: 17.400000 | loss: 0.024850 
-Episode: 6600 | Steps: 2025171/3000000 | Avg reward: 10.800000 | loss: 0.025652 
-Episode: 6610 | Steps: 2028391/3000000 | Avg reward: 12.000000 | loss: 0.024069 
-Episode: 6620 | Steps: 2030909/3000000 | Avg reward: 8.700000 | loss: 0.019081 
-Episode: 6630 | Steps: 2034345/3000000 | Avg reward: 11.300000 | loss: 0.030677 
-Episode: 6640 | Steps: 2037959/3000000 | Avg reward: 13.300000 | loss: 0.016738 
-Episode: 6650 | Steps: 2041521/3000000 | Avg reward: 14.000000 | loss: 0.065041 
-Episode: 6660 | Steps: 2044726/3000000 | Avg reward: 12.600000 | loss: 0.026404 
-Episode: 6670 | Steps: 2048362/3000000 | Avg reward: 12.800000 | loss: 0.024724 
-Episode: 6680 | Steps: 2052246/3000000 | Avg reward: 14.900000 | loss: 0.028424 
-Episode: 6690 | Steps: 2056852/3000000 | Avg reward: 15.700000 | loss: 0.023320 
-Episode: 6700 | Steps: 2060442/3000000 | Avg reward: 12.800000 | loss: 0.020627 
-Episode: 6710 | Steps: 2063768/3000000 | Avg reward: 12.800000 | loss: 0.025089 
-Episode: 6720 | Steps: 2068227/3000000 | Avg reward: 14.800000 | loss: 0.016048 
-Episode: 6730 | Steps: 2070721/3000000 | Avg reward: 8.800000 | loss: 0.023411 
-Episode: 6740 | Steps: 2073738/3000000 | Avg reward: 11.200000 | loss: 0.032793 
-Episode: 6750 | Steps: 2077688/3000000 | Avg reward: 13.800000 | loss: 0.019407 
-Episode: 6760 | Steps: 2083706/3000000 | Avg reward: 19.500000 | loss: 0.029408 
-Episode: 6770 | Steps: 2087477/3000000 | Avg reward: 14.100000 | loss: 0.052114 
-Episode: 6780 | Steps: 2092312/3000000 | Avg reward: 17.400000 | loss: 0.238306 
-Episode: 6790 | Steps: 2096315/3000000 | Avg reward: 15.800000 | loss: 0.036525 
-Episode: 6800 | Steps: 2101187/3000000 | Avg reward: 17.200000 | loss: 0.031771 
-Episode: 6810 | Steps: 2106533/3000000 | Avg reward: 19.200000 | loss: 0.060588 
-Episode: 6820 | Steps: 2112438/3000000 | Avg reward: 20.700000 | loss: 0.025181 
-Episode: 6830 | Steps: 2116980/3000000 | Avg reward: 14.500000 | loss: 0.032521 
-Episode: 6840 | Steps: 2121689/3000000 | Avg reward: 16.200000 | loss: 0.020626 
-Episode: 6850 | Steps: 2125802/3000000 | Avg reward: 12.000000 | loss: 0.041936 
-Episode: 6860 | Steps: 2129058/3000000 | Avg reward: 11.900000 | loss: 0.036970 
-Episode: 6870 | Steps: 2132204/3000000 | Avg reward: 10.900000 | loss: 0.028205 
-Episode: 6880 | Steps: 2136412/3000000 | Avg reward: 13.100000 | loss: 0.033631 
-Episode: 6890 | Steps: 2140358/3000000 | Avg reward: 9.700000 | loss: 0.026959 
-Episode: 6900 | Steps: 2143008/3000000 | Avg reward: 9.500000 | loss: 0.019727 
-Episode: 6910 | Steps: 2147290/3000000 | Avg reward: 14.100000 | loss: 0.044182 
-Episode: 6920 | Steps: 2150583/3000000 | Avg reward: 11.600000 | loss: 0.048826 
-Episode: 6930 | Steps: 2153575/3000000 | Avg reward: 11.400000 | loss: 0.126878 
-Episode: 6940 | Steps: 2158727/3000000 | Avg reward: 17.600000 | loss: 0.035991 
-Episode: 6950 | Steps: 2164087/3000000 | Avg reward: 18.400000 | loss: 0.045131 
-Episode: 6960 | Steps: 2169807/3000000 | Avg reward: 19.100000 | loss: 0.032169 
-Episode: 6970 | Steps: 2172298/3000000 | Avg reward: 10.200000 | loss: 0.027918 
-Episode: 6980 | Steps: 2175087/3000000 | Avg reward: 10.700000 | loss: 0.025793 
-Episode: 6990 | Steps: 2177974/3000000 | Avg reward: 10.100000 | loss: 0.038317 
-Episode: 7000 | Steps: 2181333/3000000 | Avg reward: 13.400000 | loss: 0.046144 
-Episode: 7010 | Steps: 2185074/3000000 | Avg reward: 14.100000 | loss: 0.054658 
-Episode: 7020 | Steps: 2189908/3000000 | Avg reward: 15.000000 | loss: 0.231630 
-Episode: 7030 | Steps: 2192823/3000000 | Avg reward: 9.700000 | loss: 0.123114 
-Episode: 7040 | Steps: 2196028/3000000 | Avg reward: 12.900000 | loss: 0.023081 
-Episode: 7050 | Steps: 2199511/3000000 | Avg reward: 12.800000 | loss: 0.033042 
-save model to dqn
-Episode: 7060 | Steps: 2202560/3000000 | Avg reward: 10.300000 | loss: 0.022708 
-Episode: 7070 | Steps: 2205602/3000000 | Avg reward: 10.400000 | loss: 0.041474 
-Episode: 7080 | Steps: 2207856/3000000 | Avg reward: 8.300000 | loss: 0.065250 
-Episode: 7090 | Steps: 2211577/3000000 | Avg reward: 15.100000 | loss: 0.493628 
-Episode: 7100 | Steps: 2215058/3000000 | Avg reward: 14.400000 | loss: 0.026387 
-Episode: 7110 | Steps: 2218050/3000000 | Avg reward: 10.900000 | loss: 0.035152 
-Episode: 7120 | Steps: 2221120/3000000 | Avg reward: 9.800000 | loss: 0.055728 
-Episode: 7130 | Steps: 2223806/3000000 | Avg reward: 8.700000 | loss: 0.027243 
-Episode: 7140 | Steps: 2227697/3000000 | Avg reward: 12.900000 | loss: 0.068874 
-Episode: 7150 | Steps: 2233877/3000000 | Avg reward: 22.300000 | loss: 0.056708 
-Episode: 7160 | Steps: 2240849/3000000 | Avg reward: 22.300000 | loss: 0.082883 
-Episode: 7170 | Steps: 2247593/3000000 | Avg reward: 19.600000 | loss: 0.025351 
-Episode: 7180 | Steps: 2251821/3000000 | Avg reward: 14.200000 | loss: 0.079944 
-Episode: 7190 | Steps: 2256278/3000000 | Avg reward: 15.300000 | loss: 0.032557 
-Episode: 7200 | Steps: 2264015/3000000 | Avg reward: 23.600000 | loss: 0.010334 
-Episode: 7210 | Steps: 2269549/3000000 | Avg reward: 15.900000 | loss: 0.023862 
-Episode: 7220 | Steps: 2274965/3000000 | Avg reward: 20.300000 | loss: 0.035774 
-Episode: 7230 | Steps: 2280780/3000000 | Avg reward: 19.100000 | loss: 0.057484 
-Episode: 7240 | Steps: 2285987/3000000 | Avg reward: 14.900000 | loss: 0.056011 
-Episode: 7250 | Steps: 2291552/3000000 | Avg reward: 18.800000 | loss: 0.023457 
-Episode: 7260 | Steps: 2299468/3000000 | Avg reward: 24.000000 | loss: 0.042655 
-Episode: 7270 | Steps: 2303831/3000000 | Avg reward: 12.400000 | loss: 0.029535 
-Episode: 7280 | Steps: 2306796/3000000 | Avg reward: 10.100000 | loss: 0.013597 
-Episode: 7290 | Steps: 2311769/3000000 | Avg reward: 16.900000 | loss: 0.065772 
-Episode: 7300 | Steps: 2314931/3000000 | Avg reward: 10.200000 | loss: 0.036383 
-Episode: 7310 | Steps: 2319170/3000000 | Avg reward: 16.300000 | loss: 0.064944 
-Episode: 7320 | Steps: 2324038/3000000 | Avg reward: 16.900000 | loss: 0.018802 
-Episode: 7330 | Steps: 2328519/3000000 | Avg reward: 15.600000 | loss: 0.029116 
-Episode: 7340 | Steps: 2333222/3000000 | Avg reward: 14.800000 | loss: 0.022017 
-Episode: 7350 | Steps: 2339830/3000000 | Avg reward: 21.700000 | loss: 0.029615 
-Episode: 7360 | Steps: 2345481/3000000 | Avg reward: 20.200000 | loss: 0.025940 
-Episode: 7370 | Steps: 2351201/3000000 | Avg reward: 18.300000 | loss: 0.014488 
-Episode: 7380 | Steps: 2354560/3000000 | Avg reward: 13.000000 | loss: 0.016890 
-Episode: 7390 | Steps: 2360868/3000000 | Avg reward: 24.200000 | loss: 0.043528 
-Episode: 7400 | Steps: 2364501/3000000 | Avg reward: 14.300000 | loss: 0.021349 
-Episode: 7410 | Steps: 2367413/3000000 | Avg reward: 10.100000 | loss: 0.128007 
-Episode: 7420 | Steps: 2370514/3000000 | Avg reward: 11.500000 | loss: 0.034694 
-Episode: 7430 | Steps: 2373448/3000000 | Avg reward: 12.000000 | loss: 0.026864 
-Episode: 7440 | Steps: 2377412/3000000 | Avg reward: 14.600000 | loss: 0.108529 
-Episode: 7450 | Steps: 2381673/3000000 | Avg reward: 16.500000 | loss: 0.025907 
-Episode: 7460 | Steps: 2386233/3000000 | Avg reward: 16.600000 | loss: 0.033510 
-Episode: 7470 | Steps: 2390147/3000000 | Avg reward: 15.600000 | loss: 0.028092 
-Episode: 7480 | Steps: 2396843/3000000 | Avg reward: 24.600000 | loss: 0.027658 
-save model to dqn
-Episode: 7490 | Steps: 2400100/3000000 | Avg reward: 12.900000 | loss: 0.029912 
-Episode: 7500 | Steps: 2403749/3000000 | Avg reward: 13.900000 | loss: 0.027142 
-Episode: 7510 | Steps: 2408471/3000000 | Avg reward: 16.000000 | loss: 0.050608 
-Episode: 7520 | Steps: 2415512/3000000 | Avg reward: 22.800000 | loss: 0.014629 
-Episode: 7530 | Steps: 2420143/3000000 | Avg reward: 16.300000 | loss: 0.018840 
-Episode: 7540 | Steps: 2424439/3000000 | Avg reward: 16.100000 | loss: 0.030758 
-Episode: 7550 | Steps: 2432525/3000000 | Avg reward: 26.500000 | loss: 0.017396 
-Episode: 7560 | Steps: 2435427/3000000 | Avg reward: 10.100000 | loss: 0.026356 
-Episode: 7570 | Steps: 2438287/3000000 | Avg reward: 10.800000 | loss: 0.037203 
-Episode: 7580 | Steps: 2441950/3000000 | Avg reward: 14.200000 | loss: 0.027471 
-Episode: 7590 | Steps: 2446068/3000000 | Avg reward: 14.300000 | loss: 0.021634 
-Episode: 7600 | Steps: 2448993/3000000 | Avg reward: 12.300000 | loss: 0.027743 
-Episode: 7610 | Steps: 2453192/3000000 | Avg reward: 14.500000 | loss: 0.018975 
-Episode: 7620 | Steps: 2455254/3000000 | Avg reward: 8.800000 | loss: 0.040719 
-Episode: 7630 | Steps: 2458037/3000000 | Avg reward: 11.400000 | loss: 0.059164 
-Episode: 7640 | Steps: 2460643/3000000 | Avg reward: 9.700000 | loss: 0.026819 
-Episode: 7650 | Steps: 2463837/3000000 | Avg reward: 11.500000 | loss: 0.056187 
-Episode: 7660 | Steps: 2466537/3000000 | Avg reward: 9.500000 | loss: 0.088935 
-Episode: 7670 | Steps: 2470837/3000000 | Avg reward: 16.100000 | loss: 0.029078 
-Episode: 7680 | Steps: 2475951/3000000 | Avg reward: 18.400000 | loss: 0.049424 
-Episode: 7690 | Steps: 2481200/3000000 | Avg reward: 20.300000 | loss: 0.032179 
-Episode: 7700 | Steps: 2483810/3000000 | Avg reward: 8.400000 | loss: 0.030443 
-Episode: 7710 | Steps: 2487597/3000000 | Avg reward: 13.900000 | loss: 0.071177 
-Episode: 7720 | Steps: 2491730/3000000 | Avg reward: 16.400000 | loss: 0.039864 
-Episode: 7730 | Steps: 2496027/3000000 | Avg reward: 15.300000 | loss: 0.033350 
-Episode: 7740 | Steps: 2500264/3000000 | Avg reward: 17.200000 | loss: 0.057158 
-Episode: 7750 | Steps: 2503931/3000000 | Avg reward: 15.100000 | loss: 0.018882 
-Episode: 7760 | Steps: 2508738/3000000 | Avg reward: 19.000000 | loss: 0.144568 
-Episode: 7770 | Steps: 2511427/3000000 | Avg reward: 9.900000 | loss: 0.028790 
-Episode: 7780 | Steps: 2518171/3000000 | Avg reward: 25.500000 | loss: 0.035734 
-Episode: 7790 | Steps: 2522164/3000000 | Avg reward: 15.900000 | loss: 0.120688 
-Episode: 7800 | Steps: 2527265/3000000 | Avg reward: 17.700000 | loss: 0.024452 
-Episode: 7810 | Steps: 2534722/3000000 | Avg reward: 23.600000 | loss: 0.017090 
-Episode: 7820 | Steps: 2540165/3000000 | Avg reward: 18.100000 | loss: 0.060859 
-Episode: 7830 | Steps: 2543217/3000000 | Avg reward: 11.600000 | loss: 0.034170 
-Episode: 7840 | Steps: 2548166/3000000 | Avg reward: 18.800000 | loss: 0.042964 
-Episode: 7850 | Steps: 2550910/3000000 | Avg reward: 11.000000 | loss: 0.035868 
-Episode: 7860 | Steps: 2557037/3000000 | Avg reward: 21.600000 | loss: 0.031070 
-Episode: 7870 | Steps: 2560758/3000000 | Avg reward: 14.600000 | loss: 0.088015 
-Episode: 7880 | Steps: 2565033/3000000 | Avg reward: 13.600000 | loss: 0.040200 
-Episode: 7890 | Steps: 2567532/3000000 | Avg reward: 9.500000 | loss: 0.056241 
-Episode: 7900 | Steps: 2570272/3000000 | Avg reward: 10.700000 | loss: 0.034864 
-Episode: 7910 | Steps: 2574703/3000000 | Avg reward: 15.900000 | loss: 0.031974 
-Episode: 7920 | Steps: 2578208/3000000 | Avg reward: 14.400000 | loss: 0.049454 
-Episode: 7930 | Steps: 2581650/3000000 | Avg reward: 13.500000 | loss: 0.045484 
-Episode: 7940 | Steps: 2585693/3000000 | Avg reward: 15.100000 | loss: 0.021280 
-Episode: 7950 | Steps: 2588822/3000000 | Avg reward: 11.500000 | loss: 0.034506 
-Episode: 7960 | Steps: 2591927/3000000 | Avg reward: 12.400000 | loss: 0.284167 
-Episode: 7970 | Steps: 2594919/3000000 | Avg reward: 12.800000 | loss: 0.041921 
-Episode: 7980 | Steps: 2598124/3000000 | Avg reward: 13.900000 | loss: 0.031278 
-save model to dqn
-Episode: 7990 | Steps: 2602988/3000000 | Avg reward: 19.100000 | loss: 0.051672 
-Episode: 8000 | Steps: 2606580/3000000 | Avg reward: 12.900000 | loss: 0.057366 
-Episode: 8010 | Steps: 2610505/3000000 | Avg reward: 13.800000 | loss: 0.045823 
-Episode: 8020 | Steps: 2614533/3000000 | Avg reward: 14.900000 | loss: 0.033326 
-Episode: 8030 | Steps: 2618210/3000000 | Avg reward: 12.700000 | loss: 0.015904 
-Episode: 8040 | Steps: 2623009/3000000 | Avg reward: 17.200000 | loss: 0.036095 
-Episode: 8050 | Steps: 2627799/3000000 | Avg reward: 18.800000 | loss: 0.037409 
-Episode: 8060 | Steps: 2633524/3000000 | Avg reward: 23.300000 | loss: 0.087471 
-Episode: 8070 | Steps: 2638428/3000000 | Avg reward: 18.800000 | loss: 0.038988 
-Episode: 8080 | Steps: 2644680/3000000 | Avg reward: 23.700000 | loss: 0.047408 
-Episode: 8090 | Steps: 2651200/3000000 | Avg reward: 26.700000 | loss: 0.024774 
-Episode: 8100 | Steps: 2656088/3000000 | Avg reward: 19.700000 | loss: 0.033927 
-Episode: 8110 | Steps: 2661464/3000000 | Avg reward: 18.900000 | loss: 0.034750 
-Episode: 8120 | Steps: 2663720/3000000 | Avg reward: 9.500000 | loss: 0.032332 
-Episode: 8130 | Steps: 2666113/3000000 | Avg reward: 10.400000 | loss: 0.011241 
-Episode: 8140 | Steps: 2670094/3000000 | Avg reward: 15.300000 | loss: 0.030088 
-Episode: 8150 | Steps: 2673088/3000000 | Avg reward: 11.400000 | loss: 0.070385 
-Episode: 8160 | Steps: 2677023/3000000 | Avg reward: 15.800000 | loss: 0.030158 
-Episode: 8170 | Steps: 2681143/3000000 | Avg reward: 16.000000 | loss: 0.012003 
-Episode: 8180 | Steps: 2684276/3000000 | Avg reward: 11.600000 | loss: 0.120277 
-Episode: 8190 | Steps: 2689520/3000000 | Avg reward: 21.000000 | loss: 0.031392 
-Episode: 8200 | Steps: 2694889/3000000 | Avg reward: 20.900000 | loss: 0.044144 
-Episode: 8210 | Steps: 2699091/3000000 | Avg reward: 16.400000 | loss: 0.014065 
-Episode: 8220 | Steps: 2703251/3000000 | Avg reward: 17.700000 | loss: 0.030421 
-Episode: 8230 | Steps: 2706256/3000000 | Avg reward: 11.700000 | loss: 0.027910 
-Episode: 8240 | Steps: 2710340/3000000 | Avg reward: 17.100000 | loss: 0.047250 
-Episode: 8250 | Steps: 2715133/3000000 | Avg reward: 16.500000 | loss: 0.075483 
-Episode: 8260 | Steps: 2719577/3000000 | Avg reward: 16.100000 | loss: 0.041891 
-Episode: 8270 | Steps: 2722453/3000000 | Avg reward: 11.100000 | loss: 0.023720 
-Episode: 8280 | Steps: 2725317/3000000 | Avg reward: 11.200000 | loss: 0.015583 
-Episode: 8290 | Steps: 2727902/3000000 | Avg reward: 10.000000 | loss: 0.050053 
-Episode: 8300 | Steps: 2730974/3000000 | Avg reward: 12.900000 | loss: 0.019454 
-Episode: 8310 | Steps: 2734297/3000000 | Avg reward: 12.400000 | loss: 0.047570 
-Episode: 8320 | Steps: 2738929/3000000 | Avg reward: 17.900000 | loss: 0.049928 
-Episode: 8330 | Steps: 2743136/3000000 | Avg reward: 16.900000 | loss: 0.033841 
-Episode: 8340 | Steps: 2745976/3000000 | Avg reward: 11.800000 | loss: 0.021444 
-Episode: 8350 | Steps: 2750405/3000000 | Avg reward: 17.500000 | loss: 0.026654 
-Episode: 8360 | Steps: 2753075/3000000 | Avg reward: 9.700000 | loss: 0.049076 
-Episode: 8370 | Steps: 2756581/3000000 | Avg reward: 12.400000 | loss: 0.039554 
-Episode: 8380 | Steps: 2759655/3000000 | Avg reward: 12.100000 | loss: 0.028847 
-Episode: 8390 | Steps: 2763834/3000000 | Avg reward: 16.000000 | loss: 0.037817 
-Episode: 8400 | Steps: 2768093/3000000 | Avg reward: 16.600000 | loss: 0.042043 
-Episode: 8410 | Steps: 2771779/3000000 | Avg reward: 13.400000 | loss: 0.050986 
-Episode: 8420 | Steps: 2776363/3000000 | Avg reward: 16.800000 | loss: 0.078701 
-Episode: 8430 | Steps: 2781524/3000000 | Avg reward: 19.400000 | loss: 0.014595 
-Episode: 8440 | Steps: 2784784/3000000 | Avg reward: 14.000000 | loss: 0.047923 
-Episode: 8450 | Steps: 2788882/3000000 | Avg reward: 15.400000 | loss: 0.024384 
-Episode: 8460 | Steps: 2791241/3000000 | Avg reward: 9.100000 | loss: 0.030508 
-Episode: 8470 | Steps: 2793508/3000000 | Avg reward: 9.200000 | loss: 0.041989 
-Episode: 8480 | Steps: 2798339/3000000 | Avg reward: 18.100000 | loss: 0.067184 
-save model to dqn
-Episode: 8490 | Steps: 2801213/3000000 | Avg reward: 11.900000 | loss: 0.044509 
-Episode: 8500 | Steps: 2804013/3000000 | Avg reward: 11.900000 | loss: 0.026286 
-Episode: 8510 | Steps: 2807306/3000000 | Avg reward: 13.100000 | loss: 0.027838 
-Episode: 8520 | Steps: 2812119/3000000 | Avg reward: 19.100000 | loss: 0.055778 
-Episode: 8530 | Steps: 2815566/3000000 | Avg reward: 11.600000 | loss: 0.047687 
-Episode: 8540 | Steps: 2818799/3000000 | Avg reward: 12.700000 | loss: 0.058413 
-Episode: 8550 | Steps: 2822549/3000000 | Avg reward: 14.200000 | loss: 0.053675 
-Episode: 8560 | Steps: 2826687/3000000 | Avg reward: 16.200000 | loss: 0.047105 
-Episode: 8570 | Steps: 2829673/3000000 | Avg reward: 11.900000 | loss: 0.046052 
-Episode: 8580 | Steps: 2834719/3000000 | Avg reward: 19.300000 | loss: 0.017551 
-Episode: 8590 | Steps: 2839092/3000000 | Avg reward: 15.300000 | loss: 0.035282 
-Episode: 8600 | Steps: 2843203/3000000 | Avg reward: 15.800000 | loss: 0.028162 
-Episode: 8610 | Steps: 2846454/3000000 | Avg reward: 12.000000 | loss: 0.066461 
-Episode: 8620 | Steps: 2850059/3000000 | Avg reward: 14.400000 | loss: 0.011188 
-Episode: 8630 | Steps: 2853157/3000000 | Avg reward: 11.100000 | loss: 0.047830 
-Episode: 8640 | Steps: 2856143/3000000 | Avg reward: 11.900000 | loss: 0.039314 
-Episode: 8650 | Steps: 2858643/3000000 | Avg reward: 9.800000 | loss: 0.044840 
-Episode: 8660 | Steps: 2861800/3000000 | Avg reward: 12.600000 | loss: 0.038924 
-Episode: 8670 | Steps: 2864501/3000000 | Avg reward: 10.900000 | loss: 0.036311 
-Episode: 8680 | Steps: 2868483/3000000 | Avg reward: 14.900000 | loss: 0.073945 
-Episode: 8690 | Steps: 2872959/3000000 | Avg reward: 19.500000 | loss: 0.041920 
-Episode: 8700 | Steps: 2878276/3000000 | Avg reward: 19.900000 | loss: 0.036149 
-Episode: 8710 | Steps: 2882599/3000000 | Avg reward: 17.100000 | loss: 0.015619 
-Episode: 8720 | Steps: 2885994/3000000 | Avg reward: 12.900000 | loss: 0.021824 
-Episode: 8730 | Steps: 2889478/3000000 | Avg reward: 14.300000 | loss: 0.022940 
-Episode: 8740 | Steps: 2892836/3000000 | Avg reward: 14.300000 | loss: 0.020026 
-Episode: 8750 | Steps: 2896483/3000000 | Avg reward: 12.500000 | loss: 0.059042 
-Episode: 8760 | Steps: 2901477/3000000 | Avg reward: 19.400000 | loss: 0.047575 
-Episode: 8770 | Steps: 2904744/3000000 | Avg reward: 13.900000 | loss: 0.050606 
-Episode: 8780 | Steps: 2909156/3000000 | Avg reward: 16.900000 | loss: 0.029384 
-Episode: 8790 | Steps: 2911870/3000000 | Avg reward: 10.100000 | loss: 0.020206 
-Episode: 8800 | Steps: 2914767/3000000 | Avg reward: 13.200000 | loss: 0.043139 
-Episode: 8810 | Steps: 2918889/3000000 | Avg reward: 16.300000 | loss: 0.026291 
-Episode: 8820 | Steps: 2925399/3000000 | Avg reward: 24.900000 | loss: 0.036972 
-Episode: 8830 | Steps: 2928140/3000000 | Avg reward: 10.400000 | loss: 0.018000 
-Episode: 8840 | Steps: 2932950/3000000 | Avg reward: 19.100000 | loss: 0.455168 
-Episode: 8850 | Steps: 2936473/3000000 | Avg reward: 13.600000 | loss: 0.363164 
-Episode: 8860 | Steps: 2940881/3000000 | Avg reward: 17.500000 | loss: 0.025290 
-Episode: 8870 | Steps: 2943814/3000000 | Avg reward: 12.600000 | loss: 0.021175 
-Episode: 8880 | Steps: 2946845/3000000 | Avg reward: 11.600000 | loss: 0.069401 
-Episode: 8890 | Steps: 2950432/3000000 | Avg reward: 14.700000 | loss: 0.023541 
-Episode: 8900 | Steps: 2954325/3000000 | Avg reward: 14.900000 | loss: 0.061256 
-Episode: 8910 | Steps: 2957468/3000000 | Avg reward: 11.900000 | loss: 0.021725 
-Episode: 8920 | Steps: 2961440/3000000 | Avg reward: 15.700000 | loss: 0.032408 
-Episode: 8930 | Steps: 2965070/3000000 | Avg reward: 14.700000 | loss: 0.017264 
-Episode: 8940 | Steps: 2971334/3000000 | Avg reward: 23.700000 | loss: 0.019642 
-Episode: 8950 | Steps: 2974570/3000000 | Avg reward: 12.100000 | loss: 0.012490 
-Episode: 8960 | Steps: 2982345/3000000 | Avg reward: 29.600000 | loss: 0.052958 
-Episode: 8970 | Steps: 2986892/3000000 | Avg reward: 18.600000 | loss: 0.021170 
-Episode: 8980 | Steps: 2993620/3000000 | Avg reward: 22.800000 | loss: 0.027222 
-Episode: 8990 | Steps: 2996276/3000000 | Avg reward: 9.700000 | loss: 0.046832 
-save model to dqn
-save model to dqn
+Start training
+Steps: 4000/10000000 | Avg reward: 606.620013
+Steps: 8000/10000000 | Avg reward: 606.620013
+Steps: 12000/10000000 | Avg reward: 668.880231
+Steps: 16000/10000000 | Avg reward: 796.865527
+Steps: 20000/10000000 | Avg reward: 797.435522
+Steps: 24000/10000000 | Avg reward: 1160.761969
+Steps: 28000/10000000 | Avg reward: 933.250586
+Steps: 32000/10000000 | Avg reward: 704.940405
+Steps: 36000/10000000 | Avg reward: 708.520618
+Steps: 40000/10000000 | Avg reward: 932.451184
+Steps: 44000/10000000 | Avg reward: 1455.222302
+Steps: 48000/10000000 | Avg reward: 1499.802039
+Steps: 52000/10000000 | Avg reward: 1626.342566
+Steps: 56000/10000000 | Avg reward: 1810.836267
+Steps: 60000/10000000 | Avg reward: 1495.391223
+Steps: 64000/10000000 | Avg reward: 1677.020520
+Steps: 68000/10000000 | Avg reward: 1621.081458
+Steps: 72000/10000000 | Avg reward: 1771.152087
+Steps: 76000/10000000 | Avg reward: 1771.152087
+Steps: 80000/10000000 | Avg reward: 1771.152087
+Steps: 84000/10000000 | Avg reward: 1542.943298
+Steps: 88000/10000000 | Avg reward: 1186.489374
+Steps: 92000/10000000 | Avg reward: 1104.230707
+Steps: 96000/10000000 | Avg reward: 1646.341846
+Steps: 100000/10000000 | Avg reward: 1488.200861
+*****save model*****
+Steps: 104000/10000000 | Avg reward: 1156.160699
+Steps: 108000/10000000 | Avg reward: 1476.700928
+Steps: 112000/10000000 | Avg reward: 1339.110724
+Steps: 116000/10000000 | Avg reward: 1150.520471
+Steps: 120000/10000000 | Avg reward: 1771.011157
+Steps: 124000/10000000 | Avg reward: 1618.640466
+Steps: 128000/10000000 | Avg reward: 1620.660474
+Steps: 132000/10000000 | Avg reward: 1620.660474
+Steps: 136000/10000000 | Avg reward: 1620.660474
+Steps: 140000/10000000 | Avg reward: 2003.395801
+Steps: 144000/10000000 | Avg reward: 1678.231873
+Steps: 148000/10000000 | Avg reward: 1401.940900
+Steps: 152000/10000000 | Avg reward: 1159.870660
+Steps: 156000/10000000 | Avg reward: 772.890192
+Steps: 160000/10000000 | Avg reward: 1025.870667
+Steps: 164000/10000000 | Avg reward: 837.170374
+Steps: 168000/10000000 | Avg reward: 913.740448
+Steps: 172000/10000000 | Avg reward: 1253.761200
+Steps: 176000/10000000 | Avg reward: 1042.930786
+Steps: 180000/10000000 | Avg reward: 1269.570789
+Steps: 184000/10000000 | Avg reward: 1430.301416
+Steps: 188000/10000000 | Avg reward: 1440.331885
+Steps: 192000/10000000 | Avg reward: 1440.331885
+Steps: 196000/10000000 | Avg reward: 1368.252161
+Steps: 200000/10000000 | Avg reward: 1411.084210
+*****save model*****
+Steps: 204000/10000000 | Avg reward: 1537.486310
+Steps: 208000/10000000 | Avg reward: 1312.724597
+Steps: 212000/10000000 | Avg reward: 1281.534650
+Steps: 216000/10000000 | Avg reward: 1370.324860
+Steps: 220000/10000000 | Avg reward: 1405.794928
+Steps: 224000/10000000 | Avg reward: 1986.485156
+Steps: 228000/10000000 | Avg reward: 1167.150836
+Steps: 232000/10000000 | Avg reward: 1252.790796
+Steps: 236000/10000000 | Avg reward: 963.300476
+Steps: 240000/10000000 | Avg reward: 857.070343
+Steps: 244000/10000000 | Avg reward: 1105.940704
+Steps: 248000/10000000 | Avg reward: 1247.110852
+Steps: 252000/10000000 | Avg reward: 1314.870905
+Steps: 256000/10000000 | Avg reward: 1991.330212
+Steps: 260000/10000000 | Avg reward: 1396.981226
+Steps: 264000/10000000 | Avg reward: 1457.970764
+Steps: 268000/10000000 | Avg reward: 1588.560986
+Steps: 272000/10000000 | Avg reward: 1588.560986
+Steps: 276000/10000000 | Avg reward: 1577.001099
+Steps: 280000/10000000 | Avg reward: 2084.551282
+Steps: 284000/10000000 | Avg reward: 2359.796423
+Steps: 288000/10000000 | Avg reward: 2287.355908
+Steps: 292000/10000000 | Avg reward: 2287.355908
+Steps: 296000/10000000 | Avg reward: 2044.517590
+Steps: 300000/10000000 | Avg reward: 1892.467145
+*****save model*****
+Steps: 304000/10000000 | Avg reward: 1665.887042
+Steps: 308000/10000000 | Avg reward: 1530.167255
+Steps: 312000/10000000 | Avg reward: 1497.650946
+Steps: 316000/10000000 | Avg reward: 1472.072113
+Steps: 320000/10000000 | Avg reward: 1589.603662
+Steps: 324000/10000000 | Avg reward: 1653.950208
+Steps: 328000/10000000 | Avg reward: 2570.490924
+Steps: 332000/10000000 | Avg reward: 1945.297351
+Steps: 336000/10000000 | Avg reward: 1298.060724
+Steps: 340000/10000000 | Avg reward: 805.990320
+Steps: 344000/10000000 | Avg reward: 928.830469
+Steps: 348000/10000000 | Avg reward: 1071.570465
+Steps: 352000/10000000 | Avg reward: 1422.290771
+Steps: 356000/10000000 | Avg reward: 1377.620789
+Steps: 360000/10000000 | Avg reward: 1494.851367
+Steps: 364000/10000000 | Avg reward: 1422.761462
+Steps: 368000/10000000 | Avg reward: 1368.791455
+Steps: 372000/10000000 | Avg reward: 1368.791455
+Steps: 376000/10000000 | Avg reward: 1897.393933
+Steps: 380000/10000000 | Avg reward: 1735.347870
+Steps: 384000/10000000 | Avg reward: 1411.711914
+Steps: 388000/10000000 | Avg reward: 1508.602026
+Steps: 392000/10000000 | Avg reward: 1355.321735
+Steps: 396000/10000000 | Avg reward: 1510.696588
+Steps: 400000/10000000 | Avg reward: 1739.941541
+*****save model*****
+Steps: 404000/10000000 | Avg reward: 2084.710071
+Steps: 408000/10000000 | Avg reward: 1858.300244
+Steps: 412000/10000000 | Avg reward: 1724.060559
+Steps: 416000/10000000 | Avg reward: 1823.841089
+Steps: 420000/10000000 | Avg reward: 1564.881531
+Steps: 424000/10000000 | Avg reward: 1519.830920
+Steps: 428000/10000000 | Avg reward: 1615.401105
+Steps: 432000/10000000 | Avg reward: 1494.320984
+Steps: 436000/10000000 | Avg reward: 1237.480725
+Steps: 440000/10000000 | Avg reward: 1690.500964
+Steps: 444000/10000000 | Avg reward: 1572.020471
+Steps: 448000/10000000 | Avg reward: 1441.180914
+Steps: 452000/10000000 | Avg reward: 1134.980542
+Steps: 456000/10000000 | Avg reward: 1333.090515
+Steps: 460000/10000000 | Avg reward: 1457.870618
+Steps: 464000/10000000 | Avg reward: 1620.070752
+Steps: 468000/10000000 | Avg reward: 1632.440894
+Steps: 472000/10000000 | Avg reward: 1456.031213
+Steps: 476000/10000000 | Avg reward: 1237.590649
+Steps: 480000/10000000 | Avg reward: 1415.080676
+Steps: 484000/10000000 | Avg reward: 1378.200830
+Steps: 488000/10000000 | Avg reward: 1442.680725
+Steps: 492000/10000000 | Avg reward: 1342.130652
+Steps: 496000/10000000 | Avg reward: 1304.120892
+Steps: 500000/10000000 | Avg reward: 1248.760834
+*****save model*****
+Steps: 504000/10000000 | Avg reward: 1767.505420
+Steps: 508000/10000000 | Avg reward: 1689.832922
+Steps: 512000/10000000 | Avg reward: 1503.150995
+Steps: 516000/10000000 | Avg reward: 1508.571057
+Steps: 520000/10000000 | Avg reward: 1468.340698
+Steps: 524000/10000000 | Avg reward: 1500.230780
+Steps: 528000/10000000 | Avg reward: 1527.400934
+Steps: 532000/10000000 | Avg reward: 1581.800757
+Steps: 536000/10000000 | Avg reward: 1267.240637
+Steps: 540000/10000000 | Avg reward: 1252.040607
+Steps: 544000/10000000 | Avg reward: 1394.430676
+Steps: 548000/10000000 | Avg reward: 1763.421155
+Steps: 552000/10000000 | Avg reward: 1357.790717
+Steps: 556000/10000000 | Avg reward: 1411.561292
+Steps: 560000/10000000 | Avg reward: 1577.991351
+Steps: 564000/10000000 | Avg reward: 1611.031085
+Steps: 568000/10000000 | Avg reward: 1404.660059
+Steps: 572000/10000000 | Avg reward: 1247.990778
+Steps: 576000/10000000 | Avg reward: 1096.280664
+Steps: 580000/10000000 | Avg reward: 1056.160547
+Steps: 584000/10000000 | Avg reward: 1368.910962
+Steps: 588000/10000000 | Avg reward: 1450.041211
+Steps: 592000/10000000 | Avg reward: 1465.190845
+Steps: 596000/10000000 | Avg reward: 1339.540588
+Steps: 600000/10000000 | Avg reward: 1408.641193
+*****save model*****
+Steps: 604000/10000000 | Avg reward: 1341.970685
+Steps: 608000/10000000 | Avg reward: 1513.970313
+Steps: 612000/10000000 | Avg reward: 1485.900031
+Steps: 616000/10000000 | Avg reward: 1161.810645
+Steps: 620000/10000000 | Avg reward: 1106.840515
+Steps: 624000/10000000 | Avg reward: 1265.920807
+Steps: 628000/10000000 | Avg reward: 1385.790625
+Steps: 632000/10000000 | Avg reward: 1663.500793
+Steps: 636000/10000000 | Avg reward: 1486.530444
+Steps: 640000/10000000 | Avg reward: 1353.680536
+Steps: 644000/10000000 | Avg reward: 1393.140710
+Steps: 648000/10000000 | Avg reward: 1433.690723
+Steps: 652000/10000000 | Avg reward: 1506.770911
+Steps: 656000/10000000 | Avg reward: 1569.860559
+Steps: 660000/10000000 | Avg reward: 1631.141467
+Steps: 664000/10000000 | Avg reward: 1743.990332
+Steps: 668000/10000000 | Avg reward: 1950.278625
+Steps: 672000/10000000 | Avg reward: 1945.931067
+Steps: 676000/10000000 | Avg reward: 1700.390942
+Steps: 680000/10000000 | Avg reward: 1640.270947
+Steps: 684000/10000000 | Avg reward: 1447.485315
+Steps: 688000/10000000 | Avg reward: 1320.660706
+Steps: 692000/10000000 | Avg reward: 1650.962378
+Steps: 696000/10000000 | Avg reward: 2186.690125
+Steps: 700000/10000000 | Avg reward: 2186.690125
+*****save model*****
+Steps: 704000/10000000 | Avg reward: 2205.710217
+Steps: 708000/10000000 | Avg reward: 2205.710217
+Steps: 712000/10000000 | Avg reward: 2205.710217
+Steps: 716000/10000000 | Avg reward: 2205.710217
+Steps: 720000/10000000 | Avg reward: 1899.648120
+Steps: 724000/10000000 | Avg reward: 839.401831
+Steps: 728000/10000000 | Avg reward: 1401.812683
+Steps: 732000/10000000 | Avg reward: 1510.206604
+Steps: 736000/10000000 | Avg reward: 1760.711438
+Steps: 740000/10000000 | Avg reward: 1448.890851
+Steps: 744000/10000000 | Avg reward: 1399.690808
+Steps: 748000/10000000 | Avg reward: 1310.730322
+Steps: 752000/10000000 | Avg reward: 1090.590173
+Steps: 756000/10000000 | Avg reward: 640.080334
+Steps: 760000/10000000 | Avg reward: 527.200000
+Steps: 764000/10000000 | Avg reward: 527.200000
+Steps: 768000/10000000 | Avg reward: 527.200000
+Steps: 772000/10000000 | Avg reward: 665.601038
+Steps: 776000/10000000 | Avg reward: 1235.037024
+Steps: 780000/10000000 | Avg reward: 1065.725952
+Steps: 784000/10000000 | Avg reward: 828.502588
+Steps: 788000/10000000 | Avg reward: 846.481830
+Steps: 792000/10000000 | Avg reward: 953.213739
+Steps: 796000/10000000 | Avg reward: 979.723810
+Steps: 800000/10000000 | Avg reward: 979.723810
+*****save model*****
+Steps: 804000/10000000 | Avg reward: 979.723810
+Steps: 808000/10000000 | Avg reward: 1069.146997
+Steps: 812000/10000000 | Avg reward: 1255.427655
+Steps: 816000/10000000 | Avg reward: 1277.167548
+Steps: 820000/10000000 | Avg reward: 1248.404370
+Steps: 824000/10000000 | Avg reward: 1177.875562
+Steps: 828000/10000000 | Avg reward: 1177.435504
+Steps: 832000/10000000 | Avg reward: 1186.605524
+Steps: 836000/10000000 | Avg reward: 1220.873639
+Steps: 840000/10000000 | Avg reward: 1290.503888
+Steps: 844000/10000000 | Avg reward: 1374.083118
+Steps: 848000/10000000 | Avg reward: 925.723291
+Steps: 852000/10000000 | Avg reward: 659.090833
+Steps: 856000/10000000 | Avg reward: 791.052472
+Steps: 860000/10000000 | Avg reward: 794.812482
+Steps: 864000/10000000 | Avg reward: 944.073853
+Steps: 868000/10000000 | Avg reward: 947.294061
+Steps: 872000/10000000 | Avg reward: 1028.561835
+Steps: 876000/10000000 | Avg reward: 1028.561835
+Steps: 880000/10000000 | Avg reward: 909.711743
+Steps: 884000/10000000 | Avg reward: 1000.194519
+Steps: 888000/10000000 | Avg reward: 906.744238
+Steps: 892000/10000000 | Avg reward: 1126.872217
+Steps: 896000/10000000 | Avg reward: 1107.472534
+Steps: 900000/10000000 | Avg reward: 1139.802612
+*****save model*****
+Steps: 904000/10000000 | Avg reward: 1135.522137
+Steps: 908000/10000000 | Avg reward: 1135.522137
+Steps: 912000/10000000 | Avg reward: 1135.522137
+Steps: 916000/10000000 | Avg reward: 1208.123077
+Steps: 920000/10000000 | Avg reward: 1389.255078
+Steps: 924000/10000000 | Avg reward: 798.651715
+Steps: 928000/10000000 | Avg reward: 736.680713
+Steps: 932000/10000000 | Avg reward: 897.861072
+Steps: 936000/10000000 | Avg reward: 1264.713934
+Steps: 940000/10000000 | Avg reward: 1334.824323
+Steps: 944000/10000000 | Avg reward: 1346.144708
+Steps: 948000/10000000 | Avg reward: 1571.873450
+Steps: 952000/10000000 | Avg reward: 1995.641931
+Steps: 956000/10000000 | Avg reward: 1966.730957
+Steps: 960000/10000000 | Avg reward: 1634.710669
+Steps: 964000/10000000 | Avg reward: 1644.912000
+Steps: 968000/10000000 | Avg reward: 1672.649695
+Steps: 972000/10000000 | Avg reward: 1502.171448
+Steps: 976000/10000000 | Avg reward: 1600.801520
+Steps: 980000/10000000 | Avg reward: 1611.260480
+Steps: 984000/10000000 | Avg reward: 1960.300018
+Steps: 988000/10000000 | Avg reward: 1568.860571
+Steps: 992000/10000000 | Avg reward: 1339.150690
+Steps: 996000/10000000 | Avg reward: 1685.390887
+Steps: 1000000/10000000 | Avg reward: 1898.360400
+*****save model*****
+Steps: 1004000/10000000 | Avg reward: 2177.770007
+Steps: 1008000/10000000 | Avg reward: 2298.739197
+Steps: 1012000/10000000 | Avg reward: 2335.028552
+Steps: 1016000/10000000 | Avg reward: 2509.948486
+Steps: 1020000/10000000 | Avg reward: 2014.029858
+Steps: 1024000/10000000 | Avg reward: 2184.130042
+Steps: 1028000/10000000 | Avg reward: 1420.720270
+Steps: 1032000/10000000 | Avg reward: 1879.340295
+Steps: 1036000/10000000 | Avg reward: 2191.727063
+Steps: 1040000/10000000 | Avg reward: 1682.370300
+Steps: 1044000/10000000 | Avg reward: 1800.771094
+Steps: 1048000/10000000 | Avg reward: 2065.270093
+Steps: 1052000/10000000 | Avg reward: 1466.910480
+Steps: 1056000/10000000 | Avg reward: 1552.530603
+Steps: 1060000/10000000 | Avg reward: 1581.170563
+Steps: 1064000/10000000 | Avg reward: 1977.400616
+Steps: 1068000/10000000 | Avg reward: 2099.029932
+Steps: 1072000/10000000 | Avg reward: 2066.926733
+Steps: 1076000/10000000 | Avg reward: 2066.926733
+Steps: 1080000/10000000 | Avg reward: 2310.114819
+Steps: 1084000/10000000 | Avg reward: 2158.990540
+Steps: 1088000/10000000 | Avg reward: 1740.611060
+Steps: 1092000/10000000 | Avg reward: 1460.047327
+Steps: 1096000/10000000 | Avg reward: 1814.305737
+Steps: 1100000/10000000 | Avg reward: 2439.916663
+*****save model*****
+Steps: 1104000/10000000 | Avg reward: 1842.581226
+Steps: 1108000/10000000 | Avg reward: 1698.180603
+Steps: 1112000/10000000 | Avg reward: 1544.720166
+Steps: 1116000/10000000 | Avg reward: 1597.511438
+Steps: 1120000/10000000 | Avg reward: 1443.261987
+Steps: 1124000/10000000 | Avg reward: 1484.892102
+Steps: 1128000/10000000 | Avg reward: 1615.821826
+Steps: 1132000/10000000 | Avg reward: 1670.352588
+Steps: 1136000/10000000 | Avg reward: 1940.838770
+Steps: 1140000/10000000 | Avg reward: 2001.174634
+Steps: 1144000/10000000 | Avg reward: 1977.294678
+Steps: 1148000/10000000 | Avg reward: 1977.294678
+Steps: 1152000/10000000 | Avg reward: 1822.259424
+Steps: 1156000/10000000 | Avg reward: 1900.279529
+Steps: 1160000/10000000 | Avg reward: 1924.479749
+Steps: 1164000/10000000 | Avg reward: 1684.664514
+Steps: 1168000/10000000 | Avg reward: 1750.817676
+Steps: 1172000/10000000 | Avg reward: 1666.288074
+Steps: 1176000/10000000 | Avg reward: 1674.241339
+Steps: 1180000/10000000 | Avg reward: 1625.211035
+Steps: 1184000/10000000 | Avg reward: 1643.620898
+Steps: 1188000/10000000 | Avg reward: 1857.511060
+Steps: 1192000/10000000 | Avg reward: 1767.170667
+Steps: 1196000/10000000 | Avg reward: 1750.709229
+Steps: 1200000/10000000 | Avg reward: 1808.318811
+*****save model*****
+Steps: 1204000/10000000 | Avg reward: 1989.590112
+Steps: 1208000/10000000 | Avg reward: 1472.750677
+Steps: 1212000/10000000 | Avg reward: 1759.441504
+Steps: 1216000/10000000 | Avg reward: 1800.731573
+Steps: 1220000/10000000 | Avg reward: 1423.920941
+Steps: 1224000/10000000 | Avg reward: 1575.300684
+Steps: 1228000/10000000 | Avg reward: 1651.310791
+Steps: 1232000/10000000 | Avg reward: 1772.748474
+Steps: 1236000/10000000 | Avg reward: 1910.618652
+Steps: 1240000/10000000 | Avg reward: 1903.549548
+Steps: 1244000/10000000 | Avg reward: 1987.815894
+Steps: 1248000/10000000 | Avg reward: 2090.295813
+Steps: 1252000/10000000 | Avg reward: 2293.624426
+Steps: 1256000/10000000 | Avg reward: 2328.369214
+Steps: 1260000/10000000 | Avg reward: 2101.017358
+Steps: 1264000/10000000 | Avg reward: 2029.845386
+Steps: 1268000/10000000 | Avg reward: 1771.484583
+Steps: 1272000/10000000 | Avg reward: 1609.550757
+Steps: 1276000/10000000 | Avg reward: 1781.750305
+Steps: 1280000/10000000 | Avg reward: 1777.280579
+Steps: 1284000/10000000 | Avg reward: 1750.910559
+Steps: 1288000/10000000 | Avg reward: 1725.341052
+Steps: 1292000/10000000 | Avg reward: 1527.042957
+Steps: 1296000/10000000 | Avg reward: 1294.583673
+Steps: 1300000/10000000 | Avg reward: 1339.124738
+*****save model*****
+Steps: 1304000/10000000 | Avg reward: 1421.936041
+Steps: 1308000/10000000 | Avg reward: 1515.005060
+Steps: 1312000/10000000 | Avg reward: 1521.246210
+Steps: 1316000/10000000 | Avg reward: 1346.664185
+Steps: 1320000/10000000 | Avg reward: 1345.995032
+Steps: 1324000/10000000 | Avg reward: 1268.744165
+Steps: 1328000/10000000 | Avg reward: 1268.744165
+Steps: 1332000/10000000 | Avg reward: 1260.984143
+Steps: 1336000/10000000 | Avg reward: 1179.966101
+Steps: 1340000/10000000 | Avg reward: 1186.775726
+Steps: 1344000/10000000 | Avg reward: 1227.584503
+Steps: 1348000/10000000 | Avg reward: 1365.904718
+Steps: 1352000/10000000 | Avg reward: 1325.844189
+Steps: 1356000/10000000 | Avg reward: 1325.844189
+Steps: 1360000/10000000 | Avg reward: 1559.332550
+Steps: 1364000/10000000 | Avg reward: 1651.582306
+Steps: 1368000/10000000 | Avg reward: 1614.082245
+Steps: 1372000/10000000 | Avg reward: 1783.561676
+Steps: 1376000/10000000 | Avg reward: 1791.983423
+Steps: 1380000/10000000 | Avg reward: 1743.192590
+Steps: 1384000/10000000 | Avg reward: 1991.812732
+Steps: 1388000/10000000 | Avg reward: 2072.133289
+Steps: 1392000/10000000 | Avg reward: 2096.142224
+Steps: 1396000/10000000 | Avg reward: 2178.152417
+Steps: 1400000/10000000 | Avg reward: 2103.482117
+*****save model*****
+Steps: 1404000/10000000 | Avg reward: 1919.901733
+Steps: 1408000/10000000 | Avg reward: 1758.341077
+Steps: 1412000/10000000 | Avg reward: 2369.592468
+Steps: 1416000/10000000 | Avg reward: 2177.669366
+Steps: 1420000/10000000 | Avg reward: 2125.380261
+Steps: 1424000/10000000 | Avg reward: 2248.260071
+Steps: 1428000/10000000 | Avg reward: 1847.471130
+Steps: 1432000/10000000 | Avg reward: 1828.100665
+Steps: 1436000/10000000 | Avg reward: 1840.860754
+Steps: 1440000/10000000 | Avg reward: 2121.400269
+Steps: 1444000/10000000 | Avg reward: 1864.400525
+Steps: 1448000/10000000 | Avg reward: 1662.899841
+Steps: 1452000/10000000 | Avg reward: 1678.038550
+Steps: 1456000/10000000 | Avg reward: 1795.181091
+Steps: 1460000/10000000 | Avg reward: 1912.762048
+Steps: 1464000/10000000 | Avg reward: 1893.501086
+Steps: 1468000/10000000 | Avg reward: 1748.180640
+Steps: 1472000/10000000 | Avg reward: 1807.330005
+Steps: 1476000/10000000 | Avg reward: 1825.250854
+Steps: 1480000/10000000 | Avg reward: 1914.500287
+Steps: 1484000/10000000 | Avg reward: 1732.800586
+Steps: 1488000/10000000 | Avg reward: 1739.500537
+Steps: 1492000/10000000 | Avg reward: 1987.530396
+Steps: 1496000/10000000 | Avg reward: 1704.581470
+Steps: 1500000/10000000 | Avg reward: 1981.199951
+*****save model*****
+Steps: 1504000/10000000 | Avg reward: 1737.451550
+Steps: 1508000/10000000 | Avg reward: 1693.801501
+Steps: 1512000/10000000 | Avg reward: 1590.131543
+Steps: 1516000/10000000 | Avg reward: 1590.131543
+Steps: 1520000/10000000 | Avg reward: 1512.681604
+Steps: 1524000/10000000 | Avg reward: 1512.681604
+Steps: 1528000/10000000 | Avg reward: 1603.907849
+Steps: 1532000/10000000 | Avg reward: 1570.908508
+Steps: 1536000/10000000 | Avg reward: 2169.506067
+Steps: 1540000/10000000 | Avg reward: 2056.500366
+Steps: 1544000/10000000 | Avg reward: 2128.369452
+Steps: 1548000/10000000 | Avg reward: 1470.214075
+Steps: 1552000/10000000 | Avg reward: 1378.583026
+Steps: 1556000/10000000 | Avg reward: 1411.001691
+Steps: 1560000/10000000 | Avg reward: 1401.932220
+Steps: 1564000/10000000 | Avg reward: 1424.153082
+Steps: 1568000/10000000 | Avg reward: 1419.032715
+Steps: 1572000/10000000 | Avg reward: 1376.342627
+Steps: 1576000/10000000 | Avg reward: 1403.873242
+Steps: 1580000/10000000 | Avg reward: 1403.873242
+Steps: 1584000/10000000 | Avg reward: 1403.873242
+Steps: 1588000/10000000 | Avg reward: 1609.952917
+Steps: 1592000/10000000 | Avg reward: 1607.264392
+Steps: 1596000/10000000 | Avg reward: 1607.264392
+Steps: 1600000/10000000 | Avg reward: 1561.657288
+*****save model*****
+Steps: 1604000/10000000 | Avg reward: 1243.524023
+Steps: 1608000/10000000 | Avg reward: 1264.341162
+Steps: 1612000/10000000 | Avg reward: 1259.901141
+Steps: 1616000/10000000 | Avg reward: 1259.901141
+Steps: 1620000/10000000 | Avg reward: 1259.901141
+Steps: 1624000/10000000 | Avg reward: 1486.001630
+Steps: 1628000/10000000 | Avg reward: 1349.600452
+Steps: 1632000/10000000 | Avg reward: 1208.089917
+Steps: 1636000/10000000 | Avg reward: 1202.058972
+Steps: 1640000/10000000 | Avg reward: 1007.664380
+Steps: 1644000/10000000 | Avg reward: 1305.541699
+Steps: 1648000/10000000 | Avg reward: 1366.821375
+Steps: 1652000/10000000 | Avg reward: 1258.924646
+Steps: 1656000/10000000 | Avg reward: 1318.841052
+Steps: 1660000/10000000 | Avg reward: 1196.450690
+Steps: 1664000/10000000 | Avg reward: 1517.853491
+Steps: 1668000/10000000 | Avg reward: 1577.511243
+Steps: 1672000/10000000 | Avg reward: 1697.371509
+Steps: 1676000/10000000 | Avg reward: 1611.800958
+Steps: 1680000/10000000 | Avg reward: 1624.511060
+Steps: 1684000/10000000 | Avg reward: 1282.060565
+Steps: 1688000/10000000 | Avg reward: 1425.960388
+Steps: 1692000/10000000 | Avg reward: 1170.450513
+Steps: 1696000/10000000 | Avg reward: 1228.670581
+Steps: 1700000/10000000 | Avg reward: 1162.950574
+*****save model*****
+Steps: 1704000/10000000 | Avg reward: 1244.300586
+Steps: 1708000/10000000 | Avg reward: 1416.200751
+Steps: 1712000/10000000 | Avg reward: 914.800287
+Steps: 1716000/10000000 | Avg reward: 782.690198
+Steps: 1720000/10000000 | Avg reward: 1133.580597
+Steps: 1724000/10000000 | Avg reward: 1337.730823
+Steps: 1728000/10000000 | Avg reward: 1202.550586
+Steps: 1732000/10000000 | Avg reward: 1391.520837
+Steps: 1736000/10000000 | Avg reward: 1602.041699
+Steps: 1740000/10000000 | Avg reward: 1722.620740
+Steps: 1744000/10000000 | Avg reward: 1807.580560
+Steps: 1748000/10000000 | Avg reward: 1554.560883
+Steps: 1752000/10000000 | Avg reward: 1317.750781
+Steps: 1756000/10000000 | Avg reward: 1836.480005
+Steps: 1760000/10000000 | Avg reward: 1576.920996
+Steps: 1764000/10000000 | Avg reward: 1870.480933
+Steps: 1768000/10000000 | Avg reward: 1606.751147
+Steps: 1772000/10000000 | Avg reward: 1107.730493
+Steps: 1776000/10000000 | Avg reward: 1206.350562
+Steps: 1780000/10000000 | Avg reward: 1223.610571
+Steps: 1784000/10000000 | Avg reward: 1499.180750
+Steps: 1788000/10000000 | Avg reward: 1323.930719
+Steps: 1792000/10000000 | Avg reward: 1211.701495
+Steps: 1796000/10000000 | Avg reward: 1259.181854
+Steps: 1800000/10000000 | Avg reward: 1257.592432
+*****save model*****
+Steps: 1804000/10000000 | Avg reward: 1471.642224
+Steps: 1808000/10000000 | Avg reward: 1647.551221
+Steps: 1812000/10000000 | Avg reward: 1343.700500
+Steps: 1816000/10000000 | Avg reward: 1353.420618
+Steps: 1820000/10000000 | Avg reward: 1485.740863
+Steps: 1824000/10000000 | Avg reward: 1377.790735
+Steps: 1828000/10000000 | Avg reward: 1615.640552
+Steps: 1832000/10000000 | Avg reward: 1508.170581
+Steps: 1836000/10000000 | Avg reward: 1494.410779
+Steps: 1840000/10000000 | Avg reward: 1466.900653
+Steps: 1844000/10000000 | Avg reward: 1490.420825
+Steps: 1848000/10000000 | Avg reward: 1640.170227
+Steps: 1852000/10000000 | Avg reward: 1339.620538
+Steps: 1856000/10000000 | Avg reward: 1262.460559
+Steps: 1860000/10000000 | Avg reward: 1444.150732
+Steps: 1864000/10000000 | Avg reward: 1688.820776
+Steps: 1868000/10000000 | Avg reward: 1424.530444
+Steps: 1872000/10000000 | Avg reward: 1146.230591
+Steps: 1876000/10000000 | Avg reward: 1129.250500
+Steps: 1880000/10000000 | Avg reward: 1345.920618
+Steps: 1884000/10000000 | Avg reward: 1090.860461
+Steps: 1888000/10000000 | Avg reward: 1356.680817
+Steps: 1892000/10000000 | Avg reward: 1377.270691
+Steps: 1896000/10000000 | Avg reward: 1296.380554
+Steps: 1900000/10000000 | Avg reward: 1085.890552
+*****save model*****
+Steps: 1904000/10000000 | Avg reward: 1053.440411
+Steps: 1908000/10000000 | Avg reward: 1305.080762
+Steps: 1912000/10000000 | Avg reward: 1448.480743
+Steps: 1916000/10000000 | Avg reward: 1487.130823
+Steps: 1920000/10000000 | Avg reward: 1412.910712
+Steps: 1924000/10000000 | Avg reward: 1616.650690
+Steps: 1928000/10000000 | Avg reward: 1636.010791
+Steps: 1932000/10000000 | Avg reward: 1682.040161
+Steps: 1936000/10000000 | Avg reward: 1814.320068
+Steps: 1940000/10000000 | Avg reward: 1744.255518
+Steps: 1944000/10000000 | Avg reward: 1998.865369
+Steps: 1948000/10000000 | Avg reward: 2133.135065
+Steps: 1952000/10000000 | Avg reward: 2133.135065
+Steps: 1956000/10000000 | Avg reward: 2133.135065
+Steps: 1960000/10000000 | Avg reward: 2133.135065
+Steps: 1964000/10000000 | Avg reward: 2462.735065
+Steps: 1968000/10000000 | Avg reward: 2474.124054
+Steps: 1972000/10000000 | Avg reward: 2817.798737
+Steps: 1976000/10000000 | Avg reward: 3120.515106
+Steps: 1980000/10000000 | Avg reward: 3371.028406
+Steps: 1984000/10000000 | Avg reward: 3120.391553
+Steps: 1988000/10000000 | Avg reward: 2902.882263
+Steps: 1992000/10000000 | Avg reward: 2902.882263
+Steps: 1996000/10000000 | Avg reward: 2649.425354
+Steps: 2000000/10000000 | Avg reward: 2649.425354
+*****save model*****
+Steps: 2004000/10000000 | Avg reward: 2649.425354
+Steps: 2008000/10000000 | Avg reward: 2558.717419
+Steps: 2012000/10000000 | Avg reward: 2609.762317
+Steps: 2016000/10000000 | Avg reward: 2198.067358
+Steps: 2020000/10000000 | Avg reward: 2241.606226
+Steps: 2024000/10000000 | Avg reward: 1861.838782
+Steps: 2028000/10000000 | Avg reward: 1861.838782
+Steps: 2032000/10000000 | Avg reward: 1721.967987
+Steps: 2036000/10000000 | Avg reward: 1527.087482
+Steps: 2040000/10000000 | Avg reward: 1164.728705
+Steps: 2044000/10000000 | Avg reward: 1005.578223
+Steps: 2048000/10000000 | Avg reward: 1039.339911
+Steps: 2052000/10000000 | Avg reward: 1099.787091
+Steps: 2056000/10000000 | Avg reward: 891.230872
+Steps: 2060000/10000000 | Avg reward: 854.049957
+Steps: 2064000/10000000 | Avg reward: 716.350024
+Steps: 2068000/10000000 | Avg reward: 832.762280
+Steps: 2072000/10000000 | Avg reward: 838.132684
+Steps: 2076000/10000000 | Avg reward: 744.021271
+Steps: 2080000/10000000 | Avg reward: 934.112341
+Steps: 2084000/10000000 | Avg reward: 971.293127
+Steps: 2088000/10000000 | Avg reward: 931.013098
+Steps: 2092000/10000000 | Avg reward: 1000.295886
+Steps: 2096000/10000000 | Avg reward: 751.331915
+Steps: 2100000/10000000 | Avg reward: 825.322217
+*****save model*****
+Steps: 2104000/10000000 | Avg reward: 1028.955432
+Steps: 2108000/10000000 | Avg reward: 1353.645276
+Steps: 2112000/10000000 | Avg reward: 1420.475366
+Steps: 2116000/10000000 | Avg reward: 1375.982996
+Steps: 2120000/10000000 | Avg reward: 1313.212000
+Steps: 2124000/10000000 | Avg reward: 1317.883545
+Steps: 2128000/10000000 | Avg reward: 1317.883545
+Steps: 2132000/10000000 | Avg reward: 1332.293665
+Steps: 2136000/10000000 | Avg reward: 1693.811804
+Steps: 2140000/10000000 | Avg reward: 1708.003162
+Steps: 2144000/10000000 | Avg reward: 1699.652979
+Steps: 2148000/10000000 | Avg reward: 1494.041565
+Steps: 2152000/10000000 | Avg reward: 1801.841492
+Steps: 2156000/10000000 | Avg reward: 1622.671692
+Steps: 2160000/10000000 | Avg reward: 1805.051196
+Steps: 2164000/10000000 | Avg reward: 1283.980609
+Steps: 2168000/10000000 | Avg reward: 1708.740295
+Steps: 2172000/10000000 | Avg reward: 1667.590576
+Steps: 2176000/10000000 | Avg reward: 1656.257617
+Steps: 2180000/10000000 | Avg reward: 1698.583435
+Steps: 2184000/10000000 | Avg reward: 1116.380829
+Steps: 2188000/10000000 | Avg reward: 1013.470386
+Steps: 2192000/10000000 | Avg reward: 1639.495752
+Steps: 2196000/10000000 | Avg reward: 1329.150702
+Steps: 2200000/10000000 | Avg reward: 1289.020593
+*****save model*****
+Steps: 2204000/10000000 | Avg reward: 1080.190411
+Steps: 2208000/10000000 | Avg reward: 1357.200647
+Steps: 2212000/10000000 | Avg reward: 1336.870667
+Steps: 2216000/10000000 | Avg reward: 1556.321216
+Steps: 2220000/10000000 | Avg reward: 1650.000806
+Steps: 2224000/10000000 | Avg reward: 1589.670874
+Steps: 2228000/10000000 | Avg reward: 1532.161755
+Steps: 2232000/10000000 | Avg reward: 1686.432397
+Steps: 2236000/10000000 | Avg reward: 1715.932092
+Steps: 2240000/10000000 | Avg reward: 1553.401941
+Steps: 2244000/10000000 | Avg reward: 1594.462939
+Steps: 2248000/10000000 | Avg reward: 1769.252673
+Steps: 2252000/10000000 | Avg reward: 1789.659119
+Steps: 2256000/10000000 | Avg reward: 1888.857764
+Steps: 2260000/10000000 | Avg reward: 1868.777344
+Steps: 2264000/10000000 | Avg reward: 1590.581604
+Steps: 2268000/10000000 | Avg reward: 1797.570923
+Steps: 2272000/10000000 | Avg reward: 1865.000244
+Steps: 2276000/10000000 | Avg reward: 2064.349768
+Steps: 2280000/10000000 | Avg reward: 2037.359680
+Steps: 2284000/10000000 | Avg reward: 1991.189355
+Steps: 2288000/10000000 | Avg reward: 2157.336584
+Steps: 2292000/10000000 | Avg reward: 2042.174915
+Steps: 2296000/10000000 | Avg reward: 2222.542676
+Steps: 2300000/10000000 | Avg reward: 2131.642700
+*****save model*****
+Steps: 2304000/10000000 | Avg reward: 2037.945593
+Steps: 2308000/10000000 | Avg reward: 1955.339990
+Steps: 2312000/10000000 | Avg reward: 1955.339990
+Steps: 2316000/10000000 | Avg reward: 1821.682617
+Steps: 2320000/10000000 | Avg reward: 1821.682617
+Steps: 2324000/10000000 | Avg reward: 2175.116895
+Steps: 2328000/10000000 | Avg reward: 2349.283691
+Steps: 2332000/10000000 | Avg reward: 2284.134302
+Steps: 2336000/10000000 | Avg reward: 2375.734485
+Steps: 2340000/10000000 | Avg reward: 2175.855859
+Steps: 2344000/10000000 | Avg reward: 1353.720972
+Steps: 2348000/10000000 | Avg reward: 1149.750146
+Steps: 2352000/10000000 | Avg reward: 1236.010571
+Steps: 2356000/10000000 | Avg reward: 1236.010571
+Steps: 2360000/10000000 | Avg reward: 1234.210620
+Steps: 2364000/10000000 | Avg reward: 1522.342883
+Steps: 2368000/10000000 | Avg reward: 1663.563306
+Steps: 2372000/10000000 | Avg reward: 1696.703601
+Steps: 2376000/10000000 | Avg reward: 1490.591675
+Steps: 2380000/10000000 | Avg reward: 1119.933862
+Steps: 2384000/10000000 | Avg reward: 1055.493945
+Steps: 2388000/10000000 | Avg reward: 1123.221582
+Steps: 2392000/10000000 | Avg reward: 1372.093311
+Steps: 2396000/10000000 | Avg reward: 1330.954657
+Steps: 2400000/10000000 | Avg reward: 1272.554413
+*****save model*****
+Steps: 2404000/10000000 | Avg reward: 843.123083
+Steps: 2408000/10000000 | Avg reward: 858.164716
+Steps: 2412000/10000000 | Avg reward: 792.754639
+Steps: 2416000/10000000 | Avg reward: 710.262878
+Steps: 2420000/10000000 | Avg reward: 623.949786
+Steps: 2424000/10000000 | Avg reward: 873.703351
+Steps: 2428000/10000000 | Avg reward: 881.913739
+Steps: 2432000/10000000 | Avg reward: 758.121643
+Steps: 2436000/10000000 | Avg reward: 761.702771
+Steps: 2440000/10000000 | Avg reward: 850.053271
+Steps: 2444000/10000000 | Avg reward: 883.143286
+Steps: 2448000/10000000 | Avg reward: 965.543579
+Steps: 2452000/10000000 | Avg reward: 744.501477
+Steps: 2456000/10000000 | Avg reward: 631.560052
+Steps: 2460000/10000000 | Avg reward: 743.080634
+Steps: 2464000/10000000 | Avg reward: 912.902405
+Steps: 2468000/10000000 | Avg reward: 1150.272815
+Steps: 2472000/10000000 | Avg reward: 1100.822400
+Steps: 2476000/10000000 | Avg reward: 1100.822400
+Steps: 2480000/10000000 | Avg reward: 1160.882690
+Steps: 2484000/10000000 | Avg reward: 1205.432886
+Steps: 2488000/10000000 | Avg reward: 1209.903265
+Steps: 2492000/10000000 | Avg reward: 1154.204437
+Steps: 2496000/10000000 | Avg reward: 1482.456598
+Steps: 2500000/10000000 | Avg reward: 1793.905054
+*****save model*****
+Steps: 2504000/10000000 | Avg reward: 1565.243372
+Steps: 2508000/10000000 | Avg reward: 1420.065405
+Steps: 2512000/10000000 | Avg reward: 1366.513281
+Steps: 2516000/10000000 | Avg reward: 1366.513281
+Steps: 2520000/10000000 | Avg reward: 1989.256262
+Steps: 2524000/10000000 | Avg reward: 1380.782068
+Steps: 2528000/10000000 | Avg reward: 1653.852551
+Steps: 2532000/10000000 | Avg reward: 1407.430847
+Steps: 2536000/10000000 | Avg reward: 1423.400586
+Steps: 2540000/10000000 | Avg reward: 1425.201233
+Steps: 2544000/10000000 | Avg reward: 1837.400415
+Steps: 2548000/10000000 | Avg reward: 1674.441309
+Steps: 2552000/10000000 | Avg reward: 1605.511169
+Steps: 2556000/10000000 | Avg reward: 1524.831067
+Steps: 2560000/10000000 | Avg reward: 1513.871118
+Steps: 2564000/10000000 | Avg reward: 1539.271265
+Steps: 2568000/10000000 | Avg reward: 1515.411206
+Steps: 2572000/10000000 | Avg reward: 1515.411206
+Steps: 2576000/10000000 | Avg reward: 1593.103064
+Steps: 2580000/10000000 | Avg reward: 1593.624939
+Steps: 2584000/10000000 | Avg reward: 1593.624939
+Steps: 2588000/10000000 | Avg reward: 1538.077582
+Steps: 2592000/10000000 | Avg reward: 1562.138531
+Steps: 2596000/10000000 | Avg reward: 1536.898529
+Steps: 2600000/10000000 | Avg reward: 1492.668536
+*****save model*****
+Steps: 2604000/10000000 | Avg reward: 1492.668536
+Steps: 2608000/10000000 | Avg reward: 1640.578473
+Steps: 2612000/10000000 | Avg reward: 1551.413190
+Steps: 2616000/10000000 | Avg reward: 1543.442218
+Steps: 2620000/10000000 | Avg reward: 1172.643066
+Steps: 2624000/10000000 | Avg reward: 1400.707825
+Steps: 2628000/10000000 | Avg reward: 1370.477820
+Steps: 2632000/10000000 | Avg reward: 1480.980530
+Steps: 2636000/10000000 | Avg reward: 1392.739636
+Steps: 2640000/10000000 | Avg reward: 1392.739636
+Steps: 2644000/10000000 | Avg reward: 1413.989001
+Steps: 2648000/10000000 | Avg reward: 1595.942969
+Steps: 2652000/10000000 | Avg reward: 1595.942969
+Steps: 2656000/10000000 | Avg reward: 1570.942249
+Steps: 2660000/10000000 | Avg reward: 1620.862585
+Steps: 2664000/10000000 | Avg reward: 1620.862585
+Steps: 2668000/10000000 | Avg reward: 1656.802637
+Steps: 2672000/10000000 | Avg reward: 1564.705737
+Steps: 2676000/10000000 | Avg reward: 1698.376050
+Steps: 2680000/10000000 | Avg reward: 2206.071448
+Steps: 2684000/10000000 | Avg reward: 2430.095032
+Steps: 2688000/10000000 | Avg reward: 2327.625403
+Steps: 2692000/10000000 | Avg reward: 1860.202600
+Steps: 2696000/10000000 | Avg reward: 1880.436768
+Steps: 2700000/10000000 | Avg reward: 1965.941809
+*****save model*****
+Steps: 2704000/10000000 | Avg reward: 1965.941809
+Steps: 2708000/10000000 | Avg reward: 1891.211804
+Steps: 2712000/10000000 | Avg reward: 1940.141553
+Steps: 2716000/10000000 | Avg reward: 1903.511658
+Steps: 2720000/10000000 | Avg reward: 1828.753015
+Steps: 2724000/10000000 | Avg reward: 1936.619836
+Steps: 2728000/10000000 | Avg reward: 1967.460474
+Steps: 2732000/10000000 | Avg reward: 1965.562622
+Steps: 2736000/10000000 | Avg reward: 1965.562622
+Steps: 2740000/10000000 | Avg reward: 2035.443457
+Steps: 2744000/10000000 | Avg reward: 2129.742200
+Steps: 2748000/10000000 | Avg reward: 1899.781079
+Steps: 2752000/10000000 | Avg reward: 1507.450763
+Steps: 2756000/10000000 | Avg reward: 1509.480835
+Steps: 2760000/10000000 | Avg reward: 1493.180731
+Steps: 2764000/10000000 | Avg reward: 1576.320441
+Steps: 2768000/10000000 | Avg reward: 1490.410828
+Steps: 2772000/10000000 | Avg reward: 1282.310706
+Steps: 2776000/10000000 | Avg reward: 1383.450745
+Steps: 2780000/10000000 | Avg reward: 1708.890924
+Steps: 2784000/10000000 | Avg reward: 1553.580902
+Steps: 2788000/10000000 | Avg reward: 1187.450366
+Steps: 2792000/10000000 | Avg reward: 1251.170428
+Steps: 2796000/10000000 | Avg reward: 1164.870551
+Steps: 2800000/10000000 | Avg reward: 1058.760510
+*****save model*****
+Steps: 2804000/10000000 | Avg reward: 1227.530743
+Steps: 2808000/10000000 | Avg reward: 1368.790784
+Steps: 2812000/10000000 | Avg reward: 1261.480725
+Steps: 2816000/10000000 | Avg reward: 1521.560577
+Steps: 2820000/10000000 | Avg reward: 973.750385
+Steps: 2824000/10000000 | Avg reward: 1054.010541
+Steps: 2828000/10000000 | Avg reward: 1007.250488
+Steps: 2832000/10000000 | Avg reward: 1633.080750
+Steps: 2836000/10000000 | Avg reward: 1655.600732
+Steps: 2840000/10000000 | Avg reward: 1841.281458
+Steps: 2844000/10000000 | Avg reward: 1884.560559
+Steps: 2848000/10000000 | Avg reward: 1183.950732
+Steps: 2852000/10000000 | Avg reward: 1377.150562
+Steps: 2856000/10000000 | Avg reward: 1574.730762
+Steps: 2860000/10000000 | Avg reward: 1379.700836
+Steps: 2864000/10000000 | Avg reward: 1472.561041
+Steps: 2868000/10000000 | Avg reward: 1938.728613
+Steps: 2872000/10000000 | Avg reward: 1855.001099
+Steps: 2876000/10000000 | Avg reward: 1363.870825
+Steps: 2880000/10000000 | Avg reward: 1709.140759
+Steps: 2884000/10000000 | Avg reward: 1564.310468
+Steps: 2888000/10000000 | Avg reward: 1430.631232
+Steps: 2892000/10000000 | Avg reward: 1510.392114
+Steps: 2896000/10000000 | Avg reward: 1679.251605
+Steps: 2900000/10000000 | Avg reward: 1662.721820
+*****save model*****
+Steps: 2904000/10000000 | Avg reward: 1742.991797
+Steps: 2908000/10000000 | Avg reward: 1995.432629
+Steps: 2912000/10000000 | Avg reward: 1978.122632
+Steps: 2916000/10000000 | Avg reward: 1896.882642
+Steps: 2920000/10000000 | Avg reward: 1791.932495
+Steps: 2924000/10000000 | Avg reward: 1840.681165
+Steps: 2928000/10000000 | Avg reward: 2033.133948
+Steps: 2932000/10000000 | Avg reward: 2194.183875
+Steps: 2936000/10000000 | Avg reward: 1659.131238
+Steps: 2940000/10000000 | Avg reward: 1430.510522
+Steps: 2944000/10000000 | Avg reward: 1314.530658
+Steps: 2948000/10000000 | Avg reward: 1542.920776
+Steps: 2952000/10000000 | Avg reward: 1455.130865
+Steps: 2956000/10000000 | Avg reward: 1573.590637
+Steps: 2960000/10000000 | Avg reward: 1280.300665
+Steps: 2964000/10000000 | Avg reward: 1668.640466
+Steps: 2968000/10000000 | Avg reward: 1449.500671
+Steps: 2972000/10000000 | Avg reward: 1636.420740
+Steps: 2976000/10000000 | Avg reward: 1473.690442
+Steps: 2980000/10000000 | Avg reward: 1655.130347
+Steps: 2984000/10000000 | Avg reward: 1951.360193
+Steps: 2988000/10000000 | Avg reward: 1296.900690
+Steps: 2992000/10000000 | Avg reward: 1803.121033
+Steps: 2996000/10000000 | Avg reward: 1534.920801
+Steps: 3000000/10000000 | Avg reward: 1785.120874
+*****save model*****
+Steps: 3004000/10000000 | Avg reward: 2208.570947
+Steps: 3008000/10000000 | Avg reward: 1732.820929
+Steps: 3012000/10000000 | Avg reward: 1640.821417
+Steps: 3016000/10000000 | Avg reward: 1640.821417
+Steps: 3020000/10000000 | Avg reward: 1714.911548
+Steps: 3024000/10000000 | Avg reward: 1714.911548
+Steps: 3028000/10000000 | Avg reward: 1714.911548
+Steps: 3032000/10000000 | Avg reward: 1714.911548
+Steps: 3036000/10000000 | Avg reward: 1756.237830
+Steps: 3040000/10000000 | Avg reward: 1553.388446
+Steps: 3044000/10000000 | Avg reward: 1075.974585
+Steps: 3048000/10000000 | Avg reward: 1221.445135
+Steps: 3052000/10000000 | Avg reward: 1146.543414
+Steps: 3056000/10000000 | Avg reward: 1121.615118
+Steps: 3060000/10000000 | Avg reward: 1077.604645
+Steps: 3064000/10000000 | Avg reward: 1079.064825
+Steps: 3068000/10000000 | Avg reward: 1245.296381
+Steps: 3072000/10000000 | Avg reward: 1182.204401
+Steps: 3076000/10000000 | Avg reward: 1235.643323
+Steps: 3080000/10000000 | Avg reward: 1080.333289
+Steps: 3084000/10000000 | Avg reward: 1002.864136
+Steps: 3088000/10000000 | Avg reward: 1054.844690
+Steps: 3092000/10000000 | Avg reward: 1071.013208
+Steps: 3096000/10000000 | Avg reward: 1120.693994
+Steps: 3100000/10000000 | Avg reward: 1065.443701
+*****save model*****
+Steps: 3104000/10000000 | Avg reward: 1085.194275
+Steps: 3108000/10000000 | Avg reward: 1085.194275
+Steps: 3112000/10000000 | Avg reward: 1110.695050
+Steps: 3116000/10000000 | Avg reward: 1011.035431
+Steps: 3120000/10000000 | Avg reward: 1011.035431
+Steps: 3124000/10000000 | Avg reward: 1157.357208
+Steps: 3128000/10000000 | Avg reward: 1072.015521
+Steps: 3132000/10000000 | Avg reward: 1003.213928
+Steps: 3136000/10000000 | Avg reward: 1271.957471
+Steps: 3140000/10000000 | Avg reward: 1251.657068
+Steps: 3144000/10000000 | Avg reward: 1245.056305
+Steps: 3148000/10000000 | Avg reward: 1391.608295
+Steps: 3152000/10000000 | Avg reward: 1374.708002
+Steps: 3156000/10000000 | Avg reward: 1415.165973
+Steps: 3160000/10000000 | Avg reward: 1443.306720
+Steps: 3164000/10000000 | Avg reward: 1260.040082
+Steps: 3168000/10000000 | Avg reward: 1456.419788
+Steps: 3172000/10000000 | Avg reward: 1329.401941
+Steps: 3176000/10000000 | Avg reward: 1213.370581
+Steps: 3180000/10000000 | Avg reward: 1191.282190
+Steps: 3184000/10000000 | Avg reward: 1196.990466
+Steps: 3188000/10000000 | Avg reward: 898.463062
+Steps: 3192000/10000000 | Avg reward: 1162.503619
+Steps: 3196000/10000000 | Avg reward: 1178.322552
+Steps: 3200000/10000000 | Avg reward: 1181.173285
+*****save model*****
+Steps: 3204000/10000000 | Avg reward: 1205.162170
+Steps: 3208000/10000000 | Avg reward: 1374.792621
+Steps: 3212000/10000000 | Avg reward: 1231.453912
+Steps: 3216000/10000000 | Avg reward: 1109.204236
+Steps: 3220000/10000000 | Avg reward: 1109.204236
+Steps: 3224000/10000000 | Avg reward: 1079.264795
+Steps: 3228000/10000000 | Avg reward: 1197.185400
+Steps: 3232000/10000000 | Avg reward: 1223.665308
+Steps: 3236000/10000000 | Avg reward: 1785.115088
+Steps: 3240000/10000000 | Avg reward: 1549.124298
+Steps: 3244000/10000000 | Avg reward: 1588.413605
+Steps: 3248000/10000000 | Avg reward: 1636.163367
+Steps: 3252000/10000000 | Avg reward: 1636.163367
+Steps: 3256000/10000000 | Avg reward: 1640.662549
+Steps: 3260000/10000000 | Avg reward: 1640.662549
+Steps: 3264000/10000000 | Avg reward: 1667.483069
+Steps: 3268000/10000000 | Avg reward: 1715.289832
+Steps: 3272000/10000000 | Avg reward: 1699.529187
+Steps: 3276000/10000000 | Avg reward: 1960.466370
+Steps: 3280000/10000000 | Avg reward: 1136.289783
+Steps: 3284000/10000000 | Avg reward: 1621.673340
+Steps: 3288000/10000000 | Avg reward: 1663.231165
+Steps: 3292000/10000000 | Avg reward: 1229.610583
+Steps: 3296000/10000000 | Avg reward: 1227.800586
+Steps: 3300000/10000000 | Avg reward: 1303.540747
+*****save model*****
+Steps: 3304000/10000000 | Avg reward: 1303.031140
+Steps: 3308000/10000000 | Avg reward: 957.970288
+Steps: 3312000/10000000 | Avg reward: 1580.890594
+Steps: 3316000/10000000 | Avg reward: 1447.291064
+Steps: 3320000/10000000 | Avg reward: 1460.031104
+Steps: 3324000/10000000 | Avg reward: 1437.001074
+Steps: 3328000/10000000 | Avg reward: 1594.191370
+Steps: 3332000/10000000 | Avg reward: 1682.030945
+Steps: 3336000/10000000 | Avg reward: 1554.390955
+Steps: 3340000/10000000 | Avg reward: 1507.200720
+Steps: 3344000/10000000 | Avg reward: 1761.511127
+Steps: 3348000/10000000 | Avg reward: 1644.401093
+Steps: 3352000/10000000 | Avg reward: 1724.591431
+Steps: 3356000/10000000 | Avg reward: 1822.950269
+Steps: 3360000/10000000 | Avg reward: 1846.775366
+Steps: 3364000/10000000 | Avg reward: 1738.795251
+Steps: 3368000/10000000 | Avg reward: 1824.472510
+Steps: 3372000/10000000 | Avg reward: 2064.576794
+Steps: 3376000/10000000 | Avg reward: 2297.185388
+Steps: 3380000/10000000 | Avg reward: 2311.820801
+Steps: 3384000/10000000 | Avg reward: 1938.321942
+Steps: 3388000/10000000 | Avg reward: 1977.850519
+Steps: 3392000/10000000 | Avg reward: 2122.187616
+Steps: 3396000/10000000 | Avg reward: 1976.808301
+Steps: 3400000/10000000 | Avg reward: 1760.010291
+*****save model*****
+Steps: 3404000/10000000 | Avg reward: 1042.360468
+Steps: 3408000/10000000 | Avg reward: 1309.210785
+Steps: 3412000/10000000 | Avg reward: 1227.890668
+Steps: 3416000/10000000 | Avg reward: 1178.540619
+Steps: 3420000/10000000 | Avg reward: 1082.410504
+Steps: 3424000/10000000 | Avg reward: 1109.610559
+Steps: 3428000/10000000 | Avg reward: 1222.810767
+Steps: 3432000/10000000 | Avg reward: 1047.730426
+Steps: 3436000/10000000 | Avg reward: 962.600385
+Steps: 3440000/10000000 | Avg reward: 1194.490619
+Steps: 3444000/10000000 | Avg reward: 922.900488
+Steps: 3448000/10000000 | Avg reward: 1009.580463
+Steps: 3452000/10000000 | Avg reward: 1166.200647
+Steps: 3456000/10000000 | Avg reward: 1237.700769
+Steps: 3460000/10000000 | Avg reward: 1552.410876
+Steps: 3464000/10000000 | Avg reward: 1662.651135
+Steps: 3468000/10000000 | Avg reward: 1559.040594
+Steps: 3472000/10000000 | Avg reward: 1519.990698
+Steps: 3476000/10000000 | Avg reward: 2075.971411
+Steps: 3480000/10000000 | Avg reward: 1992.340808
+Steps: 3484000/10000000 | Avg reward: 1454.300830
+Steps: 3488000/10000000 | Avg reward: 1621.000684
+Steps: 3492000/10000000 | Avg reward: 1455.220587
+Steps: 3496000/10000000 | Avg reward: 1393.990637
+Steps: 3500000/10000000 | Avg reward: 1581.181067
+*****save model*****
+Steps: 3504000/10000000 | Avg reward: 1139.330627
+Steps: 3508000/10000000 | Avg reward: 1223.780804
+Steps: 3512000/10000000 | Avg reward: 1163.060620
+Steps: 3516000/10000000 | Avg reward: 1582.791718
+Steps: 3520000/10000000 | Avg reward: 1459.801581
+Steps: 3524000/10000000 | Avg reward: 1459.801581
+Steps: 3528000/10000000 | Avg reward: 1493.161761
+Steps: 3532000/10000000 | Avg reward: 1493.161761
+Steps: 3536000/10000000 | Avg reward: 1493.161761
+Steps: 3540000/10000000 | Avg reward: 1938.898401
+Steps: 3544000/10000000 | Avg reward: 2734.005096
+Steps: 3548000/10000000 | Avg reward: 1571.280573
+Steps: 3552000/10000000 | Avg reward: 1517.980609
+Steps: 3556000/10000000 | Avg reward: 1367.390808
+Steps: 3560000/10000000 | Avg reward: 928.910468
+Steps: 3564000/10000000 | Avg reward: 1100.020563
+Steps: 3568000/10000000 | Avg reward: 1436.130884
+Steps: 3572000/10000000 | Avg reward: 1455.440009
+Steps: 3576000/10000000 | Avg reward: 1634.370581
+Steps: 3580000/10000000 | Avg reward: 1346.250378
+Steps: 3584000/10000000 | Avg reward: 1799.280542
+Steps: 3588000/10000000 | Avg reward: 1046.870465
+Steps: 3592000/10000000 | Avg reward: 1235.130670
+Steps: 3596000/10000000 | Avg reward: 1642.010937
+Steps: 3600000/10000000 | Avg reward: 1790.430811
+*****save model*****
+Steps: 3604000/10000000 | Avg reward: 1402.760248
+Steps: 3608000/10000000 | Avg reward: 1528.960754
+Steps: 3612000/10000000 | Avg reward: 1526.020142
+Steps: 3616000/10000000 | Avg reward: 1767.350732
+Steps: 3620000/10000000 | Avg reward: 1260.760583
+Steps: 3624000/10000000 | Avg reward: 1504.470715
+Steps: 3628000/10000000 | Avg reward: 1413.500745
+Steps: 3632000/10000000 | Avg reward: 1309.660718
+Steps: 3636000/10000000 | Avg reward: 1169.170502
+Steps: 3640000/10000000 | Avg reward: 1422.080798
+Steps: 3644000/10000000 | Avg reward: 1224.870660
+Steps: 3648000/10000000 | Avg reward: 1583.550598
+Steps: 3652000/10000000 | Avg reward: 976.320392
+Steps: 3656000/10000000 | Avg reward: 1199.100464
+Steps: 3660000/10000000 | Avg reward: 1235.940570
+Steps: 3664000/10000000 | Avg reward: 1318.740674
+Steps: 3668000/10000000 | Avg reward: 1516.730847
+Steps: 3672000/10000000 | Avg reward: 1568.951001
+Steps: 3676000/10000000 | Avg reward: 1756.510443
+Steps: 3680000/10000000 | Avg reward: 1917.630115
+Steps: 3684000/10000000 | Avg reward: 1813.790698
+Steps: 3688000/10000000 | Avg reward: 1813.790698
+Steps: 3692000/10000000 | Avg reward: 1774.290881
+Steps: 3696000/10000000 | Avg reward: 1774.290881
+Steps: 3700000/10000000 | Avg reward: 1759.421497
+*****save model*****
+Steps: 3704000/10000000 | Avg reward: 1788.732715
+Steps: 3708000/10000000 | Avg reward: 1807.429797
+Steps: 3712000/10000000 | Avg reward: 1807.429797
+Steps: 3716000/10000000 | Avg reward: 1802.745874
+Steps: 3720000/10000000 | Avg reward: 1842.515845
+Steps: 3724000/10000000 | Avg reward: 1775.806921
+Steps: 3728000/10000000 | Avg reward: 1648.770496
+Steps: 3732000/10000000 | Avg reward: 1784.836707
+Steps: 3736000/10000000 | Avg reward: 1693.958228
+Steps: 3740000/10000000 | Avg reward: 1756.519946
+Steps: 3744000/10000000 | Avg reward: 1745.322510
+Steps: 3748000/10000000 | Avg reward: 1822.082202
+Steps: 3752000/10000000 | Avg reward: 2122.356030
+Steps: 3756000/10000000 | Avg reward: 1565.601282
+Steps: 3760000/10000000 | Avg reward: 1664.080859
+Steps: 3764000/10000000 | Avg reward: 1845.270569
+Steps: 3768000/10000000 | Avg reward: 2013.120605
+Steps: 3772000/10000000 | Avg reward: 1770.650098
+Steps: 3776000/10000000 | Avg reward: 2299.018970
+Steps: 3780000/10000000 | Avg reward: 2110.249414
+Steps: 3784000/10000000 | Avg reward: 1368.300726
+Steps: 3788000/10000000 | Avg reward: 1161.440485
+Steps: 3792000/10000000 | Avg reward: 1482.740369
+Steps: 3796000/10000000 | Avg reward: 1303.350745
+Steps: 3800000/10000000 | Avg reward: 1650.120886
+*****save model*****
+Steps: 3804000/10000000 | Avg reward: 1596.661121
+Steps: 3808000/10000000 | Avg reward: 1545.201074
+Steps: 3812000/10000000 | Avg reward: 1489.840747
+Steps: 3816000/10000000 | Avg reward: 1489.840747
+Steps: 3820000/10000000 | Avg reward: 1455.221411
+Steps: 3824000/10000000 | Avg reward: 1717.402014
+Steps: 3828000/10000000 | Avg reward: 1770.086084
+Steps: 3832000/10000000 | Avg reward: 1966.079944
+Steps: 3836000/10000000 | Avg reward: 1956.010107
+Steps: 3840000/10000000 | Avg reward: 2109.305286
+Steps: 3844000/10000000 | Avg reward: 1688.515833
+Steps: 3848000/10000000 | Avg reward: 1445.960571
+Steps: 3852000/10000000 | Avg reward: 1047.820844
+Steps: 3856000/10000000 | Avg reward: 985.751019
+Steps: 3860000/10000000 | Avg reward: 916.620862
+Steps: 3864000/10000000 | Avg reward: 916.620862
+Steps: 3868000/10000000 | Avg reward: 938.591309
+Steps: 3872000/10000000 | Avg reward: 1219.877112
+Steps: 3876000/10000000 | Avg reward: 893.593774
+Steps: 3880000/10000000 | Avg reward: 776.302661
+Steps: 3884000/10000000 | Avg reward: 663.232007
+Steps: 3888000/10000000 | Avg reward: 562.649945
+Steps: 3892000/10000000 | Avg reward: 564.549945
+Steps: 3896000/10000000 | Avg reward: 564.049945
+Steps: 3900000/10000000 | Avg reward: 604.349902
+*****save model*****
+Steps: 3904000/10000000 | Avg reward: 1013.802667
+Steps: 3908000/10000000 | Avg reward: 1155.954584
+Steps: 3912000/10000000 | Avg reward: 1082.324194
+Steps: 3916000/10000000 | Avg reward: 1047.553247
+Steps: 3920000/10000000 | Avg reward: 1000.085303
+Steps: 3924000/10000000 | Avg reward: 1000.085303
+Steps: 3928000/10000000 | Avg reward: 998.224469
+Steps: 3932000/10000000 | Avg reward: 1039.885284
+Steps: 3936000/10000000 | Avg reward: 1296.763519
+Steps: 3940000/10000000 | Avg reward: 982.952490
+Steps: 3944000/10000000 | Avg reward: 1003.552722
+Steps: 3948000/10000000 | Avg reward: 1003.552722
+Steps: 3952000/10000000 | Avg reward: 836.402490
+Steps: 3956000/10000000 | Avg reward: 1099.231543
+Steps: 3960000/10000000 | Avg reward: 1018.680505
+Steps: 3964000/10000000 | Avg reward: 861.652014
+Steps: 3968000/10000000 | Avg reward: 861.552014
+Steps: 3972000/10000000 | Avg reward: 971.753223
+Steps: 3976000/10000000 | Avg reward: 933.723389
+Steps: 3980000/10000000 | Avg reward: 1213.011926
+Steps: 3984000/10000000 | Avg reward: 1226.022107
+Steps: 3988000/10000000 | Avg reward: 1430.173376
+Steps: 3992000/10000000 | Avg reward: 1430.173376
+Steps: 3996000/10000000 | Avg reward: 1496.102808
+Steps: 4000000/10000000 | Avg reward: 1496.102808
+*****save model*****
+Steps: 4004000/10000000 | Avg reward: 1311.803162
+Steps: 4008000/10000000 | Avg reward: 1125.182141
+Steps: 4012000/10000000 | Avg reward: 935.875012
+Steps: 4016000/10000000 | Avg reward: 1193.504382
+Steps: 4020000/10000000 | Avg reward: 1193.504382
+Steps: 4024000/10000000 | Avg reward: 1076.052289
+Steps: 4028000/10000000 | Avg reward: 1062.151324
+Steps: 4032000/10000000 | Avg reward: 919.971033
+Steps: 4036000/10000000 | Avg reward: 885.021082
+Steps: 4040000/10000000 | Avg reward: 854.892542
+Steps: 4044000/10000000 | Avg reward: 1027.632867
+Steps: 4048000/10000000 | Avg reward: 930.833270
+Steps: 4052000/10000000 | Avg reward: 1142.251392
+Steps: 4056000/10000000 | Avg reward: 953.789813
+Steps: 4060000/10000000 | Avg reward: 807.651196
+Steps: 4064000/10000000 | Avg reward: 806.591870
+Steps: 4068000/10000000 | Avg reward: 806.591870
+Steps: 4072000/10000000 | Avg reward: 1149.472595
+Steps: 4076000/10000000 | Avg reward: 1084.331799
+Steps: 4080000/10000000 | Avg reward: 1101.931909
+Steps: 4084000/10000000 | Avg reward: 1074.173596
+Steps: 4088000/10000000 | Avg reward: 1074.173596
+Steps: 4092000/10000000 | Avg reward: 1126.655054
+Steps: 4096000/10000000 | Avg reward: 1212.514795
+Steps: 4100000/10000000 | Avg reward: 1372.063831
+*****save model*****
+Steps: 4104000/10000000 | Avg reward: 1382.934424
+Steps: 4108000/10000000 | Avg reward: 1284.765417
+Steps: 4112000/10000000 | Avg reward: 1433.524023
+Steps: 4116000/10000000 | Avg reward: 1708.270374
+Steps: 4120000/10000000 | Avg reward: 1438.898816
+Steps: 4124000/10000000 | Avg reward: 1244.661658
+Steps: 4128000/10000000 | Avg reward: 1189.963904
+Steps: 4132000/10000000 | Avg reward: 957.272803
+Steps: 4136000/10000000 | Avg reward: 958.562866
+Steps: 4140000/10000000 | Avg reward: 1124.810254
+Steps: 4144000/10000000 | Avg reward: 1446.883020
+Steps: 4148000/10000000 | Avg reward: 1158.731934
+Steps: 4152000/10000000 | Avg reward: 1184.491846
+Steps: 4156000/10000000 | Avg reward: 1448.754150
+Steps: 4160000/10000000 | Avg reward: 1495.114246
+Steps: 4164000/10000000 | Avg reward: 1496.304321
+Steps: 4168000/10000000 | Avg reward: 1496.304321
+Steps: 4172000/10000000 | Avg reward: 1496.304321
+Steps: 4176000/10000000 | Avg reward: 1642.491565
+Steps: 4180000/10000000 | Avg reward: 1739.509631
+Steps: 4184000/10000000 | Avg reward: 1817.709705
+Steps: 4188000/10000000 | Avg reward: 1497.536646
+Steps: 4192000/10000000 | Avg reward: 1303.555444
+Steps: 4196000/10000000 | Avg reward: 1152.816064
+Steps: 4200000/10000000 | Avg reward: 1066.665112
+*****save model*****
+Steps: 4204000/10000000 | Avg reward: 1112.843616
+Steps: 4208000/10000000 | Avg reward: 1405.619714
+Steps: 4212000/10000000 | Avg reward: 1487.029553
+Steps: 4216000/10000000 | Avg reward: 1481.890991
+Steps: 4220000/10000000 | Avg reward: 1515.162415
+Steps: 4224000/10000000 | Avg reward: 1486.190704
+Steps: 4228000/10000000 | Avg reward: 1496.350812
+Steps: 4232000/10000000 | Avg reward: 1472.570306
+Steps: 4236000/10000000 | Avg reward: 1728.120422
+Steps: 4240000/10000000 | Avg reward: 1821.041235
+Steps: 4244000/10000000 | Avg reward: 1806.475317
+Steps: 4248000/10000000 | Avg reward: 1594.340381
+Steps: 4252000/10000000 | Avg reward: 1605.120337
+Steps: 4256000/10000000 | Avg reward: 1605.120337
+Steps: 4260000/10000000 | Avg reward: 1651.230359
+Steps: 4264000/10000000 | Avg reward: 1742.780804
+Steps: 4268000/10000000 | Avg reward: 1658.631146
+Steps: 4272000/10000000 | Avg reward: 1658.631146
+Steps: 4276000/10000000 | Avg reward: 1658.631146
+Steps: 4280000/10000000 | Avg reward: 1892.968610
+Steps: 4284000/10000000 | Avg reward: 2291.774420
+Steps: 4288000/10000000 | Avg reward: 1511.463025
+Steps: 4292000/10000000 | Avg reward: 1021.188086
+Steps: 4296000/10000000 | Avg reward: 1293.344543
+Steps: 4300000/10000000 | Avg reward: 1095.648450
+*****save model*****
+Steps: 4304000/10000000 | Avg reward: 527.100000
+Steps: 4308000/10000000 | Avg reward: 854.547845
+Steps: 4312000/10000000 | Avg reward: 1181.645135
+Steps: 4316000/10000000 | Avg reward: 1223.796100
+Steps: 4320000/10000000 | Avg reward: 1420.456293
+Steps: 4324000/10000000 | Avg reward: 1220.345483
+Steps: 4328000/10000000 | Avg reward: 1130.486292
+Steps: 4332000/10000000 | Avg reward: 1130.486292
+Steps: 4336000/10000000 | Avg reward: 1070.746332
+Steps: 4340000/10000000 | Avg reward: 1029.646246
+Steps: 4344000/10000000 | Avg reward: 1230.804596
+Steps: 4348000/10000000 | Avg reward: 1072.833136
+Steps: 4352000/10000000 | Avg reward: 1175.939862
+Steps: 4356000/10000000 | Avg reward: 1170.719849
+Steps: 4360000/10000000 | Avg reward: 1018.155328
+Steps: 4364000/10000000 | Avg reward: 1025.954657
+Steps: 4368000/10000000 | Avg reward: 1305.294788
+Steps: 4372000/10000000 | Avg reward: 1451.333801
+Steps: 4376000/10000000 | Avg reward: 1471.463928
+Steps: 4380000/10000000 | Avg reward: 1254.333838
+Steps: 4384000/10000000 | Avg reward: 1240.483112
+Steps: 4388000/10000000 | Avg reward: 1161.125006
+Steps: 4392000/10000000 | Avg reward: 1185.394568
+Steps: 4396000/10000000 | Avg reward: 1193.255505
+Steps: 4400000/10000000 | Avg reward: 1288.632678
+*****save model*****
+Steps: 4404000/10000000 | Avg reward: 1353.444305
+Steps: 4408000/10000000 | Avg reward: 1351.644543
+Steps: 4412000/10000000 | Avg reward: 1108.676404
+Steps: 4416000/10000000 | Avg reward: 1103.494653
+Steps: 4420000/10000000 | Avg reward: 1094.233752
+Steps: 4424000/10000000 | Avg reward: 1181.854797
+Steps: 4428000/10000000 | Avg reward: 1024.064508
+Steps: 4432000/10000000 | Avg reward: 1085.964569
+Steps: 4436000/10000000 | Avg reward: 1160.344623
+Steps: 4440000/10000000 | Avg reward: 1080.994525
+Steps: 4444000/10000000 | Avg reward: 1331.223444
+Steps: 4448000/10000000 | Avg reward: 1338.202991
+Steps: 4452000/10000000 | Avg reward: 1338.202991
+Steps: 4456000/10000000 | Avg reward: 1321.323846
+Steps: 4460000/10000000 | Avg reward: 965.545715
+Steps: 4464000/10000000 | Avg reward: 858.194250
+Steps: 4468000/10000000 | Avg reward: 826.493945
+Steps: 4472000/10000000 | Avg reward: 907.802252
+Steps: 4476000/10000000 | Avg reward: 745.349335
+Steps: 4480000/10000000 | Avg reward: 595.701929
+Steps: 4484000/10000000 | Avg reward: 757.053027
+Steps: 4488000/10000000 | Avg reward: 786.043518
+Steps: 4492000/10000000 | Avg reward: 901.452368
+Steps: 4496000/10000000 | Avg reward: 1002.062140
+Steps: 4500000/10000000 | Avg reward: 900.601923
+*****save model*****
+Steps: 4504000/10000000 | Avg reward: 979.751971
+Steps: 4508000/10000000 | Avg reward: 979.751971
+Steps: 4512000/10000000 | Avg reward: 974.582770
+Steps: 4516000/10000000 | Avg reward: 1077.734998
+Steps: 4520000/10000000 | Avg reward: 1148.485681
+Steps: 4524000/10000000 | Avg reward: 1166.185681
+Steps: 4528000/10000000 | Avg reward: 1207.445929
+Steps: 4532000/10000000 | Avg reward: 1086.705530
+Steps: 4536000/10000000 | Avg reward: 1150.285406
+Steps: 4540000/10000000 | Avg reward: 1087.053595
+Steps: 4544000/10000000 | Avg reward: 1385.355444
+Steps: 4548000/10000000 | Avg reward: 1489.245483
+Steps: 4552000/10000000 | Avg reward: 1520.015540
+Steps: 4556000/10000000 | Avg reward: 1537.935608
+Steps: 4560000/10000000 | Avg reward: 1240.733069
+Steps: 4564000/10000000 | Avg reward: 1121.103009
+Steps: 4568000/10000000 | Avg reward: 901.953143
+Steps: 4572000/10000000 | Avg reward: 782.333453
+Steps: 4576000/10000000 | Avg reward: 853.084479
+Steps: 4580000/10000000 | Avg reward: 758.153235
+Steps: 4584000/10000000 | Avg reward: 741.142590
+Steps: 4588000/10000000 | Avg reward: 750.682330
+Steps: 4592000/10000000 | Avg reward: 750.682330
+Steps: 4596000/10000000 | Avg reward: 762.341974
+Steps: 4600000/10000000 | Avg reward: 828.782855
+*****save model*****
+Steps: 4604000/10000000 | Avg reward: 1094.984235
+Steps: 4608000/10000000 | Avg reward: 1162.825195
+Steps: 4612000/10000000 | Avg reward: 1339.325366
+Steps: 4616000/10000000 | Avg reward: 1154.164441
+Steps: 4620000/10000000 | Avg reward: 1102.733667
+Steps: 4624000/10000000 | Avg reward: 1225.130792
+Steps: 4628000/10000000 | Avg reward: 1225.130792
+Steps: 4632000/10000000 | Avg reward: 1612.561090
+Steps: 4636000/10000000 | Avg reward: 1612.561090
+Steps: 4640000/10000000 | Avg reward: 1613.721100
+Steps: 4644000/10000000 | Avg reward: 1551.400562
+Steps: 4648000/10000000 | Avg reward: 1418.574634
+Steps: 4652000/10000000 | Avg reward: 1076.785431
+Steps: 4656000/10000000 | Avg reward: 1090.726215
+Steps: 4660000/10000000 | Avg reward: 1138.663226
+Steps: 4664000/10000000 | Avg reward: 1302.211926
+Steps: 4668000/10000000 | Avg reward: 1669.002081
+Steps: 4672000/10000000 | Avg reward: 1711.273035
+Steps: 4676000/10000000 | Avg reward: 1437.043188
+Steps: 4680000/10000000 | Avg reward: 1437.043188
+Steps: 4684000/10000000 | Avg reward: 1048.184961
+Steps: 4688000/10000000 | Avg reward: 534.600000
+Steps: 4692000/10000000 | Avg reward: 662.961914
+Steps: 4696000/10000000 | Avg reward: 666.961926
+Steps: 4700000/10000000 | Avg reward: 618.441663
+*****save model*****
+Steps: 4704000/10000000 | Avg reward: 614.731915
+Steps: 4708000/10000000 | Avg reward: 570.390955
+Steps: 4712000/10000000 | Avg reward: 561.790967
+Steps: 4716000/10000000 | Avg reward: 561.790967
+Steps: 4720000/10000000 | Avg reward: 601.191931
+Steps: 4724000/10000000 | Avg reward: 687.743750
+Steps: 4728000/10000000 | Avg reward: 749.574670
+Steps: 4732000/10000000 | Avg reward: 799.880658
+Steps: 4736000/10000000 | Avg reward: 625.380048
+Steps: 4740000/10000000 | Avg reward: 685.721893
+Steps: 4744000/10000000 | Avg reward: 617.890979
+Steps: 4748000/10000000 | Avg reward: 596.700977
+Steps: 4752000/10000000 | Avg reward: 751.580713
+Steps: 4756000/10000000 | Avg reward: 1014.982721
+Steps: 4760000/10000000 | Avg reward: 837.912036
+Steps: 4764000/10000000 | Avg reward: 837.810913
+Steps: 4768000/10000000 | Avg reward: 903.161877
+Steps: 4772000/10000000 | Avg reward: 992.462463
+Steps: 4776000/10000000 | Avg reward: 949.971497
+Steps: 4780000/10000000 | Avg reward: 1019.712439
+Steps: 4784000/10000000 | Avg reward: 849.573840
+Steps: 4788000/10000000 | Avg reward: 978.791425
+Steps: 4792000/10000000 | Avg reward: 870.139868
+Steps: 4796000/10000000 | Avg reward: 787.791406
+Steps: 4800000/10000000 | Avg reward: 924.860388
+*****save model*****
+Steps: 4804000/10000000 | Avg reward: 830.930353
+Steps: 4808000/10000000 | Avg reward: 870.980139
+Steps: 4812000/10000000 | Avg reward: 611.340039
+Steps: 4816000/10000000 | Avg reward: 686.410669
+Steps: 4820000/10000000 | Avg reward: 625.440033
+Steps: 4824000/10000000 | Avg reward: 842.869965
+Steps: 4828000/10000000 | Avg reward: 647.460773
+Steps: 4832000/10000000 | Avg reward: 596.760028
+Steps: 4836000/10000000 | Avg reward: 579.090027
+Steps: 4840000/10000000 | Avg reward: 730.101172
+Steps: 4844000/10000000 | Avg reward: 747.130963
+Steps: 4848000/10000000 | Avg reward: 722.620929
+Steps: 4852000/10000000 | Avg reward: 722.620929
+Steps: 4856000/10000000 | Avg reward: 815.421985
+Steps: 4860000/10000000 | Avg reward: 982.553607
+Steps: 4864000/10000000 | Avg reward: 982.553607
+Steps: 4868000/10000000 | Avg reward: 1040.614240
+Steps: 4872000/10000000 | Avg reward: 1096.725140
+Steps: 4876000/10000000 | Avg reward: 1160.936761
+Steps: 4880000/10000000 | Avg reward: 1186.466125
+Steps: 4884000/10000000 | Avg reward: 1057.212305
+Steps: 4888000/10000000 | Avg reward: 959.182831
+Steps: 4892000/10000000 | Avg reward: 1037.983691
+Steps: 4896000/10000000 | Avg reward: 840.581873
+Steps: 4900000/10000000 | Avg reward: 866.884149
+*****save model*****
+Steps: 4904000/10000000 | Avg reward: 731.332233
+Steps: 4908000/10000000 | Avg reward: 731.332233
+Steps: 4912000/10000000 | Avg reward: 843.693646
+Steps: 4916000/10000000 | Avg reward: 1039.287103
+Steps: 4920000/10000000 | Avg reward: 924.004852
+Steps: 4924000/10000000 | Avg reward: 924.004852
+Steps: 4928000/10000000 | Avg reward: 1078.295959
+Steps: 4932000/10000000 | Avg reward: 1100.564844
+Steps: 4936000/10000000 | Avg reward: 1117.114600
+Steps: 4940000/10000000 | Avg reward: 1242.294958
+Steps: 4944000/10000000 | Avg reward: 1307.626270
+Steps: 4948000/10000000 | Avg reward: 1131.705121
+Steps: 4952000/10000000 | Avg reward: 936.223987
+Steps: 4956000/10000000 | Avg reward: 861.523651
+Steps: 4960000/10000000 | Avg reward: 861.523651
+Steps: 4964000/10000000 | Avg reward: 818.132727
+Steps: 4968000/10000000 | Avg reward: 750.552869
+Steps: 4972000/10000000 | Avg reward: 577.550696
+Steps: 4976000/10000000 | Avg reward: 573.920020
+Steps: 4980000/10000000 | Avg reward: 652.730792
+Steps: 4984000/10000000 | Avg reward: 653.559845
+Steps: 4988000/10000000 | Avg reward: 658.729608
+Steps: 4992000/10000000 | Avg reward: 655.699603
+Steps: 4996000/10000000 | Avg reward: 672.870117
+Steps: 5000000/10000000 | Avg reward: 721.191895
+*****save model*****
+Steps: 5004000/10000000 | Avg reward: 616.519812
+Steps: 5008000/10000000 | Avg reward: 572.840015
+Steps: 5012000/10000000 | Avg reward: 602.720959
+Steps: 5016000/10000000 | Avg reward: 646.950775
+Steps: 5020000/10000000 | Avg reward: 709.111658
+Steps: 5024000/10000000 | Avg reward: 701.980902
+Steps: 5028000/10000000 | Avg reward: 671.060077
+Steps: 5032000/10000000 | Avg reward: 692.681036
+Steps: 5036000/10000000 | Avg reward: 700.329858
+Steps: 5040000/10000000 | Avg reward: 663.510071
+Steps: 5044000/10000000 | Avg reward: 681.870068
+Steps: 5048000/10000000 | Avg reward: 799.712006
+Steps: 5052000/10000000 | Avg reward: 797.431641
+Steps: 5056000/10000000 | Avg reward: 840.991278
+Steps: 5060000/10000000 | Avg reward: 933.631842
+Steps: 5064000/10000000 | Avg reward: 1094.682214
+Steps: 5068000/10000000 | Avg reward: 1094.682214
+Steps: 5072000/10000000 | Avg reward: 1163.942493
+Steps: 5076000/10000000 | Avg reward: 1185.182422
+Steps: 5080000/10000000 | Avg reward: 1193.793225
+Steps: 5084000/10000000 | Avg reward: 1151.305078
+Steps: 5088000/10000000 | Avg reward: 906.724078
+Steps: 5092000/10000000 | Avg reward: 1211.827161
+Steps: 5096000/10000000 | Avg reward: 1294.067004
+Steps: 5100000/10000000 | Avg reward: 1442.154858
+*****save model*****
+Steps: 5104000/10000000 | Avg reward: 1618.623987
+Steps: 5108000/10000000 | Avg reward: 1618.623987
+Steps: 5112000/10000000 | Avg reward: 1617.443494
+Steps: 5116000/10000000 | Avg reward: 1613.253674
+Steps: 5120000/10000000 | Avg reward: 1564.663562
+Steps: 5124000/10000000 | Avg reward: 1644.334985
+Steps: 5128000/10000000 | Avg reward: 1518.835840
+Steps: 5132000/10000000 | Avg reward: 1451.055798
+Steps: 5136000/10000000 | Avg reward: 1257.140778
+Steps: 5140000/10000000 | Avg reward: 1125.129352
+Steps: 5144000/10000000 | Avg reward: 902.822876
+Steps: 5148000/10000000 | Avg reward: 1130.103412
+Steps: 5152000/10000000 | Avg reward: 1127.583502
+Steps: 5156000/10000000 | Avg reward: 1320.754437
+Steps: 5160000/10000000 | Avg reward: 1404.390424
+Steps: 5164000/10000000 | Avg reward: 1479.682385
+Steps: 5168000/10000000 | Avg reward: 1479.682385
+Steps: 5172000/10000000 | Avg reward: 1554.692993
+Steps: 5176000/10000000 | Avg reward: 1606.073938
+Steps: 5180000/10000000 | Avg reward: 1527.614197
+Steps: 5184000/10000000 | Avg reward: 1323.906897
+Steps: 5188000/10000000 | Avg reward: 1286.506775
+Steps: 5192000/10000000 | Avg reward: 1356.866858
+Steps: 5196000/10000000 | Avg reward: 1442.343542
+Steps: 5200000/10000000 | Avg reward: 1732.040332
+*****save model*****
+Steps: 5204000/10000000 | Avg reward: 1627.949414
+Steps: 5208000/10000000 | Avg reward: 1516.867578
+Steps: 5212000/10000000 | Avg reward: 1697.633789
+Steps: 5216000/10000000 | Avg reward: 1853.103149
+Steps: 5220000/10000000 | Avg reward: 1264.712378
+Steps: 5224000/10000000 | Avg reward: 1968.500940
+Steps: 5228000/10000000 | Avg reward: 1429.860638
+Steps: 5232000/10000000 | Avg reward: 1656.840350
+Steps: 5236000/10000000 | Avg reward: 1683.391211
+Steps: 5240000/10000000 | Avg reward: 1934.730273
+Steps: 5244000/10000000 | Avg reward: 1628.191223
+Steps: 5248000/10000000 | Avg reward: 2063.870630
+Steps: 5252000/10000000 | Avg reward: 1772.980859
+Steps: 5256000/10000000 | Avg reward: 2061.399774
+Steps: 5260000/10000000 | Avg reward: 2192.119800
+Steps: 5264000/10000000 | Avg reward: 2006.690063
+Steps: 5268000/10000000 | Avg reward: 1817.170410
+Steps: 5272000/10000000 | Avg reward: 1817.170410
+Steps: 5276000/10000000 | Avg reward: 1817.170410
+Steps: 5280000/10000000 | Avg reward: 1712.149487
+Steps: 5284000/10000000 | Avg reward: 1755.075745
+Steps: 5288000/10000000 | Avg reward: 1757.428778
+Steps: 5292000/10000000 | Avg reward: 1697.692548
+Steps: 5296000/10000000 | Avg reward: 1711.252435
+Steps: 5300000/10000000 | Avg reward: 1514.801471
+*****save model*****
+Steps: 5304000/10000000 | Avg reward: 1514.801471
+Steps: 5308000/10000000 | Avg reward: 1365.140778
+Steps: 5312000/10000000 | Avg reward: 1245.272797
+Steps: 5316000/10000000 | Avg reward: 1778.675476
+Steps: 5320000/10000000 | Avg reward: 1763.975476
+Steps: 5324000/10000000 | Avg reward: 1790.076562
+Steps: 5328000/10000000 | Avg reward: 1287.113696
+Steps: 5332000/10000000 | Avg reward: 1876.140857
+Steps: 5336000/10000000 | Avg reward: 2007.022449
+Steps: 5340000/10000000 | Avg reward: 1751.010315
+Steps: 5344000/10000000 | Avg reward: 2147.150330
+Steps: 5348000/10000000 | Avg reward: 1855.020490
+Steps: 5352000/10000000 | Avg reward: 1855.020490
+Steps: 5356000/10000000 | Avg reward: 1855.020490
+Steps: 5360000/10000000 | Avg reward: 1752.621112
+Steps: 5364000/10000000 | Avg reward: 1661.611237
+Steps: 5368000/10000000 | Avg reward: 1661.611237
+Steps: 5372000/10000000 | Avg reward: 1373.253168
+Steps: 5376000/10000000 | Avg reward: 1387.351953
+Steps: 5380000/10000000 | Avg reward: 1053.170386
+Steps: 5384000/10000000 | Avg reward: 990.370349
+Steps: 5388000/10000000 | Avg reward: 1028.820557
+Steps: 5392000/10000000 | Avg reward: 925.353320
+Steps: 5396000/10000000 | Avg reward: 1208.939673
+Steps: 5400000/10000000 | Avg reward: 1599.991138
+*****save model*****
+Steps: 5404000/10000000 | Avg reward: 1764.428906
+Steps: 5408000/10000000 | Avg reward: 1560.591028
+Steps: 5412000/10000000 | Avg reward: 1344.432690
+Steps: 5416000/10000000 | Avg reward: 879.643170
+Steps: 5420000/10000000 | Avg reward: 958.653021
+Steps: 5424000/10000000 | Avg reward: 986.472583
+Steps: 5428000/10000000 | Avg reward: 1166.252991
+Steps: 5432000/10000000 | Avg reward: 1166.252991
+Steps: 5436000/10000000 | Avg reward: 1248.543781
+Steps: 5440000/10000000 | Avg reward: 1172.832867
+Steps: 5444000/10000000 | Avg reward: 743.150879
+Steps: 5448000/10000000 | Avg reward: 661.190759
+Steps: 5452000/10000000 | Avg reward: 764.042798
+Steps: 5456000/10000000 | Avg reward: 1039.543420
+Steps: 5460000/10000000 | Avg reward: 1131.849097
+Steps: 5464000/10000000 | Avg reward: 1131.849097
+Steps: 5468000/10000000 | Avg reward: 1063.920892
+Steps: 5472000/10000000 | Avg reward: 1198.951642
+Steps: 5476000/10000000 | Avg reward: 1578.341949
+Steps: 5480000/10000000 | Avg reward: 1644.840222
+Steps: 5484000/10000000 | Avg reward: 1927.130408
+Steps: 5488000/10000000 | Avg reward: 1919.922034
+Steps: 5492000/10000000 | Avg reward: 1881.811670
+Steps: 5496000/10000000 | Avg reward: 1644.012134
+Steps: 5500000/10000000 | Avg reward: 1770.061926
+*****save model*****
+Steps: 5504000/10000000 | Avg reward: 1875.591125
+Steps: 5508000/10000000 | Avg reward: 2083.440869
+Steps: 5512000/10000000 | Avg reward: 1652.351038
+Steps: 5516000/10000000 | Avg reward: 1348.920532
+Steps: 5520000/10000000 | Avg reward: 1412.010852
+Steps: 5524000/10000000 | Avg reward: 2200.270825
+Steps: 5528000/10000000 | Avg reward: 1926.040833
+Steps: 5532000/10000000 | Avg reward: 2029.420447
+Steps: 5536000/10000000 | Avg reward: 1872.789771
+Steps: 5540000/10000000 | Avg reward: 2007.410272
+Steps: 5544000/10000000 | Avg reward: 2430.299695
+Steps: 5548000/10000000 | Avg reward: 2353.189514
+Steps: 5552000/10000000 | Avg reward: 2296.819629
+Steps: 5556000/10000000 | Avg reward: 2247.469128
+Steps: 5560000/10000000 | Avg reward: 2249.840198
+Steps: 5564000/10000000 | Avg reward: 2373.899719
+Steps: 5568000/10000000 | Avg reward: 2176.584192
+Steps: 5572000/10000000 | Avg reward: 2554.952332
+Steps: 5576000/10000000 | Avg reward: 2180.824292
+Steps: 5580000/10000000 | Avg reward: 2167.914355
+Steps: 5584000/10000000 | Avg reward: 1943.831110
+Steps: 5588000/10000000 | Avg reward: 1984.230878
+Steps: 5592000/10000000 | Avg reward: 1829.795416
+Steps: 5596000/10000000 | Avg reward: 1744.796301
+Steps: 5600000/10000000 | Avg reward: 1943.325500
+*****save model*****
+Steps: 5604000/10000000 | Avg reward: 2152.503528
+Steps: 5608000/10000000 | Avg reward: 2621.045215
+Steps: 5612000/10000000 | Avg reward: 2319.365076
+Steps: 5616000/10000000 | Avg reward: 1863.780005
+Steps: 5620000/10000000 | Avg reward: 1833.690295
+Steps: 5624000/10000000 | Avg reward: 1895.941333
+Steps: 5628000/10000000 | Avg reward: 1886.710718
+Steps: 5632000/10000000 | Avg reward: 1364.280389
+Steps: 5636000/10000000 | Avg reward: 1344.930280
+Steps: 5640000/10000000 | Avg reward: 1604.040869
+Steps: 5644000/10000000 | Avg reward: 1729.650696
+Steps: 5648000/10000000 | Avg reward: 1752.540808
+Steps: 5652000/10000000 | Avg reward: 1477.411841
+Steps: 5656000/10000000 | Avg reward: 1544.002124
+Steps: 5660000/10000000 | Avg reward: 1332.891333
+Steps: 5664000/10000000 | Avg reward: 1293.791797
+Steps: 5668000/10000000 | Avg reward: 1228.700342
+Steps: 5672000/10000000 | Avg reward: 1206.860150
+Steps: 5676000/10000000 | Avg reward: 1198.550116
+Steps: 5680000/10000000 | Avg reward: 1058.029376
+Steps: 5684000/10000000 | Avg reward: 1018.823175
+Steps: 5688000/10000000 | Avg reward: 1169.988000
+Steps: 5692000/10000000 | Avg reward: 1051.816986
+Steps: 5696000/10000000 | Avg reward: 1003.624237
+Steps: 5700000/10000000 | Avg reward: 837.592163
+*****save model*****
+Steps: 5704000/10000000 | Avg reward: 961.293384
+Steps: 5708000/10000000 | Avg reward: 941.682825
+Steps: 5712000/10000000 | Avg reward: 920.742804
+Steps: 5716000/10000000 | Avg reward: 979.793500
+Steps: 5720000/10000000 | Avg reward: 922.293933
+Steps: 5724000/10000000 | Avg reward: 704.783344
+Steps: 5728000/10000000 | Avg reward: 657.751917
+Steps: 5732000/10000000 | Avg reward: 798.943774
+Steps: 5736000/10000000 | Avg reward: 558.770435
+Steps: 5740000/10000000 | Avg reward: 924.522296
+Steps: 5744000/10000000 | Avg reward: 925.022296
+Steps: 5748000/10000000 | Avg reward: 1054.943292
+Steps: 5752000/10000000 | Avg reward: 749.842883
+Steps: 5756000/10000000 | Avg reward: 776.853955
+Steps: 5760000/10000000 | Avg reward: 786.133789
+Steps: 5764000/10000000 | Avg reward: 828.205206
+Steps: 5768000/10000000 | Avg reward: 862.496149
+Steps: 5772000/10000000 | Avg reward: 960.906073
+Steps: 5776000/10000000 | Avg reward: 1068.879724
+Steps: 5780000/10000000 | Avg reward: 1008.329443
+Steps: 5784000/10000000 | Avg reward: 1086.399994
+Steps: 5788000/10000000 | Avg reward: 1248.962738
+Steps: 5792000/10000000 | Avg reward: 1149.816827
+Steps: 5796000/10000000 | Avg reward: 1173.777710
+Steps: 5800000/10000000 | Avg reward: 1103.607727
+*****save model*****
+Steps: 5804000/10000000 | Avg reward: 1103.607727
+Steps: 5808000/10000000 | Avg reward: 1089.297437
+Steps: 5812000/10000000 | Avg reward: 905.464417
+Steps: 5816000/10000000 | Avg reward: 784.432745
+Steps: 5820000/10000000 | Avg reward: 788.673114
+Steps: 5824000/10000000 | Avg reward: 1004.256183
+Steps: 5828000/10000000 | Avg reward: 1192.296387
+Steps: 5832000/10000000 | Avg reward: 1100.675555
+Steps: 5836000/10000000 | Avg reward: 1100.675555
+Steps: 5840000/10000000 | Avg reward: 1058.003925
+Steps: 5844000/10000000 | Avg reward: 1058.003925
+Steps: 5848000/10000000 | Avg reward: 1058.003925
+Steps: 5852000/10000000 | Avg reward: 979.703876
+Steps: 5856000/10000000 | Avg reward: 751.654449
+Steps: 5860000/10000000 | Avg reward: 664.502386
+Steps: 5864000/10000000 | Avg reward: 799.602612
+Steps: 5868000/10000000 | Avg reward: 801.602612
+Steps: 5872000/10000000 | Avg reward: 779.142719
+Steps: 5876000/10000000 | Avg reward: 692.421631
+Steps: 5880000/10000000 | Avg reward: 667.581940
+Steps: 5884000/10000000 | Avg reward: 709.912531
+Steps: 5888000/10000000 | Avg reward: 695.511566
+Steps: 5892000/10000000 | Avg reward: 820.634766
+Steps: 5896000/10000000 | Avg reward: 907.735303
+Steps: 5900000/10000000 | Avg reward: 738.352130
+*****save model*****
+Steps: 5904000/10000000 | Avg reward: 758.162085
+Steps: 5908000/10000000 | Avg reward: 966.502808
+Steps: 5912000/10000000 | Avg reward: 997.513165
+Steps: 5916000/10000000 | Avg reward: 997.513165
+Steps: 5920000/10000000 | Avg reward: 1336.394818
+Steps: 5924000/10000000 | Avg reward: 1380.225964
+Steps: 5928000/10000000 | Avg reward: 1337.533521
+Steps: 5932000/10000000 | Avg reward: 1695.894299
+Steps: 5936000/10000000 | Avg reward: 2093.363660
+Steps: 5940000/10000000 | Avg reward: 2180.763721
+Steps: 5944000/10000000 | Avg reward: 2180.763721
+Steps: 5948000/10000000 | Avg reward: 1960.272815
+Steps: 5952000/10000000 | Avg reward: 1759.862317
+Steps: 5956000/10000000 | Avg reward: 1759.862317
+Steps: 5960000/10000000 | Avg reward: 1721.212256
+Steps: 5964000/10000000 | Avg reward: 1447.104297
+Steps: 5968000/10000000 | Avg reward: 1401.755713
+Steps: 5972000/10000000 | Avg reward: 1622.722131
+Steps: 5976000/10000000 | Avg reward: 1622.722131
+Steps: 5980000/10000000 | Avg reward: 1575.509741
+Steps: 5984000/10000000 | Avg reward: 1575.509741
+Steps: 5988000/10000000 | Avg reward: 1538.681702
+Steps: 5992000/10000000 | Avg reward: 1549.101709
+Steps: 5996000/10000000 | Avg reward: 1591.201270
+Steps: 6000000/10000000 | Avg reward: 1609.024426
+*****save model*****
+Steps: 6004000/10000000 | Avg reward: 1716.845337
+Steps: 6008000/10000000 | Avg reward: 1615.093335
+Steps: 6012000/10000000 | Avg reward: 1531.023584
+Steps: 6016000/10000000 | Avg reward: 1536.262976
+Steps: 6020000/10000000 | Avg reward: 1527.582971
+Steps: 6024000/10000000 | Avg reward: 1491.912878
+Steps: 6028000/10000000 | Avg reward: 1491.912878
+Steps: 6032000/10000000 | Avg reward: 1709.228656
+Steps: 6036000/10000000 | Avg reward: 1791.757794
+Steps: 6040000/10000000 | Avg reward: 1687.705652
+Steps: 6044000/10000000 | Avg reward: 1612.353381
+Steps: 6048000/10000000 | Avg reward: 1394.242200
+Steps: 6052000/10000000 | Avg reward: 1325.662115
+Steps: 6056000/10000000 | Avg reward: 1356.970959
+Steps: 6060000/10000000 | Avg reward: 1358.661206
+Steps: 6064000/10000000 | Avg reward: 1240.631519
+Steps: 6068000/10000000 | Avg reward: 1164.741382
+Steps: 6072000/10000000 | Avg reward: 1425.778632
+Steps: 6076000/10000000 | Avg reward: 1298.420532
+Steps: 6080000/10000000 | Avg reward: 1097.495044
+Steps: 6084000/10000000 | Avg reward: 900.042297
+Steps: 6088000/10000000 | Avg reward: 1299.019189
+Steps: 6092000/10000000 | Avg reward: 1522.593274
+Steps: 6096000/10000000 | Avg reward: 1847.201123
+Steps: 6100000/10000000 | Avg reward: 1604.370972
+*****save model*****
+Steps: 6104000/10000000 | Avg reward: 1838.410791
+Steps: 6108000/10000000 | Avg reward: 1790.161072
+Steps: 6112000/10000000 | Avg reward: 1918.610828
+Steps: 6116000/10000000 | Avg reward: 1491.280469
+Steps: 6120000/10000000 | Avg reward: 1512.049194
+Steps: 6124000/10000000 | Avg reward: 1495.059399
+Steps: 6128000/10000000 | Avg reward: 1619.130273
+Steps: 6132000/10000000 | Avg reward: 1619.130273
+Steps: 6136000/10000000 | Avg reward: 1661.941162
+Steps: 6140000/10000000 | Avg reward: 1682.507965
+Steps: 6144000/10000000 | Avg reward: 1753.133063
+Steps: 6148000/10000000 | Avg reward: 1496.487451
+Steps: 6152000/10000000 | Avg reward: 827.932605
+Steps: 6156000/10000000 | Avg reward: 876.733270
+Steps: 6160000/10000000 | Avg reward: 911.564429
+Steps: 6164000/10000000 | Avg reward: 1337.893140
+Steps: 6168000/10000000 | Avg reward: 1449.501038
+Steps: 6172000/10000000 | Avg reward: 1492.700476
+Steps: 6176000/10000000 | Avg reward: 1341.950745
+Steps: 6180000/10000000 | Avg reward: 1321.851489
+Steps: 6184000/10000000 | Avg reward: 1279.311804
+Steps: 6188000/10000000 | Avg reward: 1337.721503
+Steps: 6192000/10000000 | Avg reward: 1492.310968
+Steps: 6196000/10000000 | Avg reward: 1441.690680
+Steps: 6200000/10000000 | Avg reward: 1459.671002
+*****save model*****
+Steps: 6204000/10000000 | Avg reward: 1508.102338
+Steps: 6208000/10000000 | Avg reward: 1446.962335
+Steps: 6212000/10000000 | Avg reward: 1384.442291
+Steps: 6216000/10000000 | Avg reward: 1268.922809
+Steps: 6220000/10000000 | Avg reward: 1498.283569
+Steps: 6224000/10000000 | Avg reward: 1544.884277
+Steps: 6228000/10000000 | Avg reward: 1681.803284
+Steps: 6232000/10000000 | Avg reward: 1462.941962
+Steps: 6236000/10000000 | Avg reward: 1519.570642
+Steps: 6240000/10000000 | Avg reward: 1366.971594
+Steps: 6244000/10000000 | Avg reward: 1999.716077
+Steps: 6248000/10000000 | Avg reward: 1483.471912
+Steps: 6252000/10000000 | Avg reward: 1415.921533
+Steps: 6256000/10000000 | Avg reward: 1308.300696
+Steps: 6260000/10000000 | Avg reward: 1577.840540
+Steps: 6264000/10000000 | Avg reward: 1327.450677
+Steps: 6268000/10000000 | Avg reward: 1703.790918
+Steps: 6272000/10000000 | Avg reward: 1772.740002
+Steps: 6276000/10000000 | Avg reward: 2049.730615
+Steps: 6280000/10000000 | Avg reward: 1498.241107
+Steps: 6284000/10000000 | Avg reward: 1447.991333
+Steps: 6288000/10000000 | Avg reward: 1180.291333
+Steps: 6292000/10000000 | Avg reward: 1209.592334
+Steps: 6296000/10000000 | Avg reward: 1209.592334
+Steps: 6300000/10000000 | Avg reward: 1209.592334
+*****save model*****
+Steps: 6304000/10000000 | Avg reward: 1209.592334
+Steps: 6308000/10000000 | Avg reward: 1386.855054
+Steps: 6312000/10000000 | Avg reward: 1447.013788
+Steps: 6316000/10000000 | Avg reward: 1224.030792
+Steps: 6320000/10000000 | Avg reward: 1269.862170
+Steps: 6324000/10000000 | Avg reward: 1306.283093
+Steps: 6328000/10000000 | Avg reward: 1093.952905
+Steps: 6332000/10000000 | Avg reward: 1093.952905
+Steps: 6336000/10000000 | Avg reward: 1408.771216
+Steps: 6340000/10000000 | Avg reward: 1701.860699
+Steps: 6344000/10000000 | Avg reward: 1695.262811
+Steps: 6348000/10000000 | Avg reward: 1353.203326
+Steps: 6352000/10000000 | Avg reward: 1353.203326
+Steps: 6356000/10000000 | Avg reward: 1398.134247
+Steps: 6360000/10000000 | Avg reward: 1162.503308
+Steps: 6364000/10000000 | Avg reward: 990.632294
+Steps: 6368000/10000000 | Avg reward: 954.632233
+Steps: 6372000/10000000 | Avg reward: 1053.554297
+Steps: 6376000/10000000 | Avg reward: 1083.495941
+Steps: 6380000/10000000 | Avg reward: 1039.985132
+Steps: 6384000/10000000 | Avg reward: 1301.584918
+Steps: 6388000/10000000 | Avg reward: 1301.584918
+Steps: 6392000/10000000 | Avg reward: 1266.904889
+Steps: 6396000/10000000 | Avg reward: 1235.663959
+Steps: 6400000/10000000 | Avg reward: 795.952942
+*****save model*****
+Steps: 6404000/10000000 | Avg reward: 807.892944
+Steps: 6408000/10000000 | Avg reward: 913.863965
+Steps: 6412000/10000000 | Avg reward: 1164.110400
+Steps: 6416000/10000000 | Avg reward: 679.951117
+Steps: 6420000/10000000 | Avg reward: 1333.882361
+Steps: 6424000/10000000 | Avg reward: 1213.580566
+Steps: 6428000/10000000 | Avg reward: 1034.333539
+Steps: 6432000/10000000 | Avg reward: 1034.973590
+Steps: 6436000/10000000 | Avg reward: 1086.534039
+Steps: 6440000/10000000 | Avg reward: 1084.273462
+Steps: 6444000/10000000 | Avg reward: 1659.226160
+Steps: 6448000/10000000 | Avg reward: 1922.511365
+Steps: 6452000/10000000 | Avg reward: 1726.010754
+Steps: 6456000/10000000 | Avg reward: 1677.170886
+Steps: 6460000/10000000 | Avg reward: 954.400323
+Steps: 6464000/10000000 | Avg reward: 903.070282
+Steps: 6468000/10000000 | Avg reward: 1186.470612
+Steps: 6472000/10000000 | Avg reward: 1498.340790
+Steps: 6476000/10000000 | Avg reward: 1333.540698
+Steps: 6480000/10000000 | Avg reward: 1192.690613
+Traceback (most recent call last):
+  File "main.py", line 73, in <module>
+    run(args)
+  File "main.py", line 51, in run
+    agent.train()
+  File "/home/tommy558788_eed04/ADL2019_rl/agent_dir/agent_mario.py", line 179, in train
+    self.rollouts.masks[step])
+  File "/home/tommy558788_eed04/ADL2019_rl/agent_dir/agent_mario.py", line 148, in _step
+    obs_next, rewards, dones, infos = self.envs.step(actions.cpu().numpy()) # synchronously step
+  File "/home/tommy558788_eed04/ADL2019_rl/a2c/vec_env/vec_env.py", line 111, in step
+    self.step_async(actions)
+  File "/home/tommy558788_eed04/ADL2019_rl/a2c/vec_env/shmem_vec_env.py", line 71, in step_async
+    pipe.send(('step', act))
+  File "/opt/anaconda3/lib/python3.7/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/opt/anaconda3/lib/python3.7/multiprocessing/connection.py", line 404, in _send_bytes
+    self._send(header + buf)
+  File "/opt/anaconda3/lib/python3.7/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe

@@ -35,7 +35,7 @@ class AgentMario:
         
         self.display_freq = 4000
         self.save_freq = 100000
-        self.save_dir = './checkpoints/'
+        self.save_dir = './model/mario/'
 
         torch.manual_seed(self.seed)
         torch.cuda.manual_seed_all(self.seed)
