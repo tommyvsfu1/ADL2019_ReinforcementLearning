@@ -179,7 +179,7 @@ class AgentMario:
             values, action_probs, hiddens_next = self.make_action(obs, hiddens, masks)
             dist = torch.distributions.Categorical(action_probs)
             actions = dist.sample()
-            self.tensorboard.scalar_summary("chosen_action",actions,self.step_s)
+            self.tensorboard.scalar_summary("chosen_action",actions.item(),self.step_s)
             self.step_s += 1
         #log_action_prob = torch.unsqueeze(dist.log_prob(actions),1) # expand dim
         #entropy = dist.entropy()
