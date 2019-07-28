@@ -12,8 +12,15 @@ from collections import deque
 import os
 import numpy as np
 from logger import TensorboardLogger
+import random
 
 use_cuda = torch.cuda.is_available()
+seed = 11037
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed_all(seed)
+
 
 class AgentMario:
     def __init__(self, env, args):
@@ -44,6 +51,8 @@ class AgentMario:
         if self.envs == None:
             self.envs = make_vec_envs('SuperMarioBros-v0', self.seed,
                     self.n_processes)
+        self.envs.seed(seed)
+        
         self.device = torch.device("cuda:0" if use_cuda else "cpu")
 
         self.obs_shape = self.envs.observation_space.shape
@@ -207,7 +216,7 @@ class AgentMario:
             
             if total_steps >= self.max_steps:
                 break
-                
+
             self.tensorboard.update()
     def save_model(self, filename):
         torch.save(self.model, os.path.join(self.save_dir, filename))
