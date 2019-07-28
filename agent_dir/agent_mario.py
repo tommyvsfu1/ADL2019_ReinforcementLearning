@@ -75,6 +75,7 @@ class AgentMario:
         self.init_game_setting()
    
         self.tensorboard = TensorboardLogger("./log/mario_log")
+        self.step_s = 0
     def _update(self):
         # TODO: Compute returns
         # R_t = reward_t + gamma * R_{t+1}
@@ -111,6 +112,7 @@ class AgentMario:
 
 
         with torch.no_grad():
+            self.model.eval()
             obs_next_batch = (self.rollouts.obs[1:self.update_freq+1]).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step + 1, n_processes, 4, 84, 84)
             hidden_next_batch = (self.rollouts.hiddens[1]).view(self.n_processes, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
             mask_next_batch = (self.rollouts.masks[1:self.update_freq+1]).view(-1, 1) # (n_step + 1*n_processes, 1)
@@ -123,7 +125,9 @@ class AgentMario:
             hidden_next_batch = hidden_next_batch.to(self.device)
             mask_next_batch = mask_next_batch.to(self.device)
             next_values, _, _ = self.model(obs_next_batch, hidden_next_batch, mask_next_batch)
-            
+        
+        
+
         # next_values[t] = V(s)_t
         
         # next feedforward
@@ -137,6 +141,7 @@ class AgentMario:
         # target = f(values, next_values)
         # value_loss = mse(values, target)
         #values = self.rollouts.value_preds[0 : self.update_freq]
+        self.model.train()
         target_y = self.rollouts.rewards + self.gamma * next_values.view(self.update_freq,self.n_processes,1) # [v(1),v(2),v(3),v(4),v(5)]
         value_loss_fn = torch.nn.MSELoss()
         value_loss = 0.5 * value_loss_fn(values, target_y.view(self.update_freq*self.n_processes,-1))
@@ -144,7 +149,8 @@ class AgentMario:
         # action_loss = log(...) * advantage_function
         advantage_function = R - (values.view(self.update_freq,self.n_processes,-1)).detach()
         action_loss = (-log_action_probs*advantage_function).mean()
-
+        self.tensorboard.histogram_summary("log_action_prob", log_action_probs)
+        self.tensorboard.histogram_summary("advantage function", advantage_function)
         #entropy = dist.entropy()
         loss = action_loss + value_loss 
         # Update
@@ -173,6 +179,8 @@ class AgentMario:
             values, action_probs, hiddens_next = self.make_action(obs, hiddens, masks)
             dist = torch.distributions.Categorical(action_probs)
             actions = dist.sample()
+            self.tensorboard.scalar_summary("chosen_action",actions,self.step_s)
+            self.step_s += 1
         #log_action_prob = torch.unsqueeze(dist.log_prob(actions),1) # expand dim
         #entropy = dist.entropy()
 
@@ -257,6 +265,7 @@ class AgentMario:
     def make_action(self, obs, hiddens, masks, test=False):
         # TODO: Use you model to choose an action
         if not test:
+            self.model.eval()
             obs = obs.to(self.device)
             hiddens = hiddens.to(self.device)
             masks = masks.to(self.device)
