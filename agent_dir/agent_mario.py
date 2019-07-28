@@ -98,6 +98,7 @@ class AgentMario:
         # print("obs batch size", obs_batch.size())
         # print("hidden batch size", hidden_batch.size())
         # print("mask batch size", mask_batch.size())
+        self.model.train()
         obs_batch = obs_batch.to(self.device)        
         hidden_batch = hidden_batch.to(self.device)
         mask_batch = mask_batch.to(self.device)
