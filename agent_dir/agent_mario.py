@@ -42,7 +42,12 @@ class AgentMario:
         
         self.display_freq = 4000
         self.save_freq = 100000
-        self.save_dir = './model/mario/'
+        self.save_dir = './model/mario'
+        print("update freq:",self.update_freq)
+        print("n_processes:",self.n_processes)
+        print("display freq:", self.display_freq)
+        print("save freq:", self.save_freq)
+        print("save dir:", self.save_dir)
 
         torch.manual_seed(self.seed)
         torch.cuda.manual_seed_all(self.seed)
@@ -53,6 +58,7 @@ class AgentMario:
                     self.n_processes)
         
         self.device = torch.device("cuda:0" if use_cuda else "cpu")
+        print("using device:", self.device)
 
         self.obs_shape = self.envs.observation_space.shape
         self.act_shape = self.envs.action_space.n
@@ -81,10 +87,16 @@ class AgentMario:
         # loss = value_loss + action_loss (- entropy_weight * entropy)
 
         #  Feedforward (do not use with no_grad() because we need Backprop)
-        obs_batch = (self.rollouts.obs[:-1]).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step + 1, n_processes, 4, 84, 84)
-        hidden_batch = (self.rollouts.hiddens[:-1]).view(-1, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
-        mask_batch = (self.rollouts.masks[:-1]).view(-1, 1) # (n_step + 1, n_processes, 1)
-        obs_batch = obs_batch.to(self.device)
+        obs_batch = (self.rollouts.obs[:-1]).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step*n_processes=80, 4, 84, 84)
+        hidden_batch = (self.rollouts.hiddens[0]).view(self.n_processes, self.hidden_size) # (n_step*n_processes=80, hidden_size=512)
+        mask_batch = (self.rollouts.masks[:-1]).view(-1, 1) # (n_step*n_processes=80, 1)
+        if (len(obs_batch.shape) != 4 or len(hidden_batch.shape) != 2) or len(mask_batch.shape) !=2:
+            raise NotImplementedError("shape error")
+
+        # print("obs batch size", obs_batch.size())
+        # print("hidden batch size", hidden_batch.size())
+        # print("mask batch size", mask_batch.size())
+        obs_batch = obs_batch.to(self.device)        
         hidden_batch = hidden_batch.to(self.device)
         mask_batch = mask_batch.to(self.device)
         values, action_probs, hiddens = self.model(obs_batch, hidden_batch, mask_batch)
@@ -99,8 +111,13 @@ class AgentMario:
 
         with torch.no_grad():
             obs_next_batch = (self.rollouts.obs[1:self.update_freq+1]).view(-1, self.obs_shape[0], self.obs_shape[1], self.obs_shape[2]) # (n_step + 1, n_processes, 4, 84, 84)
-            hidden_next_batch = (self.rollouts.hiddens[1:self.update_freq+1]).view(-1, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
-            mask_next_batch = (self.rollouts.masks[1:self.update_freq+1]).view(-1, 1) # (n_step + 1, n_processes, 1)
+            hidden_next_batch = (self.rollouts.hiddens[1]).view(self.n_processes, self.hidden_size) # (n_step + 1, n_processes, hidden_size)
+            mask_next_batch = (self.rollouts.masks[1:self.update_freq+1]).view(-1, 1) # (n_step + 1*n_processes, 1)
+            if (len(obs_next_batch.shape) != 4 or len(hidden_next_batch.shape) != 2) or len(mask_next_batch.shape) !=2:
+                raise NotImplementedError("shape error")
+            #print("obs next batch size", obs_next_batch.size())
+            #print("hidden next batch size", hidden_next_batch.size())
+            #print("mask next batch size", mask_next_batch.size())
             obs_next_batch = obs_next_batch.to(self.device)
             hidden_next_batch = hidden_next_batch.to(self.device)
             mask_next_batch = mask_next_batch.to(self.device)
@@ -125,8 +142,8 @@ class AgentMario:
         # TODO:
         # action_loss = log(...) * advantage_function
         advantage_function = R - (values.view(self.update_freq,self.n_processes,-1)).detach()
-        action_loss = (-log_action_probs * advantage_function).mean()
-    
+        action_loss = (-log_action_probs*advantage_function).mean()
+
         #entropy = dist.entropy()
         loss = action_loss + value_loss 
         # Update
@@ -134,7 +151,6 @@ class AgentMario:
         loss.backward()
         clip_grad_norm_(self.model.parameters(), self.grad_norm)
         self.optimizer.step()
-        
         # TODO:
         # Clear rollouts after update (RolloutStorage.reset())
         self.rollouts.reset()
@@ -144,6 +160,11 @@ class AgentMario:
         return loss.item()
 
     def _step(self, obs, hiddens, masks):
+        """ 
+        Input : obs = (n_processes,4,84,84)
+                hiddens = (16,512)
+                masks = (16,1)
+        """
         with torch.no_grad():
         # TODO:
         # Sample actions from the output distributions
@@ -155,7 +176,7 @@ class AgentMario:
         #entropy = dist.entropy()
 
         obs_next, rewards, dones, infos = self.envs.step(actions.cpu().numpy()) # synchronously step
-        masks_next = torch.from_numpy(1 - np.expand_dims(dones,axis=1))
+        masks_next = torch.from_numpy(1 - np.expand_dims(dones,axis=1)) # (16,1)
         actions = torch.unsqueeze(actions, 1)
         rewards = torch.from_numpy(np.expand_dims(rewards,axis=1))
         # TODO:
@@ -174,7 +195,7 @@ class AgentMario:
         running_reward = deque(maxlen=10)
         episode_rewards = torch.zeros(self.n_processes, 1).to(self.device)
         total_steps = 0
-        
+        best_avg_reward = float('-inf')
         # Store first observation
         obs = torch.from_numpy(self.envs.reset()).to(self.device)
         self.rollouts.obs[0].copy_(obs)
@@ -213,6 +234,11 @@ class AgentMario:
                 print("*****save model*****")
                 self.save_model('mario_model.pt')
             
+            if avg_reward > best_avg_reward:
+                print("#####save best model#####")
+                best_avg_reward = avg_reward
+                self.save_model('mario_best.cpt')
+
             if total_steps >= self.max_steps:
                 break
 
