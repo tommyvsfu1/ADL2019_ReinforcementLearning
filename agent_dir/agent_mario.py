@@ -1,4 +1,5 @@
 # reference code https://github.com/dennybritz/reinforcement-learning/blob/master/PolicyGradient/a3c/worker.py
+# https://github.com/vietnguyen91/Super-mario-bros-A3C-pytorch
 import torch
 from torch.distributions import Categorical
 from torch.optim import RMSprop
