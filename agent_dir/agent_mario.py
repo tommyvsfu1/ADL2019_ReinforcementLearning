@@ -51,7 +51,6 @@ class AgentMario:
         if self.envs == None:
             self.envs = make_vec_envs('SuperMarioBros-v0', self.seed,
                     self.n_processes)
-        self.envs.seed(seed)
         
         self.device = torch.device("cuda:0" if use_cuda else "cpu")
 
