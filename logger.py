@@ -16,9 +16,11 @@ class TensorboardLogger(object):
         else :
             self.writer.add_scalar(tag, value, global_step=t)
 
-    def histogram_summary(self, tag, tensor):
-        self.writer.add_histogram(tag, tensor, global_step=self.time_s)
-
+    def histogram_summary(self, tag, tensor, t=-1):
+        if t == -1:
+            self.writer.add_histogram(tag, tensor, global_step=self.time_s)
+        else :
+            self.writer.add_histogram(tag, tensor, global_step=t)
     def logger_close(self):
         self.writer.close()
 
