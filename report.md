@@ -49,3 +49,12 @@ Mean: 222.8
 Run 100 episodes  
 Mean: 366.17  
 ![](https://i.imgur.com/bu6rw4A.png)
+
+
+## 3. Mario
+- [x] Getting averaging reward in 10 episodes over 1500 in SuperMarioBros
+- [ ] Getting averaging reward in 10 episodes over 3000 in SuperMarioBros
+### Testing
+Run 10 episodes  
+Mean: 1881.490000000026  
+![](https://i.imgur.com/Nwm96Ze.png)

@@ -64,7 +64,7 @@ class AgentPG(Agent):
         
         
         if args.test_pg:
-            self.load('pg_best.cpt')
+            self.load('/Users/tommy/ADL2019_rl/model/pg_model/structure1_trained/pg_best.cpt')
         # discounted reward
         self.gamma = 0.99 
         

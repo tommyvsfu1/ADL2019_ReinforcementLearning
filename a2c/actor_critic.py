@@ -132,7 +132,7 @@ class ActorCritic(nn.Module):
 
 # Test
 # ac = ActorCritic(obs_shape=(4, 84, 84),act_shape=12,hidden_size=512,recurrent=True)
-# a = torch.ones((80,4,84,84))
+# a = torch.ones((1,4,84,84))
 # h = torch.ones((16,512))
 # m = torch.ones((80,1))
 # ac(a,h,m)

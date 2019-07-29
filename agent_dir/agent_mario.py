@@ -71,11 +71,15 @@ class AgentMario:
         self.optimizer = RMSprop(self.model.parameters(), lr=self.lr, 
                 eps=1e-5)
 
-        self.hidden = None
+        self.hidden = torch.zeros((1,self.hidden_size))
         self.init_game_setting()
    
         self.tensorboard = TensorboardLogger("./log/mario_log")
         self.step_s = 0
+
+        if args.test_mario:
+            self.load_model("/Users/tommy/ADL2019_rl/model/mario/mario_model/mario/mario_best.cpt")
+
     def _update(self):
         # TODO: Compute returns
         # R_t = reward_t + gamma * R_{t+1}
@@ -253,17 +257,19 @@ class AgentMario:
                 break
 
             self.tensorboard.update()
+
+
     def save_model(self, filename):
         torch.save(self.model, os.path.join(self.save_dir, filename))
 
     def load_model(self, path):
-        self.model = torch.load(path)
+        self.model = torch.load(path,map_location=lambda storage, loc: storage)
 
     def init_game_setting(self):
         if self.recurrent:
             self.hidden = torch.zeros(1, self.hidden_size).to(self.device)
 
-    def make_action(self, obs, hiddens, masks, test=False):
+    def make_action(self, obs, hiddens=None, masks=None, test=False):
         # TODO: Use you model to choose an action
         if not test:
             self.model.eval()
@@ -273,5 +279,17 @@ class AgentMario:
             values, action_probs, hiddens = self.model(obs, hiddens, masks)
             return values, action_probs, hiddens  
         else :
-            pass
+            """
+            Testing :
+                    input : obs = (4,84,84)
+            """
+            self.model.eval()
+            with torch.no_grad():
+                ob = torch.from_numpy(np.expand_dims(obs,0)).to(self.device) 
+                masks = torch.ones(1, 1).to(self.device)
+                self.hidden = self.hidden.to(self.device)
+                values, action_probs, self.hidden = self.model(ob, self.hidden, masks)
+                m = torch.distributions.Categorical(action_probs)
+                action = m.sample()    
+                return action.item()
  
