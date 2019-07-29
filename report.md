@@ -23,6 +23,19 @@ Mean: 196.97405585001098
 
 *   result
 
+    <details><summary>CLICK ME</summary>
+    <p>
+
+    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg_1.gif" width="40%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg_2.gif" width="40%">
+
+    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg3.gif" width="40%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg4.gif" width="40%">
+
+    </p>
+    </details>
+
+
+
+
 
 
 
