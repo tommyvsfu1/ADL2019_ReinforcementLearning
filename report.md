@@ -21,6 +21,12 @@ Mean: 196.97405585001098
 *  training curve
 ![](https://i.imgur.com/TBSnXqJ.png) 
 
+*   result
+
+    <details><summary>CLICK ME</summary>
+    <p>
+
+    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/pg_1.gif" width="40%">
 
 
 
