@@ -23,15 +23,15 @@ Mean: 196.97405585001098
 
 ### result
 
-    <details><summary>CLICK ME</summary>
-    <p>
+<details><summary>CLICK ME</summary>
+<p>
 
-    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg_1.gif" width="40%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg_2.gif" width="40%">
+<img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg_1.gif" width="40%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg_2.gif" width="40%">
 
-    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg3.gif" width="40%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg4.gif" width="40%">
+<img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg3.gif" width="40%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg4.gif" width="40%">
 
-    </p>
-    </details>
+</p>
+</details>
 
 
 
@@ -64,13 +64,13 @@ Mean: 366.17
 
 ### result
 
-    <details><summary>CLICK ME</summary>
-    <p>
+<details><summary>CLICK ME</summary>
+<p>
 
-    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_1.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_2.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_3.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_4.gif" width="25%">
+<img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_1.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_2.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_3.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_4.gif" width="25%">
 
-    </p>
-    </details>
+</p>
+</details>
 
 ## 3. Mario
 - [x] Getting averaging reward in 10 episodes over 1500 in SuperMarioBros
@@ -83,10 +83,10 @@ Mean: 1881.490000000026
 
 ### result
 
-    <details><summary>CLICK ME</summary>
-    <p>
+<details><summary>CLICK ME</summary>
+<p>
 
-    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/ac_1.gif"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/ac_2.gif">
+<img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/ac_1.gif"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/ac_2.gif">
 
-    </p>
-    </details>
+</p>
+</details>
