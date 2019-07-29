@@ -137,7 +137,7 @@ class AgentDQN(Agent):
         self.online_net = self.online_net.to(self.device)
 
         if args.test_dqn:
-            self.load('dqn_best')
+            self.load('/Users/tommy/ADL2019_rl/model/dqn_dueling_model/trained/dqn_best')
         
         # discounted reward
         self.GAMMA = 0.99 

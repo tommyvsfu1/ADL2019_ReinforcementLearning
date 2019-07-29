@@ -1,71 +1,92 @@
-# ADL HW3
-Please don't revise test.py, environment.py,  atari_wrapper.py, mario_env.py, agent_dir/agent.py
+# Report  
+## Policy Gradient  
+### Baseline
+- [x] Getting averaging reward in 30 episodes over 0 in LunarLander
 
-## Installation
-Type the following command to install OpenAI Gym Atari environment.
-
-`$ pip3 install opencv-python gym gym[box2d] gym[atari]`
-
-Please refer to [OpenAI's page](https://github.com/openai/gym) if you have any problem while installing.
-
-2019/4/28 update:
-If you encounter `AttributeError: module 'gym.envs.box2d' has no attribute 'LunarLander'`,
-try to run `$ pip3 install gym[box2d]` again.
-
-## How to run :
-training policy gradient:
-* `$ python3 main.py --train_pg`
-
-testing policy gradient:
-* `$ python3 test.py --test_pg`
-
-training DQN:
-* `$ python3 main.py --train_dqn`
-
-testing DQN:
-* `$ python3 test.py --test_dqn`
-
-If you want to see your agent playing the game,
-* `$ python3 test.py --test_[pg|dqn] --do_render`
-
-## Bonus
-Install SuperMarioBros: 
-
-`$ pip3 install gym-super-mario-bros`
-
-For more detail of this package, see:
-
-https://github.com/Kautenja/gym-super-mario-bros
-
-training SuperMarioBros:
-* `$ python3 main.py --train_mario`
-
-testing SuperMarioBros:
-* `$ python3 test.py --test_mario`
-
-## Code structure
-
+###   structure 1
+```python
+nn.Sequential(
+    nn.Linear(state_dim, hidden_dim),
+    nn.ReLU(),
+    nn.Linear(hidden_dim, hidden_dim),
+    nn.ReLU(),
+    nn.Linear(hidden_dim, action_num),
+    nn.Softmax(dim=-1)
+)
 ```
-.
-├── agent_dir (all agents are placed here)
-│   ├── agent.py (defined 4 required functions of the agent. DO NOT MODIFY IT)
-│   ├── agent_dqn.py (DQN agent sample code)
-│   ├── agent_pg.py (PG agent sample code)
-│   └── agent_mario.py (Mario agent A2C sample code)
-├── a2c (functions and classes used in A2C sample code)
-│   ├── vec_env (code for vectorizing environment for A2C)
-│   ├── actor_critic.py (define A2C model in pytorch)
-│   ├── environment_a2c.py (process environment for A2C)
-│   └── storage.py (define replay of A2C)
-├── argument.py (you can add your arguments in here. we will use the default value when running test.py)
-├── atari_wrapper.py (wrap the atari environment. DO NOT MODIFY IT)
-├── environment.py (define the game environment in HW3, DO NOT MODIFY IT)
-├── main.py (main function)
-├── mario_env.py (define the mario environment. DO NOT MODIFY IT)
-├── test.py (test script. we will use this script to test your agents. DO NOT MODIFY IT)
+*   Testing  (pg_best.cpt)  
+Run 30 episodes  
+Mean: 196.97405585001098
 
+*  training curve
+![](https://i.imgur.com/TBSnXqJ.png) 
+
+### result
+
+    <details><summary>CLICK ME</summary>
+    <p>
+
+    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg_1.gif" width="40%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg_2.gif" width="40%">
+
+    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg3.gif" width="40%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/pg4.gif" width="40%">
+
+    </p>
+    </details>
+
+
+
+
+## 2. DQN
+
+### 2.1 baseline
+- [x] Getting averaging reward in 100 episodes over 100 in Assault
+- [x] Improvements to DQN are allowed, not including Actor-Critic series.
+
+structure  
+```python
+self.conv1 = nn.Conv2d(channels, 32, kernel_size=8, stride=4)
+self.conv2 = nn.Conv2d(32, 64, kernel_size=4, stride=2)
+self.conv3 = nn.Conv2d(64, 64, kernel_size=3, stride=1)
+self.fc = nn.Linear(3136, 512)
+self.lrelu = nn.LeakyReLU(0.01)
+self.head = nn.Linear(512, num_actions)
 ```
+### Testing   
+#### DQN :  
+Run 100 episodes    
+Mean: 222.8  
+![](https://i.imgur.com/hSgpZQ0.png)
+#### Dueling DQN:  
+Run 100 episodes  
+Mean: 366.17  
+![](https://i.imgur.com/bu6rw4A.png)
 
-## Bugs
-*   BinarySpaceToDiscreteSpaceEnv -> JoypadSpace 
-http://melonicedlatte.com/programming/2019/06/09/202000.html
+
+### result
+
+    <details><summary>CLICK ME</summary>
+    <p>
+
+    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_1.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_2.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_3.gif" width="25%"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/dqn_4.gif" width="25%">
+
+    </p>
+    </details>
+
+## 3. Mario
+- [x] Getting averaging reward in 10 episodes over 1500 in SuperMarioBros
+- [ ] Getting averaging reward in 10 episodes over 3000 in SuperMarioBros
+### Testing
+Run 10 episodes  
+Mean: 1881.490000000026  
+![](https://i.imgur.com/Nwm96Ze.png)
+
+
+### result
+
+    <details><summary>CLICK ME</summary>
+    <p>
+
+    <img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/ac_1.gif"><img src="https://github.com/tommyvsfu1/ADL2019_rl/blob/master/result/ac_2.gif">
+
+    </p>
+    </details>
