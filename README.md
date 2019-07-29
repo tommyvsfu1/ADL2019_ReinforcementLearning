@@ -21,7 +21,7 @@ Mean: 196.97405585001098
 *  training curve
 ![](https://i.imgur.com/TBSnXqJ.png) 
 
-### result
+### Result
 
 <details><summary>CLICK ME</summary>
 <p>
@@ -62,7 +62,7 @@ Mean: 366.17
 ![](https://i.imgur.com/bu6rw4A.png)
 
 
-### result
+### Result
 
 <details><summary>CLICK ME</summary>
 <p>
@@ -81,7 +81,7 @@ Mean: 1881.490000000026
 ![](https://i.imgur.com/Nwm96Ze.png)
 
 
-### result
+### Result
 
 <details><summary>CLICK ME</summary>
 <p>
